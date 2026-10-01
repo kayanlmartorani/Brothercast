@@ -25,8 +25,8 @@ A separação é garantida pelo `netlify.toml` (`publish = "site"`). As páginas
 
 | # | Documento | Arquivo | Status |
 |---|---|---|---|
-| **1** | **BrotherCast Master** (v1.1) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
-| **2** | **Temporada 1** (v1.0) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
+| **1** | **BrotherCast Master** (v1.2) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
+| **2** | **Temporada 1** (v1.1) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
 | 2.1 | Roteiro de direção do piloto (E01) | — | ▢ próximo |
 | 2.2 | Lista inicial de convidados | — | ▢ |
 | 2.3 | Plano de gravação do Bloco A | — | ▢ |

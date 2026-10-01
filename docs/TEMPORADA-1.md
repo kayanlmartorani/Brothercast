@@ -2,7 +2,7 @@
 
 **Documento 2 do sistema BrotherCast.** Conceito de temporada, arco narrativo, fichas dos 10 episódios, trilha de convidados e plano de gravação.
 
-Versão 1.1 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
+Versão 1.2 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
 Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2)
 
 > ### Formato oficial
@@ -24,6 +24,7 @@ Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2)
 3. [Formato e especificações](#3-formato-e-especificações)
 4. [Mapa dos 10 episódios](#4-mapa-dos-10-episódios)
     - [Peça 0 — Manifesto BrotherCast (solo, 60–90s)](#peça-0-manifesto-brothercast-solo-6090s)
+    - [Peça 0.1 — De onde eu falo (solo, 3–5 min)](#peça-01-de-onde-eu-falo-solo-35-min)
 5. [Como ler uma ficha de episódio](#5-como-ler-uma-ficha-de-episódio)
 6. [Fichas dos episódios](#6-fichas-dos-episódios)
 7. [Convidados: critérios e trilha](#7-convidados-critérios-e-trilha)
@@ -215,6 +216,37 @@ Em formato de host único, a apresentação do projeto não pode ocupar o episó
 
 ---
 
+## Peça 0.1 — De onde eu falo (solo, 3–5 min)
+
+**Entre a Peça 0 e o E01. Não é episódio.**
+
+A história do Kayan — banco, decisão de sair, NK Concept, o dia a dia dessa luta — **precisa de espaço**, mas não pode ocupar o piloto: ela empurraria o convidado para o canto e enquadraria a marca exatamente como o Master §11.2 proíbe ("o podcast do ex-bancário que largou tudo").
+
+A solução é a mesma da Peça 0: tirar da grade e dar peça própria.
+
+| Item | Definição |
+|---|---|
+| **Formato** | Kayan sozinho |
+| **Duração** | 3–5 min |
+| **Função** | Estabelecer de onde o host fala, de uma vez, para o ano inteiro |
+| **Onde** | Publicada entre a Peça 0 e o E01; fica fixada como "comece por aqui" |
+| **Enquadramento** | **Capítulo em curso, não case.** Termina em pergunta aberta, não em lição |
+
+**Os quatro marcos**
+
+| Marco | O que precisa acontecer |
+|---|---|
+| 1. O banco | O que era bom e o que não cabia mais. Sem demonizar a carreira |
+| 2. A decisão | O dia, a conversa em casa, o medo. O custo concreto |
+| 3. A NK Concept | O que é e em que pé está — **hoje**, inclusive o que ainda não deu certo |
+| 4. O gancho | "É por isso que eu quero sentar com outras pessoas que estão no meio do caminho" |
+
+**Regras:** nenhum número de faturamento · nenhuma conclusão do tipo "e hoje eu vivo do que amo" · se a história ainda não tem final, dizer que não tem.
+
+> **Depois desta peça, a história do banco vira ponte em todos os episódios — nunca mais o assunto principal.**
+
+---
+
 ## 5. Como ler uma ficha de episódio
 
 Cada ficha tem nove blocos:
@@ -243,48 +275,52 @@ Cada ficha tem nove blocos:
 
 ### E01 — Por que a gente senta nessa mesa
 
-**Ato I · Pilar: Evolução Diária (apresenta os quatro) · Piloto · Com convidado**
+**Ato I · Pilar: Evolução Diária (apresenta os quatro) · Piloto · Convidado confirmado: Caio**
 
-- **Tema central:** por que o BrotherCast existe e o que é a filosofia do 1% — **demonstrada em conversa**, não explicada em discurso.
-- **Pergunta humana:** *"Por que tanta coisa que eu ouço sobre evolução não cabe na minha vida?"*
-- **Na mesa:** Kayan + 1 convidado.
-- **Convidado ideal:** alguém que **já tentou a virada radical e se quebrou** — e que hoje avança com passos pequenos. Perfil reconhecível, não notório. Precisa ser alguém com quem Kayan tenha intimidade suficiente para a conversa fluir no primeiro episódio, mas que o público não conheça. *A definir — ver §7.5.*
-- **Tensão da conversa:** produtividade tóxica × evolução realista. O episódio só funciona se **os dois** admitirem fracasso: Kayan na abertura e na primeira ponte, o convidado ao longo da conversa. Sem isso, vira palestra.
+- **Tema central:** os rótulos que a gente recebe e os que a gente decide carregar. É por aí que a filosofia do 1% aparece — **demonstrada em conversa**, não explicada em discurso.
+- **Pergunta humana:** *"E se as pessoas tiverem razão sobre mim?"*
+- **Na mesa:** Kayan + **Caio** — dentista, cirurgião implantodontista, com TDAH e dislexia. Tratado por muita gente como caso perdido; decidiu ser outra coisa.
+- **Tensão da conversa:** **rótulo recebido × rótulo carregado.** Os dois lados da mesa têm um: Caio foi rotulado como incapaz; Kayan está sendo rotulado como "o bancário que largou tudo". É isso que faz esta conversa específica ser a abertura certa — não a biografia de nenhum dos dois.
+
+> **Ângulo obrigatório — e é aqui que o piloto se ganha ou se perde.**
+> O episódio **não** é "como o Caio venceu o TDAH e a dislexia". Isso é palco, e palco é o que o BrotherCast recusa (Master §14).
+> O episódio é: **o que ainda é difícil hoje, mesmo depois de ter dado certo.** O laudo não sumiu, a leitura não ficou fácil, o dia ruim continua existindo — e ele segue operando. Essa é a história honesta, e é a que o público reconhece.
+> Perfil correspondente no Master §6.2: *"quem venceu em uma área e ainda está perdido em outra"*.
 
 **Estrutura específica do piloto**
 
 | Bloco | Tempo | O que acontece |
 |---|---|---|
-| Gancho frio | 0:00–0:40 | Trecho forte da conversa do convidado |
-| **Abertura solo** | 0:40–1:40 | **Kayan sozinho, até 60s:** por que isso existe, o que não vai ter aqui, quem é o convidado. Versão falada e curta do manifesto — nunca o texto da Peça 0 repetido |
-| Bloco 1 — a pessoa | ~15 min | Quem é o convidado, de onde vem, o que carrega hoje |
-| Bloco 2 — o peso | ~20 min | A tentativa de virada radical e o que ela custou |
-| Bloco 3 — a virada | ~15 min | Onde ele parou de tentar mudar tudo e começou a mudar algo |
-| Bloco 4 — o 1% | ~8 min | A filosofia nomeada **a partir do que o convidado contou** + pergunta ritual |
+| Gancho frio | 0:00–0:40 | Fala do Caio sobre o rótulo de caso perdido |
+| **Abertura solo** | 0:40–2:10 | **Kayan sozinho, até 90s** (exceção só do piloto): por que isso existe, o que não vai ter aqui, de onde ele fala — banco, saída, NK Concept — e quem é o convidado |
+| Bloco 1 — a pessoa | ~15 min | Quem é Caio, de onde vem, o diagnóstico, a escola, a faculdade |
+| Bloco 2 — o peso | ~20 min | O que custou. O que ainda custa **hoje** |
+| Bloco 3 — a virada | ~15 min | Onde ele parou de tentar ser normal e começou a construir o próprio método |
+| Bloco 4 — o 1% | ~8 min | A filosofia nomeada **a partir do que o Caio contou** + pergunta ritual |
 
-> **A filosofia do 1% só é nomeada no Bloco 4** — e usando as palavras do convidado, não as do manual. Se Kayan explicar os quatro pilares no Bloco 1, o piloto morre.
+> **A filosofia do 1% só é nomeada no Bloco 4** — e com as palavras do convidado, não as do manual. Se Kayan explicar os quatro pilares no Bloco 1, o piloto morre.
 
-**5 perguntas fortes** *(para o convidado)*
-1. Qual foi a última vez que você tentou mudar tudo de uma vez — e em quantos dias desmoronou?
-2. O que você já fingiu que estava dando certo?
-3. O que te incomoda no conteúdo de alta performance que a gente consome?
-4. Que conversa você gostaria de ter tido há cinco anos e não teve com ninguém?
-5. Qual é a menor coisa que mudou algo grande pra você?
+**5 perguntas fortes** *(para o Caio)*
+1. Qual foi a primeira vez que alguém te disse, com todas as letras, que você não ia conseguir?
+2. O que você fazia pra esconder a dificuldade quando ainda não tinha nome pra ela?
+3. O que continua difícil hoje, mesmo com o consultório funcionando?
+4. O que você construiu que só existe porque o jeito normal não servia pra você?
+5. O que você diria pro moleque que te acharam caso perdido — sem frase de autoajuda?
 
 **Territórios de história**
-A virada radical que fracassou · o momento em que a vida adulta ficou pesada · a cobrança que vinha de fora e a que vinha de dentro · a primeira coisa pequena que sobreviveu · o que ele ainda não resolveu hoje.
+A sala de aula e o constrangimento público · o diagnóstico e o que mudou (e o que não mudou) depois dele · a faculdade de odontologia com dislexia · o primeiro procedimento sozinho · o sistema que ele inventou pra dar conta · o dia ruim recente.
 
-**Pontes do Kayan previstas** *(curtas, e só se servirem ao convidado)*
-A própria tentativa de virada radical que não durou · por que "brother" — a origem do nome, em uma frase · a conversa que destravou algo nele. Nenhuma passa de 40 segundos; todas terminam devolvendo a pergunta.
+**Pontes do Kayan previstas** — orçamento total: **até 4 min** no episódio inteiro
+Banco → saída → NK Concept, como rótulo e não como currículo · o medo de errar na frente dos outros · estar no meio do caminho, não no fim. Cada ponte: 20–40s, termina devolvendo a pergunta. Detalhamento no roteiro do piloto (Doc 2.1).
 
 **Possibilidades de corte**
-*Impacto:* a confissão de fracasso do convidado · "não precisa acordar às 4h" · a definição de 1% em 20 segundos, dita pelo convidado.
-*Reflexão:* os quatro pilares aparecendo na história real de alguém · a diferença entre consistência e intensidade · "você não controla as circunstâncias, controla o próximo passo".
+*Impacto:* "me chamaram de caso perdido" · o que ainda é difícil hoje · o sistema improvisado que virou método.
+*Reflexão:* rótulo recebido × rótulo carregado · dificuldade real não é muleta nem é invisível · 1% quando o padrão não foi feito pra você.
 
-- **CTA da comunidade:** *"Qual é o seu 1% de hoje? Começa com um. Qualquer um."*
+- **CTA da comunidade:** *"Qual rótulo te colaram — e qual você decidiu carregar? E qual é o seu 1% de hoje?"*
 - **O 1% do episódio:** escolher **uma** coisa pequena e fazer hoje — e dizer em voz alta qual é.
 
-**Nota de produção:** é o episódio mais importante da temporada e o mais fácil de errar. Em formato de host único o risco dobra: o host, ansioso para explicar o projeto, toma a conversa. **Antídotos:** (1) a apresentação do projeto já foi feita na Peça 0 — não refazer; (2) abertura solo com cronômetro, teto de 60s; (3) cada afirmação de filosofia vem colada em uma história concreta, de preferência a do convidado; (4) se Kayan falar mais que o convidado em qualquer bloco, regrava-se o bloco ou corta-se na edição.
+**Nota de produção:** é o episódio mais importante da temporada e o mais fácil de errar. Em formato de host único o risco dobra: o host, ansioso para explicar o projeto e a própria saída do banco, toma a conversa. **Antídotos:** (1) a apresentação do projeto já foi feita na Peça 0 e na Peça 0.1 — não refazer; (2) abertura solo com cronômetro, teto de 90s; (3) orçamento de pontes de 4 min, cronometrado na decupagem; (4) se Kayan falar mais que o Caio em qualquer bloco, regrava-se o bloco ou corta-se na edição.
 
 ---
 
@@ -612,7 +648,7 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 
 | Ep | Perfil buscado | Confirmado | Reserva 1 | Reserva 2 | Status |
 |---|---|---|---|---|---|
-| **E01** | **Tentou a virada radical e se quebrou; hoje avança devagar** | | | | 🔴 **bloqueia o piloto** |
+| **E01** | Rotulado como incapaz; construiu método próprio | **Caio** (dentista, implantodontista, TDAH e dislexia) | | | ✅ **confirmado** |
 | E02 | Transição de carreira em curso | | | | ▢ |
 | E03 | Pai/mãe em jornada dupla | | | | ▢ |
 | E04 | Agiu com medo | | | | ▢ |
@@ -641,13 +677,15 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 
 | # | Em aberto | Bloqueia | Quem decide |
 |---|---|---|---|
-| **A** | **Quem é o convidado do E01** | 🔴 roteiro do piloto (Doc 2.1) e plano do Bloco A | Kayan |
-| B | Confirmar o formato do E10 (com convidado × só Kayan + comunidade) | nada agora; decidir até a semana 6 | Kayan |
+| ~~A~~ | ~~Quem é o convidado do E01~~ | ✅ **resolvido: Caio** | — |
+| B | Formato do E10 (com convidado × só Kayan + comunidade) | nada agora — **decisão agendada para a semana 6**, com dado real da comunidade | Kayan |
+| **F** | **Uma linha oficial sobre o que é a NK Concept** (para a abertura solo e a Peça 0.1) | 🔴 Peça 0.1 | Kayan |
+| **G** | Confirmar com o Caio o uso aberto de TDAH e dislexia no episódio e nos cortes | 🔴 gravação do E01 | Produção |
 | C | Perfil do convidado do E08 depois de cair a dupla | pipeline do Bloco C | Produção |
 | D | Qual história real do Kayan entra na Peça 0 no lugar do espaço reservado | 🔴 gravação do Manifesto solo | Kayan |
 | E | Local fixo de gravação e montagem de cenário (Universo A) | Bloco A | Produção |
 
-> **O ponto A é o único bloqueio de caminho crítico.** Sem o perfil do convidado do E01 não existe roteiro de piloto, e sem roteiro de piloto não existe Bloco A gravado — o que trava também o plano de lançamento (Doc 5).
+> **Caminho crítico agora:** pontos **D** (história real do Kayan para a Peça 0), **F** (linha oficial da NK Concept) e **G** (consentimento do Caio). O roteiro do piloto está escrito — ver [`PILOTO-E01.md`](PILOTO-E01.md).
 
 ---
 
@@ -775,6 +813,7 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.2** | out/2025 | **Convidado do E01 confirmado: Caio** (dentista implantodontista, TDAH e dislexia). E01 reescrito em torno da tese *rótulo recebido × rótulo carregado*, com ângulo obrigatório "o que ainda é difícil hoje" em vez de case de superação; abertura solo sobe para 90s só no piloto; orçamento de pontes de 4 min. Nova **Peça 0.1 — De onde eu falo** (solo 3–5 min): tira a história do banco e da NK Concept de dentro do piloto. §7.5 atualizada: ponto A resolvido, E10 agendado para a semana 6, novos pontos F (linha oficial da NK Concept) e G (consentimento do Caio). Roteiro de direção do piloto em [`PILOTO-E01.md`](PILOTO-E01.md). |
 | **1.1** | out/2025 | **Formato oficial: host único.** Kayan conduz, um convidado em todos os dez episódios. E01 refeito com convidado e abertura solo de até 60s, com a filosofia nomeada só no Bloco 4. E08 deixa de ser dupla. E10 passa a ter convidado da comunidade + mosaico de relatos + fechamento solo de até 90s. Nova **Peça 0 — Manifesto BrotherCast** (solo 60–90s, antes do E01) com estrutura em quatro marcos e rascunho v0. Regra de narrativa pessoal trocada: ponte, nunca protagonista, com os três testes. Nova §7.5 com decisões fechadas e pontos em aberto. Novas métricas de proporção de fala (≥ 60:40) e risco de o host ocupar o episódio. |
 | **1.0** | out/2025 | Primeira versão. Define a pergunta da temporada, arco em 3 atos, 10 fichas de episódio, trilha e one-pager do convidado, gravação em 3 blocos com estoque mínimo, integração com a comunidade e painel de métricas com participação recorrente como métrica principal. |
 
@@ -785,8 +824,9 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 | # | Documento | Depende de |
 |---|---|---|
 | **0** | Correção do Master para host único | ✅ feito — Master v1.2 |
-| **2.0** | Roteiro do Manifesto solo (Peça 0) | história real do Kayan (ponto D) |
-| **2.1** | Roteiro de direção do piloto (E01) | 🔴 **perfil do convidado do E01 (ponto A)** |
+| **2.0** | Roteiro do Manifesto solo (Peça 0) | 🔴 história real do Kayan (ponto D) |
+| **2.05** | Roteiro da Peça 0.1 — De onde eu falo | 🔴 linha oficial da NK Concept (ponto F) |
+| **2.1** | [Roteiro de direção do piloto (E01)](PILOTO-E01.md) | ✅ **entregue** |
 | **2.2** | Lista inicial de convidados (pipeline da §7.4 preenchido) | este documento |
 | **2.3** | Plano de gravação do Bloco A | 2.1 + 2.2 |
 | **3** | Sistema de Conteúdo | Master §12 |

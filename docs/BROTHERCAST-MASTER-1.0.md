@@ -677,8 +677,9 @@ A fase de descoberta conceitual está **encerrada**. A partir daqui, execução.
 | **2** | **[Temporada 1](TEMPORADA-1.md)** | ✅ entregue | Pergunta da temporada, arco em 3 atos, fichas dos 10 episódios, trilha de convidados, plano de gravação, métricas |
 | **0** | Correção do Master para host único | ✅ feito nesta versão (1.2) | Remove "os hosts" e "os dois na mesa"; define §3.5 e reescreve §11.2 |
 | **2.0** | Manifesto BrotherCast (peça solo, 60–90s) | ▢ **próximo** | Peça de Kayan sozinho, gravada **antes** do E01 — ver Temporada 1, Peça 0 |
-| **2.1** | Roteiro de direção do piloto (E01) | ▢ bloqueado: falta perfil do convidado | Condução do episódio de abertura bloco a bloco |
-| **2.2** | Lista inicial de convidados | ▢ | Pipeline da §7.4 da Temporada 1 preenchido com nomes reais |
+| **2.05** | Peça 0.1 — De onde eu falo (solo 3–5 min) | ▢ | Banco, saída e NK Concept em peça própria, fora do piloto |
+| **2.1** | **[Roteiro de direção do piloto (E01)](PILOTO-E01.md)** | ✅ entregue | Condução bloco a bloco com Caio |
+| **2.2** | Lista inicial de convidados | ▢ | Pipeline da §7.4 da Temporada 1 — E01 confirmado, faltam E02–E10 |
 | **2.3** | Plano de gravação do Bloco A | ▢ | Datas, local, equipe e logística de E01–E03 |
 | **3** | **Sistema de Conteúdo** | ▢ | Operacionalização da seção 12: templates de decupagem, planilha de pacote por episódio, calendário |
 | **4** | **Kit Visual Definitivo** | ▢ | Logo, manifesto redesenhado, thumbnail, capa de Reels/Shorts, lower thirds, templates |

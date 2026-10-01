@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Piloto E01 — documento interno do BrotherCast."
+    />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="theme-color" content="#0d1117" />
+    <title>Uso interno · BrotherCast — Piloto E01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --night: #0d1117;
+        --night-deep: #080b10;
+        --surface: #131a23;
+        --surface-2: #19212c;
+        --mustard: #e5a93d;
+        --mustard-light: #f1c56b;
+        --wood: #9c7247;
+        --paper: #f4f1ed;
+        --muted: #a0aab5;
+        --line: rgba(244, 241, 237, 0.12);
+        --display: "Playfair Display", Georgia, serif;
+        --body: "Manrope", system-ui, sans-serif;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+      body {
+        margin: 0;
+        background: var(--night);
+        color: var(--paper);
+        font-family: var(--body);
+        font-size: 17px;
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        content: "";
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      :focus-visible { outline: 3px solid var(--mustard-light); outline-offset: 4px; }
+
+      /* ---------- faixa de uso interno ---------- */
+      .internal-bar {
+        position: relative;
+        z-index: 45;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 9px 18px;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(229, 169, 61, 0.14) 0 14px,
+          rgba(229, 169, 61, 0.07) 14px 28px
+        );
+        border-bottom: 1px solid rgba(229, 169, 61, 0.35);
+        color: var(--mustard-light);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .internal-bar em {
+        color: var(--muted);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      /* ---------- topbar ---------- */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 28px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 11, 16, 0.88);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar a.brand {
+        font-family: var(--display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--paper);
+        text-decoration: none;
+      }
+
+      .topbar .version {
+        padding: 4px 12px;
+        border: 1px solid rgba(229, 169, 61, 0.45);
+        border-radius: 999px;
+        color: var(--mustard);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brand-group { display: flex; align-items: center; gap: 18px; min-width: 0; }
+
+      .docswitch { display: flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(244, 241, 237, 0.03); }
+      .docswitch a {
+        padding: 5px 13px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .docswitch a:hover { color: var(--paper); }
+      .docswitch a[aria-current="page"] { background: rgba(229, 169, 61, 0.16); color: var(--mustard-light); }
+
+      .topbar .links { display: flex; align-items: center; gap: 18px; }
+      .topbar .links a {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+      }
+      .topbar .links a:hover { color: var(--mustard-light); }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative;
+        padding: 96px 28px 72px;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background:
+          radial-gradient(900px 420px at 18% -10%, rgba(229, 169, 61, 0.18), transparent 70%),
+          radial-gradient(700px 380px at 92% 110%, rgba(156, 114, 71, 0.22), transparent 72%),
+          var(--night-deep);
+      }
+
+      .hero-inner { width: min(100%, 860px); margin-inline: auto; }
+
+      .hero .kicker {
+        margin: 0 0 18px;
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        font-family: var(--display);
+        font-size: clamp(2.6rem, 7vw, 4.4rem);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.015em;
+      }
+
+      .hero h1 em { display: block; color: var(--mustard); font-style: italic; font-weight: 400; }
+
+      .hero p { max-width: 58ch; margin: 0; color: var(--muted); font-size: 1.04rem; }
+
+      .hero .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .hero .meta span {
+        padding: 7px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(244, 241, 237, 0.04);
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      /* ---------- layout ---------- */
+      .layout {
+        display: grid;
+        grid-template-columns: 278px minmax(0, 1fr);
+        gap: 52px;
+        width: min(100%, 1240px);
+        margin-inline: auto;
+        padding: 56px 28px 120px;
+      }
+
+      .toc { position: sticky; top: 92px; align-self: start; max-height: calc(100vh - 130px); overflow-y: auto; }
+      .toc h2 {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .toc ul { margin: 0; padding: 0; list-style: none; border-left: 1px solid var(--line); }
+      .toc li a {
+        display: block;
+        padding: 7px 0 7px 16px;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .toc li a:hover { color: var(--paper); border-left-color: var(--wood); }
+      .toc li a.active { color: var(--mustard); border-left-color: var(--mustard); font-weight: 600; }
+      .toc ul ul { display: none; }
+
+      /* ---------- document ---------- */
+      .doc { min-width: 0; max-width: 80ch; }
+
+      .doc h1 { display: none; }
+
+      .doc h2 {
+        margin: 68px 0 22px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        font-family: var(--display);
+        font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+      }
+      .doc h2:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
+
+      .doc h3 {
+        margin: 44px 0 14px;
+        font-size: 1.16rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: var(--mustard-light);
+      }
+
+      .doc h4 { margin: 30px 0 10px; font-size: 1rem; font-weight: 700; color: var(--paper); }
+
+      .doc p { margin: 0 0 18px; }
+      .doc a { color: var(--mustard); text-decoration-color: rgba(229, 169, 61, 0.4); text-underline-offset: 3px; }
+      .doc a:hover { color: var(--mustard-light); }
+      .doc strong { color: #fff; font-weight: 700; }
+
+      .doc ul, .doc ol { margin: 0 0 20px; padding-left: 22px; }
+      .doc li { margin-bottom: 8px; }
+      .doc li::marker { color: var(--mustard); }
+
+      .doc blockquote {
+        position: relative;
+        margin: 28px 0;
+        padding: 24px 28px;
+        border: 1px solid rgba(229, 169, 61, 0.26);
+        border-left: 3px solid var(--mustard);
+        border-radius: 0 12px 12px 0;
+        background: linear-gradient(100deg, rgba(229, 169, 61, 0.08), rgba(229, 169, 61, 0.01));
+      }
+      .doc blockquote p { margin-bottom: 10px; }
+      .doc blockquote p:last-child { margin-bottom: 0; }
+      .doc blockquote strong { color: var(--mustard-light); }
+      .doc blockquote h3 {
+        margin: 2px 0 6px;
+        font-family: var(--display);
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--mustard-light);
+      }
+      .doc blockquote hr { margin: 16px 0; border: 0; border-top: 1px solid rgba(229, 169, 61, 0.25); }
+
+      .doc hr { margin: 52px 0; border: 0; border-top: 1px solid var(--line); }
+
+      .table-wrap { margin: 0 0 26px; overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+      .doc table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+      .doc thead th {
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: left;
+        white-space: nowrap;
+      }
+      .doc tbody td { padding: 13px 16px; border-bottom: 1px solid rgba(244, 241, 237, 0.07); vertical-align: top; }
+      .doc tbody tr:last-child td { border-bottom: 0; }
+      .doc tbody tr:nth-child(even) { background: rgba(244, 241, 237, 0.025); }
+
+      .doc code {
+        padding: 2px 6px;
+        border-radius: 5px;
+        background: rgba(229, 169, 61, 0.12);
+        color: var(--mustard-light);
+        font-family: var(--mono);
+        font-size: 0.86em;
+      }
+
+      .doc pre {
+        margin: 0 0 26px;
+        padding: 22px 24px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--night-deep);
+        line-height: 1.55;
+      }
+      .doc pre code { padding: 0; background: none; color: var(--muted); font-size: 0.8rem; }
+
+      .doc input[type="checkbox"] { margin-right: 8px; accent-color: var(--mustard); }
+      .doc ul:has(> li > input[type="checkbox"]) { list-style: none; padding-left: 2px; }
+
+      /* ---------- footer ---------- */
+      .footer {
+        padding: 48px 28px 64px;
+        border-top: 1px solid var(--line);
+        background: var(--night-deep);
+        text-align: center;
+      }
+      .footer .sig {
+        margin: 0 0 8px;
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .footer .tag { margin: 0 0 24px; color: var(--mustard); font-style: italic; }
+      .footer .quote { margin: 0 auto; max-width: 46ch; color: var(--muted); font-size: 0.92rem; }
+
+      @media (max-width: 960px) {
+        .layout { grid-template-columns: 1fr; gap: 0; padding-top: 36px; }
+        .toc {
+          position: static;
+          max-height: none;
+          margin-bottom: 44px;
+          padding-bottom: 28px;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 620px) {
+        body { font-size: 16px; }
+        .topbar { padding: 14px 18px; }
+        .topbar .links a { display: none; }
+        .docswitch a { font-size: 0.7rem; padding: 5px 10px; }
+        .hero { padding: 64px 18px 52px; }
+        .layout { padding-inline: 18px; }
+      }
+
+      @media print {
+        body { background: #fff; color: #111; }
+        .topbar, .toc, .hero .meta, .internal-bar { display: none; }
+        .doc { max-width: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="internal-bar">
+      Documento interno — não publicar
+      <em>Manual operacional da equipe. Não é conteúdo para a audiência.</em>
+    </div>
+
+    <header class="topbar">
+      <div class="brand-group">
+        <a class="brand" href="#inicio">BrotherCast</a>
+        <nav class="docswitch" aria-label="Documentos"><a href="index.html">Master 1.1</a><a href="temporada-1.html">Temporada 1</a><a href="piloto-e01.html" aria-current="page">Piloto E01</a></nav>
+      </div>
+      <nav class="links">
+        <a href="#3-a-tese-rótulo-recebido-rótulo-carregado">A tese</a><a href="#5-mapa-de-tempo">Mapa de tempo</a><a href="#11-as-pontes-do-kayan">Pontes</a><a href="#13-checklist-do-dia">Checklist</a>
+        <span class="version">Piloto E01</span>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <p class="kicker">Documento 2.1 · versão 1.0</p>
+        <h1>Piloto E01 <em>roteiro de direção.</em></h1>
+        <p>Condução do episódio de abertura com Caio, bloco a bloco: a tese dos rótulos, o mapa de tempo, a abertura solo, os sinais de alerta e o orçamento de pontes do host.</p>
+        <div class="meta"><span>Outubro de 2025</span><span>60–70 min</span><span>Convidado: Caio</span><span>Uso interno</span></div>
+      </div>
+    </section>
+
+    <main class="layout">
+      <aside class="toc" aria-label="Sumário">
+        <h2>Sumário</h2>
+        <div class="toc">
+<ul>
+<li><a href="#1-ficha-rápida">1. Ficha rápida</a></li>
+<li><a href="#2-o-que-este-episódio-precisa-provar">2. O que este episódio precisa provar</a></li>
+<li><a href="#3-a-tese-rótulo-recebido-rótulo-carregado">3. A tese: rótulo recebido × rótulo carregado</a></li>
+<li><a href="#4-o-risco-número-um-e-como-o-roteiro-o-neutraliza">4. O risco número um e como o roteiro o neutraliza</a></li>
+<li><a href="#5-mapa-de-tempo">5. Mapa de tempo</a></li>
+<li><a href="#6-abertura-solo">6. Abertura solo</a></li>
+<li><a href="#7-bloco-1-a-pessoa">7. Bloco 1 — a pessoa</a></li>
+<li><a href="#8-bloco-2-o-peso">8. Bloco 2 — o peso</a></li>
+<li><a href="#9-bloco-3-a-virada">9. Bloco 3 — a virada</a></li>
+<li><a href="#10-bloco-4-o-1-e-a-pergunta-ritual">10. Bloco 4 — o 1% e a pergunta ritual</a></li>
+<li><a href="#11-as-pontes-do-kayan">11. As pontes do Kayan</a></li>
+<li><a href="#12-o-que-combinar-com-o-caio-antes">12. O que combinar com o Caio antes</a></li>
+<li><a href="#13-checklist-do-dia">13. Checklist do dia</a></li>
+<li><a href="#14-pacote-de-conteúdo-previsto">14. Pacote de conteúdo previsto</a></li>
+<li><a href="#15-pontos-a-confirmar">15. Pontos a confirmar</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ul>
+</div>
+
+      </aside>
+
+      <article class="doc" id="conteudo">
+        <h1 id="piloto-e01-roteiro-de-direção">PILOTO · E01 — Roteiro de direção</h1>
+<p><strong>Documento 2.1.</strong> Condução do episódio de abertura, bloco a bloco.</p>
+<p>Versão 1.0 — outubro de 2025 · Status: <strong>vigente</strong> · <strong>USO INTERNO</strong>
+Documentos-pai: <a href="index.html"><code>BROTHERCAST-MASTER-1.0.md</code></a> (v1.2) · <a href="temporada-1.html"><code>TEMPORADA-1.md</code></a> (v1.2)</p>
+<blockquote>
+<p><strong>Isto é roteiro de direção, não roteiro de fala.</strong> Nada aqui é para ser decorado nem lido. São marcos, limites de tempo e sinais de alerta. A conversa manda — <strong>Regra Zero</strong>.</p>
+</blockquote>
+<hr />
+<hr />
+<h2 id="1-ficha-rápida">1. Ficha rápida</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Episódio</strong></td>
+<td>E01 — Por que a gente senta nessa mesa</td>
+</tr>
+<tr>
+<td><strong>Host</strong></td>
+<td>Kayan (único)</td>
+</tr>
+<tr>
+<td><strong>Convidado</strong></td>
+<td><strong>Caio</strong> — dentista, cirurgião implantodontista, TDAH e dislexia</td>
+</tr>
+<tr>
+<td><strong>Duração-alvo</strong></td>
+<td>60–70 min (teto 75)</td>
+</tr>
+<tr>
+<td><strong>Pilar</strong></td>
+<td>Evolução Diária (apresenta os quatro)</td>
+</tr>
+<tr>
+<td><strong>Pergunta humana</strong></td>
+<td><em>"E se as pessoas tiverem razão sobre mim?"</em></td>
+</tr>
+<tr>
+<td><strong>Pergunta da temporada</strong></td>
+<td>Como pessoas comuns continuam avançando quando a vida real pesa?</td>
+</tr>
+<tr>
+<td><strong>Peças que saem antes</strong></td>
+<td>Peça 0 (manifesto solo 60–90s) · Peça 0.1 (de onde eu falo, 3–5 min)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="2-o-que-este-episódio-precisa-provar">2. O que este episódio precisa provar</h2>
+<p>Um piloto não precisa ser o melhor episódio da temporada. Precisa <strong>provar quatro coisas</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Prova</th>
+<th>Como se verifica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aqui se conversa de verdade</td>
+<td>Existe pelo menos um momento em que o Caio diz algo que não planejava dizer</td>
+</tr>
+<tr>
+<td>2</td>
+<td>O host escuta</td>
+<td>Proporção de fala <strong>convidado : host ≥ 60:40</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>A filosofia não é discurso, é consequência</td>
+<td>O 1% é nomeado só no Bloco 4, com palavras do Caio</td>
+</tr>
+<tr>
+<td>4</td>
+<td>O público se reconhece</td>
+<td>Teste dos 3 minutos: dá pra dizer "isso é a minha vida" logo no começo</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Se as quatro acontecerem, o piloto está aprovado — mesmo que a conversa tenha momentos travados.</strong> Piloto travado e honesto é melhor que piloto fluido e ensaiado.</p>
+<hr />
+<h2 id="3-a-tese-rótulo-recebido-rótulo-carregado">3. A tese: rótulo recebido × rótulo carregado</h2>
+<blockquote>
+<p><strong>A gente não escolhe os rótulos que recebe. Escolhe quais vai carregar.</strong></p>
+</blockquote>
+<p>É essa a espinha do episódio, e ela é o que conecta as duas pessoas na mesa:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Rótulo recebido</th>
+<th>Rótulo carregado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Caio</strong></td>
+<td>"caso perdido", "não presta atenção", "não vai conseguir ler"</td>
+<td>cirurgião que construiu um método próprio — <strong>e que ainda tem dia ruim</strong></td>
+</tr>
+<tr>
+<td><strong>Kayan</strong></td>
+<td>"o bancário que largou tudo"</td>
+<td>alguém no meio do caminho, que decidiu o próximo passo</td>
+</tr>
+</tbody>
+</table></div>
+<p>Por isso esta conversa é a abertura certa: <strong>não é a biografia de nenhum dos dois</strong>, é um assunto que os dois carregam e que o público também carrega.</p>
+<p><strong>O que isso muda na condução:</strong> o host não está entrevistando um case de superação. Ele está sentando com alguém que carrega a mesma pergunta que ele — e o episódio todo é os dois olhando para ela.</p>
+<hr />
+<h2 id="4-o-risco-número-um-e-como-o-roteiro-o-neutraliza">4. O risco número um e como o roteiro o neutraliza</h2>
+<p><strong>O risco:</strong> o piloto virar <em>"apresentação do canal + a história do Kayan"</em>, com o Caio de figurante.</p>
+<p>Isso não é um risco teórico. É o desfecho natural quando (a) é o primeiro episódio, (b) o host é único, (c) o host tem uma história forte e recente para contar, e (d) ninguém ainda conhece o projeto. As quatro condições estão presentes.</p>
+<p><strong>Os quatro antídotos estruturais:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Antídoto</th>
+<th>Mecanismo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. A apresentação sai do episódio</strong></td>
+<td>A Peça 0 apresenta o projeto. A Peça 0.1 conta a história do banco e da NK Concept por inteiro. Quando o E01 começa, esse trabalho <strong>já foi feito</strong></td>
+</tr>
+<tr>
+<td><strong>2. Abertura solo com cronômetro</strong></td>
+<td>Teto de 90s, exceção só do piloto. Gravada separadamente, antes do Caio chegar — assim o excesso morre na edição, não na mesa</td>
+</tr>
+<tr>
+<td><strong>3. Orçamento de pontes</strong></td>
+<td>4 minutos no episódio inteiro, cronometrados na decupagem. Estourou, corta</td>
+</tr>
+<tr>
+<td><strong>4. Proporção de fala auditada</strong></td>
+<td>≥ 60:40 por bloco, não só no total. Bloco fora da proporção: regrava ou corta</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Teste de uma pergunta, na edição:</strong> se alguém assistir só a este episódio, vai sair sabendo mais sobre o <strong>Caio</strong> ou sobre o <strong>Kayan</strong>? A resposta certa é Caio. Se for a outra, o episódio é remontado.</p>
+</blockquote>
+<hr />
+<h2 id="5-mapa-de-tempo">5. Mapa de tempo</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>Minutagem</th>
+<th>Conteúdo</th>
+<th>Quem fala mais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gancho frio</strong></td>
+<td>0:00–0:40</td>
+<td>Fala do Caio sobre o rótulo de caso perdido</td>
+<td>Caio</td>
+</tr>
+<tr>
+<td><strong>Abertura solo</strong></td>
+<td>0:40–2:10</td>
+<td>Kayan sozinho, até 90s</td>
+<td>Kayan</td>
+</tr>
+<tr>
+<td><strong>Bloco 1 — a pessoa</strong></td>
+<td>2:10–17:00</td>
+<td>Quem é Caio: origem, escola, diagnóstico, faculdade</td>
+<td>Caio</td>
+</tr>
+<tr>
+<td><strong>Bloco 2 — o peso</strong></td>
+<td>17:00–37:00</td>
+<td>O que custou. <strong>O que ainda custa hoje</strong></td>
+<td>Caio</td>
+</tr>
+<tr>
+<td><strong>Bloco 3 — a virada</strong></td>
+<td>37:00–52:00</td>
+<td>O método próprio, construído na marra</td>
+<td>Caio</td>
+</tr>
+<tr>
+<td><strong>Bloco 4 — o 1%</strong></td>
+<td>52:00–60:00</td>
+<td>A filosofia nomeada + pergunta ritual + fechamento</td>
+<td>Caio, depois Kayan</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Orçamento do host no corpo da conversa (blocos 1–4):</strong> perguntas + até 4 min de pontes. Nada além disso.</p>
+<hr />
+<h2 id="6-abertura-solo">6. Abertura solo</h2>
+<p><strong>Até 90 segundos. Kayan sozinho. Gravada antes do Caio chegar.</strong></p>
+<p>Quatro marcos, nesta ordem:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Marco</th>
+<th>Tempo</th>
+<th>O que precisa acontecer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. O que não vai ter aqui</td>
+<td>0–20s</td>
+<td>A recusa: sem fórmula, sem acordar às 5h, sem virar outra pessoa em 30 dias</td>
+</tr>
+<tr>
+<td>2. De onde eu falo</td>
+<td>20–45s</td>
+<td>Banco, saída, NK Concept — <strong>em três frases</strong>, como posição, não como currículo. Quem quiser a história inteira, tem a peça fixada</td>
+</tr>
+<tr>
+<td>3. Quem está aqui hoje</td>
+<td>45–75s</td>
+<td>Caio, e por que ele. Apresenta pelo <strong>rótulo</strong>, não pelo diploma</td>
+</tr>
+<tr>
+<td>4. A pergunta</td>
+<td>75–90s</td>
+<td>A pergunta humana do episódio, dita em voz alta, e o convite para ficar</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rascunho v0 — para reagir, não para decorar</strong></p>
+<blockquote>
+<p>Aqui não vai ter fórmula. Não vai ter "acorde às cinco da manhã", não vai ter "mude sua vida em trinta dias". Se é isso que você procura, tem muita gente fazendo melhor do que eu.</p>
+<p>Eu passei anos no banco. Saí pra construir a NK Concept e estou no meio dessa luta agora — não no fim dela, no meio. Então eu não vou te ensinar nada daqui de cima. Eu não estou em cima.</p>
+<p>E hoje eu sento com o Caio. O Caio é cirurgião implantodontista. Ele tem TDAH e dislexia, e durante muito tempo tem gente que olhou pra ele e viu um caso perdido.</p>
+<p>A pergunta que eu quero fazer pra ele é a que eu já fiz pra mim: <strong>e se as pessoas tiverem razão sobre mim?</strong></p>
+<p>Senta aqui.</p>
+</blockquote>
+<p><em>≈ 150 palavras ≈ 65 segundos.</em> Deixa folga dentro do teto de 90s.</p>
+<blockquote>
+<p>⚠️ <strong>Não repetir o texto da Peça 0.</strong> São peças diferentes, com públicos em momentos diferentes. Quem chegou pelo manifesto não pode ouvir a mesma coisa duas vezes.</p>
+</blockquote>
+<hr />
+<h2 id="7-bloco-1-a-pessoa">7. Bloco 1 — a pessoa</h2>
+<p><strong>~15 min · Objetivo: o público conhecer o Caio antes de conhecer o problema dele.</strong></p>
+<p><strong>Abrir por aqui:</strong> vida concreta de hoje. <em>"Como foi seu dia hoje, antes de vir pra cá?"</em> — começar pelo cotidiano, não pela infância, derruba a formalidade e já entrega vida real.</p>
+<p><strong>Territórios, nesta ordem aproximada</strong>
+1. O dia a dia atual: consultório, rotina, o que ele faz com as mãos
+2. A escola: quando ele percebeu que algo era diferente
+3. O que as pessoas diziam — professores, colegas, família
+4. O diagnóstico: quando veio, e o que mudou ao receber um nome
+5. A faculdade de odontologia: como se estuda medicina com dislexia</p>
+<p><strong>Pergunta forte deste bloco</strong></p>
+<blockquote>
+<p><em>"Qual foi a primeira vez que alguém te disse, com todas as letras, que você não ia conseguir?"</em></p>
+</blockquote>
+<p><strong>Sinais de alerta</strong>
+- 🚩 O Caio respondendo em modo currículo → trazer para uma cena específica: <em>"me conta um dia"</em>
+- 🚩 A conversa indo para o técnico (como funciona o TDAH) → voltar para a experiência: <em>"e o que você sentia?"</em>
+- 🚩 Kayan preenchendo silêncio → <strong>contar até três antes de falar.</strong> O silêncio é do convidado, não um erro</p>
+<hr />
+<h2 id="8-bloco-2-o-peso">8. Bloco 2 — o peso</h2>
+<p><strong>~20 min · O bloco mais importante do episódio. Não apressar.</strong></p>
+<p><strong>Objetivo:</strong> estabelecer o custo — e, principalmente, <strong>o custo que continua existindo hoje</strong>.</p>
+<p><strong>Territórios</strong>
+1. O constrangimento público: ler em voz alta, ser corrigido na frente dos outros
+2. O que ele fazia para esconder, antes de ter nome para aquilo
+3. A conta emocional: cansaço, vergonha, a sensação de estar sempre devendo esforço
+4. <strong>O que ainda é difícil hoje</strong>, com o consultório funcionando
+5. O dia ruim mais recente</p>
+<p><strong>Perguntas fortes deste bloco</strong></p>
+<blockquote>
+<p><em>"O que você fazia pra esconder a dificuldade quando ainda não tinha nome pra ela?"</em>
+<em>"O que continua difícil hoje, mesmo com o consultório funcionando?"</em></p>
+<h3 id="a-pergunta-que-define-o-episódio">A pergunta que define o episódio</h3>
+<p><strong>"O que continua difícil hoje?"</strong></p>
+<p>É aqui que o piloto deixa de ser conteúdo de superação e vira BrotherCast. Se o Caio responder "nada, hoje está tudo resolvido", o host <strong>não aceita a primeira resposta</strong> — reformula: <em>"nenhum dia ruim? nenhuma tarefa que você ainda evita?"</em>. Se mesmo assim não vier, o host usa uma ponte própria para abrir espaço e devolve a pergunta.</p>
+</blockquote>
+<p><strong>Sinais de alerta</strong>
+- 🚩 Resolver a dor cedo demais → <strong>proibido</strong> entrar no Bloco 3 antes dos 35 min
+- 🚩 Virar discurso sobre inclusão/neurodiversidade em tese → voltar para a história dele
+- 🚩 O host consolando → não é papel dele. Escutar é suficiente</p>
+<hr />
+<h2 id="9-bloco-3-a-virada">9. Bloco 3 — a virada</h2>
+<p><strong>~15 min · Onde entra a responsabilidade pelo próximo passo.</strong></p>
+<p><strong>Objetivo:</strong> mostrar que ele parou de tentar ser normal e construiu um método próprio — <strong>na marra, errando</strong>.</p>
+<p><strong>Territórios</strong>
+1. O momento em que ele parou de tentar estudar como os outros
+2. O sistema que inventou: como ele lê, decora, organiza, opera
+3. O que ele abandonou para conseguir sustentar o resto
+4. O primeiro procedimento sozinho
+5. Quem apareceu — e quem duvidou até o fim</p>
+<p><strong>Perguntas fortes deste bloco</strong></p>
+<blockquote>
+<p><em>"O que você construiu que só existe porque o jeito normal não servia pra você?"</em>
+<em>"Quantas vezes isso falhou antes de funcionar?"</em></p>
+</blockquote>
+<p><strong>Sinais de alerta</strong>
+- 🚩 Narrativa de superação linear → perguntar pelas recaídas: <em>"e quando não funcionou?"</em>
+- 🚩 Conselho genérico ("é só persistir") → pedir o passo concreto: <em>"o que você fez na segunda-feira?"</em></p>
+<hr />
+<h2 id="10-bloco-4-o-1-e-a-pergunta-ritual">10. Bloco 4 — o 1% e a pergunta ritual</h2>
+<p><strong>~8 min · Só aqui a filosofia é nomeada.</strong></p>
+<p><strong>Como nomear sem virar palestra:</strong> o host devolve ao Caio o que o Caio mesmo disse, e dá nome a isso.</p>
+<blockquote>
+<p><em>"Você falou que levou três anos pra achar um jeito de estudar que funcionasse, e que no começo era uma página por dia. É exatamente isso que a gente chama de 1% aqui — e é por isso que esse podcast existe."</em></p>
+</blockquote>
+<p><strong>Sequência fixa do bloco</strong>
+1. Nomear o 1% a partir da fala do convidado (≤ 60s de host)
+2. <em>"O que você diria pro moleque que acharam caso perdido?"</em> — sem frase de autoajuda
+3. <strong>A pergunta ritual: "Qual é o seu 1% de hoje?"</strong> — gravar <strong>duas vezes</strong>, a segunda de segurança
+4. Fechamento de até 40s: agradecimento, nome do próximo episódio, a declaração filosófica</p>
+<p><strong>Fechamento (marco, não texto):</strong> <em>"O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece."</em> + o convite da comunidade.</p>
+<hr />
+<h2 id="11-as-pontes-do-kayan">11. As pontes do Kayan</h2>
+<p><strong>Orçamento: até 4 minutos no episódio inteiro. Cada ponte: 20–40 segundos.</strong></p>
+<h3 id="os-três-testes-master-112">Os três testes (Master §11.2)</h3>
+<ol>
+<li><strong>Serve ao convidado?</strong> vai fazer ele ir mais fundo, ou muda o assunto para mim?</li>
+<li><strong>É curta?</strong> 20–40s. Acima de um minuto virou monólogo</li>
+<li><strong>Devolve a bola?</strong> termina em pergunta, não em conclusão</li>
+</ol>
+<h3 id="pontes-autorizadas-neste-episódio">Pontes autorizadas neste episódio</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ponte</th>
+<th>Quando usar</th>
+<th>Como termina</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>O rótulo</strong></td>
+<td>Se o Caio travar ao falar do que diziam dele</td>
+<td><em>"Comigo é 'o bancário que largou tudo'. É o rótulo que me colaram. Com você era qual?"</em></td>
+</tr>
+<tr>
+<td><strong>O medo de errar na frente dos outros</strong></td>
+<td>No Bloco 2, se ele não chegar à vergonha sozinho</td>
+<td><em>"...você sentia isso também, ou era diferente?"</em></td>
+</tr>
+<tr>
+<td><strong>Estar no meio do caminho</strong></td>
+<td>No Bloco 3, para evitar narrativa de chegada</td>
+<td><em>"Eu não cheguei em lugar nenhum ainda. Você sente que chegou?"</em></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="pontes-proibidas-neste-episódio">Pontes proibidas neste episódio</h3>
+<ul>
+<li>❌ A história completa do banco e da saída — <strong>isso é a Peça 0.1</strong></li>
+<li>❌ Qualquer coisa sobre a NK Concept além da frase de posicionamento da abertura</li>
+<li>❌ Comparar sofrimentos ("o meu também foi difícil")</li>
+<li>❌ Ponte em dois turnos seguidos de fala</li>
+</ul>
+<hr />
+<h2 id="12-o-que-combinar-com-o-caio-antes">12. O que combinar com o Caio antes</h2>
+<p><strong>Ele recebe</strong> (Temporada 1 §7.3): a pergunta da temporada · os quatro pilares · a Regra Zero · o tema <em>rótulos</em> · a duração · os combinados de edição.</p>
+<p><strong>Ele não recebe:</strong> as cinco perguntas fortes · os territórios de história · as possibilidades de corte.</p>
+<p><strong>Combinados específicos deste episódio</strong> — fazer na pré-conversa, D-14:</p>
+<ol>
+<li><strong>Consentimento explícito sobre TDAH e dislexia.</strong> Confirmar que ele está confortável em falar abertamente, <strong>e</strong> que isso pode aparecer em cortes curtos fora de contexto do episódio. Registrar por escrito. <em>(Ponto G da Temporada 1 §7.5.)</em></li>
+<li><strong>Avisar que vamos insistir no "o que ainda é difícil hoje".</strong> Não é pegadinha — é o eixo. Ele precisa saber que não estamos procurando o case de sucesso.</li>
+<li><strong>Direito de veto</strong> sobre qualquer trecho, e revisão dos cortes antes da publicação.</li>
+<li><strong>Sem conselho clínico.</strong> Ele é dentista e tem diagnósticos — mas o episódio é sobre a experiência, não sobre TDAH como tema médico. Nada de orientação de tratamento.</li>
+</ol>
+<hr />
+<h2 id="13-checklist-do-dia">13. Checklist do dia</h2>
+<p><strong>Antes</strong>
+- [ ] Abertura solo gravada <strong>antes</strong> da chegada do Caio
+- [ ] Consentimento do ponto G confirmado por escrito
+- [ ] Linha oficial da NK Concept definida (ponto F)
+- [ ] Peça 0 e Peça 0.1 já gravadas
+- [ ] Cronômetro visível para o host (orçamento de pontes)</p>
+<p><strong>Durante</strong>
+- [ ] Som rodando antes de todo mundo sentar
+- [ ] Claquete de palma
+- [ ] Timestamps dos momentos fortes anotados ao vivo
+- [ ] Contar até três antes de preencher silêncio
+- [ ] Não entrar no Bloco 3 antes dos 35 min
+- [ ] Pergunta ritual gravada duas vezes</p>
+<p><strong>Depois</strong>
+- [ ] Backup duplo antes de desmontar
+- [ ] Decupagem com cronometragem da proporção de fala por bloco
+- [ ] Teste de uma pergunta (§4): o episódio é sobre o Caio?
+- [ ] Revisão dos cortes com o Caio</p>
+<hr />
+<h2 id="14-pacote-de-conteúdo-previsto">14. Pacote de conteúdo previsto</h2>
+<p>Conforme Master §12.1 — <strong>hipóteses, não metas</strong> (Regra Zero).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Entregável</th>
+<th>Qtd</th>
+<th>Hipótese</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Episódio completo</td>
+<td>1</td>
+<td>60–70 min</td>
+</tr>
+<tr>
+<td>Cortes de impacto</td>
+<td>3–5</td>
+<td>"me chamaram de caso perdido" · o que ainda é difícil hoje · o método improvisado</td>
+</tr>
+<tr>
+<td>Cortes de reflexão</td>
+<td>2–3</td>
+<td>rótulo recebido × carregado · dificuldade real não é muleta nem é invisível · 1% quando o padrão não foi feito pra você</td>
+</tr>
+<tr>
+<td>Card de citação</td>
+<td>1–2</td>
+<td>Universo A</td>
+</tr>
+<tr>
+<td>Pergunta de comunidade</td>
+<td>1</td>
+<td><em>"Qual rótulo te colaram — e qual você decidiu carregar?"</em></td>
+</tr>
+<tr>
+<td>Thumbnail</td>
+<td>1</td>
+<td>1280×720, Universo A</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="15-pontos-a-confirmar">15. Pontos a confirmar</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Pendência</th>
+<th>Bloqueia</th>
+<th>Quem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D</strong></td>
+<td>Qual história real do Kayan entra na Peça 0</td>
+<td>gravação do manifesto solo</td>
+<td>Kayan</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Uma linha oficial sobre o que é a NK Concept</td>
+<td>abertura solo e Peça 0.1</td>
+<td>Kayan</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Consentimento do Caio sobre TDAH e dislexia</td>
+<td>gravação do E01</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Sobrenome e forma de apresentação do Caio</td>
+<td>arte e descrição</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Local de gravação e cenário (Universo A)</td>
+<td>Bloco A</td>
+<td>Produção</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="changelog">Changelog</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Mudanças</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.0</strong></td>
+<td>out/2025</td>
+<td>Primeira versão. Define a tese <em>rótulo recebido × rótulo carregado</em>, o ângulo obrigatório ("o que ainda é difícil hoje"), os quatro antídotos contra o piloto virar apresentação do canal, mapa de tempo, rascunho v0 da abertura solo, condução bloco a bloco com sinais de alerta, orçamento e lista de pontes autorizadas e proibidas, combinados com o convidado e checklist do dia.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>BrotherCast · E01</strong>
+<em>A gente não escolhe os rótulos que recebe. Escolhe quais vai carregar.</em></p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p class="sig">BrotherCast</p>
+      <p class="tag">Experiências que conectam. Conversas que destravam.</p>
+      <p class="quote">“O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.”</p>
+    </footer>
+
+    <script>
+      // Destaca no sumário a seção visível.
+      const links = [...document.querySelectorAll(".toc a")];
+      const byId = new Map(links.map((a) => [decodeURIComponent(a.hash.slice(1)), a]));
+      const headings = [...document.querySelectorAll(".doc h2")].filter((h) => byId.has(h.id));
+
+      if (headings.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              links.forEach((a) => a.classList.remove("active"));
+              byId.get(entry.target.id)?.classList.add("active");
+            });
+          },
+          { rootMargin: "-88px 0px -72% 0px", threshold: 0 }
+        );
+        headings.forEach((h) => observer.observe(h));
+      }
+    </script>
+  </body>
+</html>

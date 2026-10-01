@@ -66,6 +66,26 @@ DOCUMENTS = [
             ("#8-plano-de-gravação", "Gravação"),
         ],
     },
+    {
+        "source": "PILOTO-E01.md",
+        "output": "piloto-e01.html",
+        "nav": "Piloto E01",
+        "badge": "Piloto E01",
+        "kicker": "Documento 2.1 · versão 1.0",
+        "title": "Piloto E01",
+        "highlight": "roteiro de direção.",
+        "lead": (
+            "Condução do episódio de abertura com Caio, bloco a bloco: a tese dos rótulos, o mapa "
+            "de tempo, a abertura solo, os sinais de alerta e o orçamento de pontes do host."
+        ),
+        "chips": ["Outubro de 2025", "60–70 min", "Convidado: Caio", "Uso interno"],
+        "shortcuts": [
+            ("#3-a-tese-rótulo-recebido-rótulo-carregado", "A tese"),
+            ("#5-mapa-de-tempo", "Mapa de tempo"),
+            ("#11-as-pontes-do-kayan", "Pontes"),
+            ("#13-checklist-do-dia", "Checklist"),
+        ],
+    },
 ]
 
 

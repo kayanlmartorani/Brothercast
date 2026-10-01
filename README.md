@@ -26,7 +26,8 @@ A separação é garantida pelo `netlify.toml` (`publish = "site"`). As páginas
 | # | Documento | Arquivo | Status |
 |---|---|---|---|
 | **1** | **BrotherCast Master** (v1.2) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
-| **2** | **Temporada 1** (v1.1) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
+| **2** | **Temporada 1** (v1.2) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
+| **2.1** | **Piloto E01 — roteiro de direção** (v1.0) | [`docs/PILOTO-E01.md`](docs/PILOTO-E01.md) | ✅ vigente |
 | 2.1 | Roteiro de direção do piloto (E01) | — | ▢ próximo |
 | 2.2 | Lista inicial de convidados | — | ▢ |
 | 2.3 | Plano de gravação do Bloco A | — | ▢ |
@@ -51,10 +52,12 @@ O **Master** é a fonte única da verdade; a **Temporada 1** deriva dele. Em cas
 │   └── index.html
 ├── docs/                           # 🔒 fonte da verdade (markdown)
 │   ├── BROTHERCAST-MASTER-1.0.md
-│   └── TEMPORADA-1.md
+│   ├── TEMPORADA-1.md
+│   └── PILOTO-E01.md
 ├── internal/manual/                # 🔒 versão navegável (gerada)
 │   ├── index.html                  #    Master
-│   └── temporada-1.html            #    Temporada 1
+│   ├── temporada-1.html            #    Temporada 1
+│   └── piloto-e01.html             #    Piloto E01
 ├── tools/build_manual.py           # gera internal/manual/ a partir de docs/
 └── netlify.toml                    # publish = "site"
 ```

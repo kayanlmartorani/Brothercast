@@ -2,8 +2,8 @@
 
 **Documento 2.1.** Condução do episódio de abertura, bloco a bloco.
 
-Versão 1.0 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
-Documentos-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2) · [`TEMPORADA-1.md`](TEMPORADA-1.md) (v1.2)
+Versão 1.1 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
+Documentos-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.3) · [`TEMPORADA-1.md`](TEMPORADA-1.md) (v1.3)
 
 > **Isto é roteiro de direção, não roteiro de fala.** Nada aqui é para ser decorado nem lido. São marcos, limites de tempo e sinais de alerta. A conversa manda — **Regra Zero**.
 
@@ -330,6 +330,7 @@ Conforme Master §12.1 — **hipóteses, não metas** (Regra Zero).
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.1** | out/2025 | Acrescenta a ponte "O presente" (voz pessoal do host, Master §2.3) à lista de pontes autorizadas. Atualiza referências dos documentos-pai. |
 | **1.0** | out/2025 | Primeira versão. Define a tese *rótulo recebido × rótulo carregado*, o ângulo obrigatório ("o que ainda é difícil hoje"), os quatro antídotos contra o piloto virar apresentação do canal, mapa de tempo, rascunho v0 da abertura solo, condução bloco a bloco com sinais de alerta, orçamento e lista de pontes autorizadas e proibidas, combinados com o convidado e checklist do dia. |
 
 ---

@@ -1,7 +1,7 @@
 # BROTHERCAST MASTER 1.0
 
 **Documento oficial de marca, filosofia e produção.**
-Versão 1.2 — outubro de 2025 · Status: **vigente** · **USO INTERNO — não publicar**
+Versão 1.3 — outubro de 2025 · Status: **vigente** · **USO INTERNO — não publicar**
 Substitui: todos os documentos anteriores de descoberta conceitual.
 
 > **Uso interno.** Este é manual operacional da equipe, não conteúdo para a audiência — ver [política de acesso](#173-política-de-acesso-público-interno).
@@ -16,6 +16,7 @@ Substitui: todos os documentos anteriores de descoberta conceitual.
 
 1. [A regra que vem antes de todas as outras](#1-a-regra-que-vem-antes-de-todas-as-outras)
 2. [Manifesto](#2-manifesto)
+    - [2.3 A distinção do presente — a voz pessoal do host](#23-a-distinção-do-presente-a-voz-pessoal-do-host)
 3. [Posicionamento](#3-posicionamento)
 4. [Arquitetura da marca](#4-arquitetura-da-marca)
 5. [A hierarquia filosófica (crença, ação, sustentação)](#5-a-hierarquia-filosófica-crença-ação-sustentação)
@@ -98,7 +99,61 @@ Uso: narração de vídeo institucional, abertura de temporada, texto de apresen
 >
 > **BrotherCast. Experiências que conectam. Conversas que destravam.**
 
-### 2.3 Hierarquia das frases oficiais
+### 2.3 A distinção do presente — a voz pessoal do host
+
+Existe uma frase que **não pertence à marca, pertence ao Kayan**. Ela não substitui a declaração institucional: ela mostra *como se chegou* a ela.
+
+> ### "O Kayan de amanhã não existe, e eu não posso contar com ele. O melhor Kayan é o de agora, porque é o único que pode agir."
+
+#### Definição editorial — obrigatória, para ninguém interpretar errado
+
+> **"Melhor versão de agora" não significa versão perfeita nem versão final.**
+> Significa **a única versão disponível para agir no presente**.
+>
+> Não precisamos estar melhores para fazer. Fazemos com o que temos, do jeito que estamos, e vamos nos melhorando no caminho.
+
+**A tese em três tempos:**
+
+```
+PRESENÇA  →  AÇÃO  →  EVOLUÇÃO
+ (é agora)   (com o    (melhora
+             que tem)   no caminho)
+```
+
+**O que a frase NÃO diz:**
+
+| ❌ Leitura errada | ✅ Leitura correta |
+|---|---|
+| "Aceite como você é e permaneça assim" | "Comece como você é para conseguir se tornar quem quer ser" |
+| "Viva o presente, relaxe" | "O presente é o único lugar onde dá para agir" |
+| "Você já é a sua melhor versão" | "Você é a única versão que existe — e ela pode fazer algo hoje" |
+| "Não planeje" | "Não adie a ação até o plano ficar perfeito" |
+
+#### A frase editorial derivada
+
+> **"Você não precisa estar pronto para começar. Começar faz parte de ficar pronto."**
+
+É a tradução direta da distinção para a vida de quem ouve, e é a resposta do BrotherCast às quatro esperas mais comuns:
+
+| A espera | A resposta |
+|---|---|
+| "Quando eu estiver preparado, começo" | Começar faz parte de ficar preparado |
+| "Quando estiver menos ansioso, faço" | A ansiedade diminui agindo, não esperando |
+| "Quando tiver dinheiro, tento" | Existe uma versão de 1% que cabe no que você tem hoje |
+| "Quando eu perder o medo, mudo" | Age-se com medo (ver §5, pilar Dificuldades Reais) |
+
+#### Regra de uso
+
+| | Voz da **marca** | Voz do **host** |
+|---|---|---|
+| Frase | "O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece." | "O Kayan de amanhã não existe..." |
+| Quem pode dizer | Qualquer peça institucional, qualquer canal | **Só o Kayan**, em primeira pessoa |
+| Onde | Manifesto, fechamento, arte, assinatura | Manifesto solo, pontes, conteúdo pessoal |
+| Função | Declarar a filosofia | Mostrar de onde ela veio |
+
+> **Nunca colocar a frase do Kayan em arte institucional, em nome da marca ou na boca de outra pessoa.** Ela só funciona em primeira pessoa. Se outro host ou convidado quiser usá-la, usa com o próprio nome — e isso, aliás, é um bom convite editorial.
+
+### 2.4 Hierarquia das frases oficiais
 
 | Frase | Função | Onde usa |
 |---|---|---|
@@ -107,8 +162,10 @@ Uso: narração de vídeo institucional, abertura de temporada, texto de apresen
 | **1% melhor, um passo de cada vez.** | Síntese da filosofia | Comunidade, cortes de reflexão, camisetas, bio |
 | **Qual é o seu 1% de hoje?** | Ritual de participação | Chamada para ação, comunidade, fim de corte, stories |
 | **Você não controla todas as circunstâncias. Controla o próximo passo.** | Princípio de responsabilidade | Cortes de reflexão, peças do Movimento 1% |
+| **Você não precisa estar pronto para começar. Começar faz parte de ficar pronto.** | Frase editorial — contra a espera | Cortes de reflexão, comunidade, abertura de conteúdo |
+| **O Kayan de amanhã não existe...** | **Voz pessoal do host** (§2.3) | Manifesto solo, pontes — nunca em arte institucional |
 
-Regra: **nunca usar as cinco na mesma peça.** Uma peça, uma ideia.
+Regra: **nunca usar mais de uma por peça.** Uma peça, uma ideia.
 
 ---
 
@@ -309,6 +366,8 @@ Quem procura hustle culture, atalho financeiro, fórmula de enriquecimento ou co
 | "Você controla o próximo passo." | "Você é 100% responsável por tudo que te acontece." |
 | "Deu errado comigo também." | "Eu descobri o segredo." |
 | "Um passo de cada vez." | "Mude sua vida em 7 dias." |
+| "Começar faz parte de ficar pronto." | "Espere estar preparado." |
+| "Faça do jeito que você está." | "Aceite como você é e fique assim." |
 | "Pessoas reais, histórias que conectam." | "Mentalidade milionária." |
 
 ### 7.4 Palavras proibidas
@@ -737,6 +796,7 @@ Este documento é **manual operacional da equipe**, não conteúdo para a audiê
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.3** | out/2025 | Incorpora a **voz pessoal do host** (§2.3): "O Kayan de amanhã não existe, e eu não posso contar com ele. O melhor Kayan é o de agora, porque é o único que pode agir." Registra a definição editorial obrigatória ("melhor versão de agora" = única versão disponível para agir, não versão perfeita), a tese **presença → ação → evolução**, a tabela de leituras erradas e a frase editorial derivada "Você não precisa estar pronto para começar. Começar faz parte de ficar pronto." Separa voz da marca × voz do host com regra de uso. |
 | **1.2** | out/2025 | **Formato oficial: host único.** Kayan conduz, um convidado por episódio (§3.5). Reescreve §11.2: a história do Kayan vira **ponte, nunca protagonista**, pode aparecer em todos os episódios desde que aprofunde a conversa do convidado — o limite de "1 a cada 5" fica revogado, com os três testes da ponte no lugar. Remove referências a "os hosts" e "os dois na mesa". Registra a peça solo Manifesto BrotherCast no roadmap. |
 | **1.1** | out/2025 | Confirma a separação do projeto *1% Melhor* com gatilho e critério de revisão (§4.2). Define a política de acesso público × interno e tira o manual do site público (§17.3). Registra a entrega do Documento 2 — Temporada 1 (§16). |
 | **1.0** | out/2025 | Primeira consolidação oficial. Define: Regra Zero; ecossistema Conversa → Descoberta → Reflexão → Participação → Comunidade; separação dos Universos A e B; hierarquia de 3 camadas filosóficas (pilares / ação / sustentação); manifesto curto de 5 mensagens; arquitetura BrotherCast + Movimento 1%; decisão editorial sobre a história pessoal do host; separação do projeto *1% Melhor*. Encerra a fase de descoberta conceitual. |

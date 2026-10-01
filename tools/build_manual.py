@@ -28,9 +28,9 @@ DOCUMENTS = [
     {
         "source": "BROTHERCAST-MASTER-1.0.md",
         "output": "index.html",
-        "nav": "Master 1.1",
-        "badge": "Master 1.1",
-        "kicker": "Documento 1 · versão 1.1",
+        "nav": "Master 1.3",
+        "badge": "Master 1.3",
+        "kicker": "Documento 1 · versão 1.3",
         "title": "BrotherCast Master",
         "highlight": "o que é, o que não é e como produzir.",
         "lead": (
@@ -38,7 +38,7 @@ DOCUMENTS = [
             "ecossistema de conteúdo. Fonte única da verdade para editor, designer, produtor, "
             "convidado ou IA."
         ),
-        "chips": ["Outubro de 2025", "Status: vigente", "17 seções", "Uso interno"],
+        "chips": ["Outubro de 2025", "Host único: Kayan", "Status: vigente", "Uso interno"],
         "shortcuts": [
             ("#1-a-regra-que-vem-antes-de-todas-as-outras", "Regra Zero"),
             ("#2-manifesto", "Manifesto"),
@@ -51,14 +51,14 @@ DOCUMENTS = [
         "output": "temporada-1.html",
         "nav": "Temporada 1",
         "badge": "Temporada 1",
-        "kicker": "Documento 2 · versão 1.0",
+        "kicker": "Documento 2 · versão 1.3",
         "title": "Temporada 1",
         "highlight": "quando a vida real pesa.",
         "lead": (
             "Como pessoas comuns continuam avançando quando a vida real pesa. Arco narrativo em "
             "três atos, fichas dos dez episódios, trilha de convidados, plano de gravação e métricas."
         ),
-        "chips": ["Outubro de 2025", "10 episódios", "3 blocos de gravação", "Uso interno"],
+        "chips": ["Outubro de 2025", "10 episódios", "1 convidado por episódio", "Uso interno"],
         "shortcuts": [
             ("#1-a-pergunta-da-temporada", "A pergunta"),
             ("#4-mapa-dos-10-episódios", "Os 10 episódios"),
@@ -71,7 +71,7 @@ DOCUMENTS = [
         "output": "piloto-e01.html",
         "nav": "Piloto E01",
         "badge": "Piloto E01",
-        "kicker": "Documento 2.1 · versão 1.0",
+        "kicker": "Documento 2.1 · versão 1.1",
         "title": "Piloto E01",
         "highlight": "roteiro de direção.",
         "lead": (

@@ -2,7 +2,7 @@
 
 **Documento 2 do sistema BrotherCast.** Conceito de temporada, arco narrativo, fichas dos 10 episódios, trilha de convidados e plano de gravação.
 
-Versão 1.2 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
+Versão 1.3 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
 Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2)
 
 > ### Formato oficial
@@ -10,6 +10,8 @@ Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2)
 > **Kayan conduz conversas com pessoas reais. Host único, um convidado por episódio — sem exceção.**
 >
 > As únicas peças sem convidado são peças **solo curtas** (manifesto, reflexão), que não contam como episódio.
+>
+> **O canônico, em uma linha:** Kayan é o único host · todos os dez episódios têm convidado · o **Manifesto** é a peça solo de abertura da marca · **a temporada abre com Kayan e o primeiro convidado**.
 
 > Este documento **deriva** do Master e não o substitui. Em caso de conflito, o Master vence.
 > Tudo aqui está subordinado à **Regra Zero**: *primeiro vem a conversa verdadeira, depois encontramos o corte.*
@@ -191,28 +193,33 @@ Em formato de host único, a apresentação do projeto não pode ocupar o episó
 
 | Marco | Tempo | O que precisa acontecer |
 |---|---|---|
-| 1. A rejeição | 0:00–0:15 | Nomear o que o BrotherCast **não** é. Abre pela tensão, não pela saudação. |
-| 2. A história | 0:15–0:40 | Um caso concreto e pessoal, pequeno. A prova de que ele fala de dentro. |
-| 3. A tese | 0:40–1:05 | O 1%: consistência acima de intensidade; controlar o próximo passo. |
-| 4. O convite | 1:05–1:15 | A declaração filosófica + a pergunta ritual. |
+| 1. A espera | 0:00–0:20 | Nomear a ilusão de que amanhã chega uma versão melhor da gente |
+| 2. A virada pessoal | 0:20–0:45 | **A frase do Kayan**, em primeira pessoa (Master §2.3) |
+| 3. A abertura para o ouvinte | 0:45–1:10 | "E talvez seja assim com você também" — faça do jeito que está |
+| 4. O fecho | 1:10–1:25 | A declaração institucional + a pergunta ritual |
 
-**Rascunho v0 — base para reagir, não para decorar**
+**Roteiro v1 — este é o coração do manifesto**
 
-> Tem um monte de gente dizendo que você precisa acordar às cinco da manhã, odiar quem você é hoje e virar outra pessoa em trinta dias.
+> Durante muito tempo a gente pensa que amanhã vai chegar uma versão melhor da gente. Mais preparada. Mais segura. Com menos medo.
 >
-> Eu já tentei. Durou onze dias. No décimo segundo eu estava mais cansado do que quando comecei, e me sentindo um fracassado por cima.
+> Só que eu percebi uma coisa: **o Kayan de amanhã não existe. Eu não posso contar com ele.**
 >
-> O que funcionou pra mim foi o contrário: uma coisa pequena, hoje. Depois de novo amanhã. Consistência ganha de intensidade — sempre.
+> O único Kayan que pode mudar alguma coisa é esse aqui. O de agora.
 >
-> Eu não controlo a economia, não controlo o chefe, não controlo o imprevisto. Mas eu controlo o próximo passo. E o próximo passo é suficiente.
+> E talvez seja assim com você também.
 >
-> Aqui a gente senta e conversa de verdade com gente que está no meio do caminho. Não com quem já chegou.
+> Você não precisa estar melhor para fazer. Faça do jeito que está. Comece com o que tem. E vá ficando melhor no caminho.
 >
-> Porque o ontem ensina, o amanhã inspira — mas é hoje que a vida acontece.
+> Porque o ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.
 >
 > Eu sou o Kayan. Isso aqui é o BrotherCast. **E aí: qual é o seu 1% de hoje?**
 
-*≈ 175 palavras ≈ 75 segundos.* A história dos "onze dias" é um **espaço reservado**: tem que ser substituída por um caso real do Kayan. Se a história for verdadeira, a peça funciona; se for genérica, nenhuma edição salva.
+*≈ 120 palavras ≈ 55 segundos.* Dentro da janela, com folga para respiro e pausa.
+
+**O que ainda pode entrar, se fizer falta na gravação**
+A peça já funciona como está. Se na hora a leitura soar curta ou abstrata demais, cabem **15 a 20 segundos de um caso concreto** entre os marcos 2 e 3 — uma vez em que ele esperou estar pronto e a oportunidade passou, ou uma coisa pequena que ele começou mal e foi melhorando no caminho. Opcional, não obrigatório: a frase sustenta a peça sozinha.
+
+> **Atenção de direção:** esta peça é a única da marca em que a **voz pessoal do host** é o centro. Não institucionalizar. Não trocar "eu" por "a gente" nos marcos 2 e 3 — perde todo o efeito. E não transformar a frase em arte com o logo: ela é dita, não estampada (Master §2.3).
 
 ---
 
@@ -560,7 +567,12 @@ O antes e o depois · os dias sem chão · o apoio inesperado · a primeira pequ
 
 - **Tema central:** o que significa, na prática, viver 1% melhor — a resposta da temporada.
 - **Pergunta humana:** *"Isso funciona mesmo ou é só mais uma frase bonita?"*
-- **Convidado ideal:** **alguém da comunidade que viveu o 1% de forma visível** durante as dez semanas. Pessoa comum, resultado modesto, história verdadeira e acompanhável — o público precisa ter visto isso acontecendo. Escolhido a partir das respostas reais do ritual.
+- **Convidado — Plano A:** **alguém da comunidade que viveu o 1% de forma visível** durante as dez semanas. Pessoa comum, resultado modesto, história verdadeira e acompanhável — o público precisa ter visto isso acontecendo. Escolhido a partir das respostas reais do ritual.
+- **Convidado — Plano B:** se até a **semana 8** não existir alguém com participação recorrente **e** história realmente boa, convida-se um **convidado alinhado à filosofia** e os relatos da comunidade entram no mosaico e no fechamento.
+
+> **O Plano A é prioridade, não obrigação.** Não se enfraquece o último episódio da temporada para cumprir uma mecânica. Um convidado fraco escolhido só porque "tinha que ser da comunidade" entrega menos à própria comunidade do que uma conversa forte com os relatos dela dentro.
+>
+> **Ponto de decisão: semana 8.** Critério objetivo para o Plano A: participação recorrente verificável no ritual **e** uma história que o host conseguiria recontar em 30 segundos sem inflar.
 - **Tensão da conversa:** o 1% é modesto, e justamente por isso funciona. O episódio precisa resistir à tentação de inflar o resultado para parecer impressionante.
 
 **Estrutura específica do fechamento**
@@ -592,6 +604,8 @@ O ponto de partida · a semana em que quase largou · o dia em que percebeu que 
 **Nota de produção:** no fechamento solo, recapitular os nove episódios anteriores em até 90 segundos, usando falas reais dos convidados. É o único momento da temporada em que é permitido montar uma colagem de frases — e ainda assim, só de falas que realmente aconteceram.
 
 **Alternativa registrada:** um E10 **sem convidado individual**, só Kayan + mosaico ampliado da comunidade. Mantivemos o convidado por coerência com a regra de um convidado por episódio, e porque uma história acompanhada de ponta a ponta prova mais do que vinte depoimentos curtos. A troca é pequena e reversível — ver [§7.5](#75-decisões-e-pontos-em-aberto).
+
+**Resumo das três possibilidades, em ordem de preferência:** Plano A (convidado da comunidade) → Plano B (convidado alinhado + relatos) → alternativa (só Kayan + mosaico ampliado).
 
 ---
 
@@ -657,7 +671,7 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 | E07 | Burnout/ansiedade, fora da fase aguda | | | | ▢ |
 | E08 | Origem marcante | | | | ▢ |
 | E09 | Perda grande, +1 ano, em reconstrução | | | | ▢ |
-| E10 | Comunidade, 1% visível nas 10 semanas | | | | ▢ |
+| E10 | Plano A: comunidade, 1% visível · Plano B: alinhado à filosofia | | | | ▢ decisão na semana 8 |
 
 ### 7.5 Decisões e pontos em aberto
 
@@ -669,7 +683,7 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 | 2 | **Um convidado por episódio, nos dez** | E01 e E10 deixam de ser episódios de host; E08 deixa de ser dupla |
 | 3 | **Peça solo "Manifesto BrotherCast" (60–90s), antes do E01** | Tira a apresentação do projeto de dentro do piloto |
 | 4 | **História do Kayan = ponte, nunca protagonista** | Revoga o limite de "1 a cada 5"; entra o teste dos três critérios |
-| 5 | **E10 com convidado + mosaico da comunidade + fechamento solo** | Mantém a regra de formato e ainda dá voz ao público |
+| 5 | **E10: Plano A convidado da comunidade, Plano B convidado alinhado + relatos** | Mantém a regra de formato sem enfraquecer o fechamento |
 | 6 | **Gravação em três blocos com estoque mínimo de 2** | Protege a cadência semanal |
 | 7 | **Métrica principal: participação recorrente no ritual** | Alcance deixa de ser a meta |
 
@@ -678,14 +692,14 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 | # | Em aberto | Bloqueia | Quem decide |
 |---|---|---|---|
 | ~~A~~ | ~~Quem é o convidado do E01~~ | ✅ **resolvido: Caio** | — |
-| B | Formato do E10 (com convidado × só Kayan + comunidade) | nada agora — **decisão agendada para a semana 6**, com dado real da comunidade | Kayan |
+| B | Formato do E10 — Plano A (comunidade) × Plano B (convidado alinhado + relatos) | nada agora — **decisão na semana 8**, com critério objetivo de participação recorrente | Kayan |
 | **F** | **Uma linha oficial sobre o que é a NK Concept** (para a abertura solo e a Peça 0.1) | 🔴 Peça 0.1 | Kayan |
 | **G** | Confirmar com o Caio o uso aberto de TDAH e dislexia no episódio e nos cortes | 🔴 gravação do E01 | Produção |
 | C | Perfil do convidado do E08 depois de cair a dupla | pipeline do Bloco C | Produção |
-| D | Qual história real do Kayan entra na Peça 0 no lugar do espaço reservado | 🔴 gravação do Manifesto solo | Kayan |
+| D | Caso concreto opcional de 15–20s na Peça 0 | 🟡 **não bloqueia mais** — o roteiro v1 se sustenta com a frase do host | Kayan |
 | E | Local fixo de gravação e montagem de cenário (Universo A) | Bloco A | Produção |
 
-> **Caminho crítico agora:** pontos **D** (história real do Kayan para a Peça 0), **F** (linha oficial da NK Concept) e **G** (consentimento do Caio). O roteiro do piloto está escrito — ver [`PILOTO-E01.md`](PILOTO-E01.md).
+> **Caminho crítico agora:** **F** (linha oficial da NK Concept, para a abertura solo e a Peça 0.1) e **G** (consentimento do Caio). O roteiro do piloto está escrito — ver [`PILOTO-E01.md`](PILOTO-E01.md) — e a Peça 0 está pronta para gravar.
 
 ---
 
@@ -752,7 +766,7 @@ A comunidade **abre junto com o E01**, não depois. Sem ela, a temporada é só 
 
 **Ciclo semanal:** Master §13.3.
 
-**Caminho para o E10:** a partir do E05, a produção marca candidatos — gente que postou 1% de forma consistente e tem história real. Convite feito na semana 7.
+**Caminho para o E10:** a partir do E05, a produção marca candidatos — gente que postou 1% de forma consistente e tem história real. **Semana 8: ponto de decisão.** Se houver candidato que passe no critério, Plano A e convite imediato. Se não houver, Plano B — convidado alinhado à filosofia, com os relatos da comunidade no mosaico.
 
 > **Regra:** nada que alguém postou na comunidade vira conteúdo público sem autorização explícita (Master §13.2).
 
@@ -779,6 +793,17 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 | Comunidade | **Membros com ≥ 2 participações** | **a métrica principal** |
 | Temporada | Episódios publicados no dia combinado | **10 de 10** |
 | Episódio | Proporção de fala **convidado : host** | ≥ 60:40 |
+
+### Métricas secundárias — a comunidade cresce sem perder qualidade?
+
+A métrica principal mede **participação**. Estas duas medem se o conteúdo que gera participação continua bom.
+
+| Métrica | O que responde | Meta T1 | Como ler |
+|---|---|---|---|
+| **Retenção do episódio completo** | O episódio sustenta a atenção até o fim? | ≥ 40% média · curva sem queda abrupta antes dos 10 min | Queda cedo = problema de abertura. Queda no meio = Bloco 2 arrastado ou resolvido rápido demais |
+| **Conversão corte → episódio completo** | O corte entrega gente de verdade para a conversa? | ≥ 2% dos que viram o corte abrem o episódio | Alcance alto com conversão baixa = o corte está funcionando sozinho, descolado da conversa — sinal de alerta da Regra Zero |
+
+> **Como usar as três juntas:** participação recorrente diz se o ecossistema funciona; retenção diz se a conversa sustenta; conversão diz se o corte é honesto com a conversa. Se participação sobe enquanto retenção e conversão caem, estamos virando canal de cortes — exatamente o que o Master §10.1 recusa.
 
 ### Metas qualitativas
 
@@ -813,6 +838,7 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.3** | out/2025 | **Peça 0 reescrita (roteiro v1)** em torno da voz pessoal do host — "o Kayan de amanhã não existe" — substituindo o caso genérico do v0; o caso concreto vira opcional e deixa de bloquear a gravação. **E10 ganha Plano A / Plano B:** convidado da comunidade é prioridade, não obrigação; decisão na semana 8 com critério objetivo. Novas **métricas secundárias**: retenção do episódio e conversão corte → episódio completo, com leitura combinada contra o risco de virar canal de cortes. Reforça o canônico de host único no topo do documento. |
 | **1.2** | out/2025 | **Convidado do E01 confirmado: Caio** (dentista implantodontista, TDAH e dislexia). E01 reescrito em torno da tese *rótulo recebido × rótulo carregado*, com ângulo obrigatório "o que ainda é difícil hoje" em vez de case de superação; abertura solo sobe para 90s só no piloto; orçamento de pontes de 4 min. Nova **Peça 0.1 — De onde eu falo** (solo 3–5 min): tira a história do banco e da NK Concept de dentro do piloto. §7.5 atualizada: ponto A resolvido, E10 agendado para a semana 6, novos pontos F (linha oficial da NK Concept) e G (consentimento do Caio). Roteiro de direção do piloto em [`PILOTO-E01.md`](PILOTO-E01.md). |
 | **1.1** | out/2025 | **Formato oficial: host único.** Kayan conduz, um convidado em todos os dez episódios. E01 refeito com convidado e abertura solo de até 60s, com a filosofia nomeada só no Bloco 4. E08 deixa de ser dupla. E10 passa a ter convidado da comunidade + mosaico de relatos + fechamento solo de até 90s. Nova **Peça 0 — Manifesto BrotherCast** (solo 60–90s, antes do E01) com estrutura em quatro marcos e rascunho v0. Regra de narrativa pessoal trocada: ponte, nunca protagonista, com os três testes. Nova §7.5 com decisões fechadas e pontos em aberto. Novas métricas de proporção de fala (≥ 60:40) e risco de o host ocupar o episódio. |
 | **1.0** | out/2025 | Primeira versão. Define a pergunta da temporada, arco em 3 atos, 10 fichas de episódio, trilha e one-pager do convidado, gravação em 3 blocos com estoque mínimo, integração com a comunidade e painel de métricas com participação recorrente como métrica principal. |

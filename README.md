@@ -12,7 +12,7 @@ Este repositório tem duas camadas. **Só `site/` vai para o ar.**
 
 | | Pasta | Vai para o ar? | Conteúdo |
 |---|---|---|---|
-| **Público** | `site/` | ✅ sim | Propósito, manifesto, hosts, episódios, convidados, Movimento 1% |
+| **Público** | `site/` | ✅ sim | Propósito, manifesto, host, episódios, convidados, Movimento 1% |
 | **Interno** | `docs/`, `internal/`, `tools/` | ❌ **não** | Master, Temporada, regras, estratégia, edição, distribuição, métricas |
 
 A separação é garantida pelo `netlify.toml` (`publish = "site"`). As páginas internas levam `noindex` e faixa de aviso.
@@ -25,8 +25,8 @@ A separação é garantida pelo `netlify.toml` (`publish = "site"`). As páginas
 
 | # | Documento | Arquivo | Status |
 |---|---|---|---|
-| **1** | **BrotherCast Master** (v1.2) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
-| **2** | **Temporada 1** (v1.2) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
+| **1** | **BrotherCast Master** (v1.3) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
+| **2** | **Temporada 1** (v1.3) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
 | **2.1** | **Piloto E01 — roteiro de direção** (v1.0) | [`docs/PILOTO-E01.md`](docs/PILOTO-E01.md) | ✅ vigente |
 | 2.1 | Roteiro de direção do piloto (E01) | — | ▢ próximo |
 | 2.2 | Lista inicial de convidados | — | ▢ |

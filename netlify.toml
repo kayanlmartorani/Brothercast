@@ -1,5 +1,7 @@
+# Apenas o conteúdo de site/ vai para o ar.
+# docs/, internal/ e tools/ são material interno e NÃO são publicados.
 [build]
-  publish = "."
+  publish = "site"
 
 [[headers]]
   for = "/*"

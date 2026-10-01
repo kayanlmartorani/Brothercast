@@ -1,8 +1,11 @@
 # BROTHERCAST MASTER 1.0
 
 **Documento oficial de marca, filosofia e produção.**
-Versão 1.0 — outubro de 2025 · Status: **vigente** · Substitui: todos os documentos anteriores de descoberta conceitual.
+Versão 1.1 — outubro de 2025 · Status: **vigente** · **USO INTERNO — não publicar**
+Substitui: todos os documentos anteriores de descoberta conceitual.
 
+> **Uso interno.** Este é manual operacional da equipe, não conteúdo para a audiência — ver [política de acesso](#173-política-de-acesso-público-interno).
+>
 > Este é o documento-fonte do BrotherCast. Qualquer pessoa — editor, designer, produtor, convidado, parceiro ou inteligência artificial — deve conseguir ler este arquivo e entender **o que o BrotherCast é, o que o BrotherCast não é e como se produz BrotherCast**, sem precisar de nenhuma outra referência.
 >
 > Se algo que você for produzir contradiz este documento, este documento vence. Se este documento estiver errado, ele é atualizado aqui — não contornado lá fora.
@@ -167,11 +170,17 @@ Você sai de um episódio do BrotherCast com **uma coisa que dá para fazer hoje
 
 ### 4.2 Relação com o projeto **1% Melhor**
 
-Decisão 1.0: **manter separado por enquanto.**
+**Decisão confirmada: manter separado na v1.0/1.1.**
 
-O Movimento 1% é a camada de comunidade dentro do BrotherCast. O projeto *1% Melhor* permanece como iniciativa própria, com conexão natural no futuro (cobranding, produto, programa), **sem fusão de marcas agora**. Nenhuma peça deve apresentar os dois como a mesma coisa.
+A ordem é: o BrotherCast **primeiro valida a filosofia e constrói audiência e comunidade**. Só depois se avalia conexão com produto.
 
-Revisitar esta decisão: ao fim da Temporada 1.
+- O Movimento 1% é a camada de comunidade **dentro** do BrotherCast.
+- O projeto *1% Melhor* permanece como iniciativa própria.
+- **Nenhuma peça, em nenhum canal, apresenta as duas marcas como a mesma coisa.** Sem cobranding, sem logo conjunto, sem menção cruzada que sugira continuidade de produto.
+- A conexão futura (cobranding, produto, programa) segue aberta — e só isso.
+
+**Gatilho de revisão:** encerramento da Temporada 1.
+**Critério de decisão:** existe demanda real e manifestada pela comunidade para um produto, ou estamos empurrando? Sem demanda observável, mantém-se separado.
 
 ---
 
@@ -640,9 +649,13 @@ A fase de descoberta conceitual está **encerrada**. A partir daqui, execução.
 | # | Documento | Status | Conteúdo |
 |---|---|---|---|
 | **1** | **BrotherCast Master 1.0** | ✅ **este documento** | Manifesto, posicionamento, arquitetura, público, tom, pilares, visual, editorial, ecossistema |
-| **2** | **Temporada 1** | ▢ próximo | Conceito da temporada, episódio piloto, lista de primeiros convidados, linha narrativa dos episódios |
+| **2** | **[Temporada 1](TEMPORADA-1.md)** | ✅ entregue | Pergunta da temporada, arco em 3 atos, fichas dos 10 episódios, trilha de convidados, plano de gravação, métricas |
+| **2.1** | Roteiro de direção do piloto (E01) | ▢ **próximo** | Condução do episódio de abertura bloco a bloco |
+| **2.2** | Lista inicial de convidados | ▢ | Pipeline da §7.4 da Temporada 1 preenchido com nomes reais |
+| **2.3** | Plano de gravação do Bloco A | ▢ | Datas, local, equipe e logística de E01–E03 |
 | **3** | **Sistema de Conteúdo** | ▢ | Operacionalização da seção 12: templates de decupagem, planilha de pacote por episódio, calendário |
 | **4** | **Kit Visual Definitivo** | ▢ | Logo, manifesto redesenhado, thumbnail, capa de Reels/Shorts, lower thirds, templates |
+| **4.1** | Manifesto BrotherCast (público) | ▢ | Peça curta e emocional para o site, derivada da §2 — ver §17.3 |
 | **5** | **Lançamento de 30 Dias** | ▢ | Reconstruído em torno de **conteúdo realmente gravado** — não de frases artificiais |
 
 **Regra de sequência:** o documento 5 (lançamento) só é finalizado **depois** que existir material gravado. Nenhum plano de lançamento é construído sobre conteúdo hipotético.
@@ -670,12 +683,33 @@ A fase de descoberta conceitual está **encerrada**. A partir daqui, execução.
 - **Fonte da verdade:** este arquivo, neste repositório.
 - **Quem aprova mudanças:** Kayan.
 - **Como mudar:** editar aqui, subir a versão, registrar no changelog abaixo. Não existe "versão paralela no NotebookLM".
+- **Nome do arquivo:** reflete a *edição* (1.x). A versão exata está no cabeçalho e no changelog — o arquivo não é renomeado a cada revisão menor.
+- **Documentos derivados:** [`TEMPORADA-1.md`](TEMPORADA-1.md).
 - **Versionamento:** `MAJOR.MINOR` — MAJOR para mudança de posicionamento, MINOR para ajustes e acréscimos.
 
-### 17.3 Changelog
+### 17.3 Política de acesso: público × interno
+
+Este documento é **manual operacional da equipe**, não conteúdo para a audiência. Ele contém linguagem, critérios de convidado, sistema de cortes, distribuição, posicionamento e métricas — informação que não deve circular aberta.
+
+| | **Público vê** | **Equipe vê** |
+|---|---|---|
+| **O quê** | Propósito, manifesto, hosts, episódios, convidados, Movimento 1% | Master, Temporada, regras, estratégia, edição, distribuição, testes e métricas |
+| **Onde** | Site, redes, plataformas de áudio | Repositório + compartilhamento controlado |
+| **Tom** | Emocional, curto, convidativo | Operacional, detalhado, prescritivo |
+
+**Regras:**
+
+1. `docs/` e `internal/` **não são publicados**. O Netlify publica apenas `site/` (ver `netlify.toml`).
+2. A versão HTML do Master vive em `internal/manual/` — uso interno e compartilhamento controlado, com `noindex` e faixa de aviso.
+3. O site público receberá, no futuro, uma peça própria chamada **Manifesto BrotherCast**: versão curta e emocional, derivada da seção 2 — **nunca** um recorte deste manual.
+4. Ao compartilhar com um colaborador externo, prefira o bloco da [seção 15](#15-briefing-curto-para-ias-e-colaboradores) ou a ficha específica do trabalho dele, em vez do documento inteiro.
+5. Antes de publicar qualquer coisa, a pergunta é: *isto é propósito e história (público) ou é método e critério (interno)?*
+
+### 17.4 Changelog
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.1** | out/2025 | Confirma a separação do projeto *1% Melhor* com gatilho e critério de revisão (§4.2). Define a política de acesso público × interno e tira o manual do site público (§17.3). Registra a entrega do Documento 2 — Temporada 1 (§16). |
 | **1.0** | out/2025 | Primeira consolidação oficial. Define: Regra Zero; ecossistema Conversa → Descoberta → Reflexão → Participação → Comunidade; separação dos Universos A e B; hierarquia de 3 camadas filosóficas (pilares / ação / sustentação); manifesto curto de 5 mensagens; arquitetura BrotherCast + Movimento 1%; decisão editorial sobre a história pessoal do host; separação do projeto *1% Melhor*. Encerra a fase de descoberta conceitual. |
 
 ---

@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Temporada 1 — documento interno do BrotherCast."
+    />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="theme-color" content="#0d1117" />
+    <title>Uso interno · BrotherCast — Temporada 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --night: #0d1117;
+        --night-deep: #080b10;
+        --surface: #131a23;
+        --surface-2: #19212c;
+        --mustard: #e5a93d;
+        --mustard-light: #f1c56b;
+        --wood: #9c7247;
+        --paper: #f4f1ed;
+        --muted: #a0aab5;
+        --line: rgba(244, 241, 237, 0.12);
+        --display: "Playfair Display", Georgia, serif;
+        --body: "Manrope", system-ui, sans-serif;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+      body {
+        margin: 0;
+        background: var(--night);
+        color: var(--paper);
+        font-family: var(--body);
+        font-size: 17px;
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        content: "";
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      :focus-visible { outline: 3px solid var(--mustard-light); outline-offset: 4px; }
+
+      /* ---------- faixa de uso interno ---------- */
+      .internal-bar {
+        position: relative;
+        z-index: 45;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 9px 18px;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(229, 169, 61, 0.14) 0 14px,
+          rgba(229, 169, 61, 0.07) 14px 28px
+        );
+        border-bottom: 1px solid rgba(229, 169, 61, 0.35);
+        color: var(--mustard-light);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .internal-bar em {
+        color: var(--muted);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      /* ---------- topbar ---------- */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 28px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 11, 16, 0.88);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar a.brand {
+        font-family: var(--display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--paper);
+        text-decoration: none;
+      }
+
+      .topbar .version {
+        padding: 4px 12px;
+        border: 1px solid rgba(229, 169, 61, 0.45);
+        border-radius: 999px;
+        color: var(--mustard);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brand-group { display: flex; align-items: center; gap: 18px; min-width: 0; }
+
+      .docswitch { display: flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(244, 241, 237, 0.03); }
+      .docswitch a {
+        padding: 5px 13px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .docswitch a:hover { color: var(--paper); }
+      .docswitch a[aria-current="page"] { background: rgba(229, 169, 61, 0.16); color: var(--mustard-light); }
+
+      .topbar .links { display: flex; align-items: center; gap: 18px; }
+      .topbar .links a {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+      }
+      .topbar .links a:hover { color: var(--mustard-light); }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative;
+        padding: 96px 28px 72px;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background:
+          radial-gradient(900px 420px at 18% -10%, rgba(229, 169, 61, 0.18), transparent 70%),
+          radial-gradient(700px 380px at 92% 110%, rgba(156, 114, 71, 0.22), transparent 72%),
+          var(--night-deep);
+      }
+
+      .hero-inner { width: min(100%, 860px); margin-inline: auto; }
+
+      .hero .kicker {
+        margin: 0 0 18px;
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        font-family: var(--display);
+        font-size: clamp(2.6rem, 7vw, 4.4rem);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.015em;
+      }
+
+      .hero h1 em { display: block; color: var(--mustard); font-style: italic; font-weight: 400; }
+
+      .hero p { max-width: 58ch; margin: 0; color: var(--muted); font-size: 1.04rem; }
+
+      .hero .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .hero .meta span {
+        padding: 7px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(244, 241, 237, 0.04);
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      /* ---------- layout ---------- */
+      .layout {
+        display: grid;
+        grid-template-columns: 278px minmax(0, 1fr);
+        gap: 52px;
+        width: min(100%, 1240px);
+        margin-inline: auto;
+        padding: 56px 28px 120px;
+      }
+
+      .toc { position: sticky; top: 92px; align-self: start; max-height: calc(100vh - 130px); overflow-y: auto; }
+      .toc h2 {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .toc ul { margin: 0; padding: 0; list-style: none; border-left: 1px solid var(--line); }
+      .toc li a {
+        display: block;
+        padding: 7px 0 7px 16px;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .toc li a:hover { color: var(--paper); border-left-color: var(--wood); }
+      .toc li a.active { color: var(--mustard); border-left-color: var(--mustard); font-weight: 600; }
+      .toc ul ul { display: none; }
+
+      /* ---------- document ---------- */
+      .doc { min-width: 0; max-width: 80ch; }
+
+      .doc h1 { display: none; }
+
+      .doc h2 {
+        margin: 68px 0 22px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        font-family: var(--display);
+        font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+      }
+      .doc h2:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
+
+      .doc h3 {
+        margin: 44px 0 14px;
+        font-size: 1.16rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: var(--mustard-light);
+      }
+
+      .doc h4 { margin: 30px 0 10px; font-size: 1rem; font-weight: 700; color: var(--paper); }
+
+      .doc p { margin: 0 0 18px; }
+      .doc a { color: var(--mustard); text-decoration-color: rgba(229, 169, 61, 0.4); text-underline-offset: 3px; }
+      .doc a:hover { color: var(--mustard-light); }
+      .doc strong { color: #fff; font-weight: 700; }
+
+      .doc ul, .doc ol { margin: 0 0 20px; padding-left: 22px; }
+      .doc li { margin-bottom: 8px; }
+      .doc li::marker { color: var(--mustard); }
+
+      .doc blockquote {
+        position: relative;
+        margin: 28px 0;
+        padding: 24px 28px;
+        border: 1px solid rgba(229, 169, 61, 0.26);
+        border-left: 3px solid var(--mustard);
+        border-radius: 0 12px 12px 0;
+        background: linear-gradient(100deg, rgba(229, 169, 61, 0.08), rgba(229, 169, 61, 0.01));
+      }
+      .doc blockquote p { margin-bottom: 10px; }
+      .doc blockquote p:last-child { margin-bottom: 0; }
+      .doc blockquote strong { color: var(--mustard-light); }
+      .doc blockquote h3 {
+        margin: 2px 0 6px;
+        font-family: var(--display);
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--mustard-light);
+      }
+      .doc blockquote hr { margin: 16px 0; border: 0; border-top: 1px solid rgba(229, 169, 61, 0.25); }
+
+      .doc hr { margin: 52px 0; border: 0; border-top: 1px solid var(--line); }
+
+      .table-wrap { margin: 0 0 26px; overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+      .doc table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+      .doc thead th {
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: left;
+        white-space: nowrap;
+      }
+      .doc tbody td { padding: 13px 16px; border-bottom: 1px solid rgba(244, 241, 237, 0.07); vertical-align: top; }
+      .doc tbody tr:last-child td { border-bottom: 0; }
+      .doc tbody tr:nth-child(even) { background: rgba(244, 241, 237, 0.025); }
+
+      .doc code {
+        padding: 2px 6px;
+        border-radius: 5px;
+        background: rgba(229, 169, 61, 0.12);
+        color: var(--mustard-light);
+        font-family: var(--mono);
+        font-size: 0.86em;
+      }
+
+      .doc pre {
+        margin: 0 0 26px;
+        padding: 22px 24px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--night-deep);
+        line-height: 1.55;
+      }
+      .doc pre code { padding: 0; background: none; color: var(--muted); font-size: 0.8rem; }
+
+      .doc input[type="checkbox"] { margin-right: 8px; accent-color: var(--mustard); }
+      .doc ul:has(> li > input[type="checkbox"]) { list-style: none; padding-left: 2px; }
+
+      /* ---------- footer ---------- */
+      .footer {
+        padding: 48px 28px 64px;
+        border-top: 1px solid var(--line);
+        background: var(--night-deep);
+        text-align: center;
+      }
+      .footer .sig {
+        margin: 0 0 8px;
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .footer .tag { margin: 0 0 24px; color: var(--mustard); font-style: italic; }
+      .footer .quote { margin: 0 auto; max-width: 46ch; color: var(--muted); font-size: 0.92rem; }
+
+      @media (max-width: 960px) {
+        .layout { grid-template-columns: 1fr; gap: 0; padding-top: 36px; }
+        .toc {
+          position: static;
+          max-height: none;
+          margin-bottom: 44px;
+          padding-bottom: 28px;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 620px) {
+        body { font-size: 16px; }
+        .topbar { padding: 14px 18px; }
+        .topbar .links a { display: none; }
+        .docswitch a { font-size: 0.7rem; padding: 5px 10px; }
+        .hero { padding: 64px 18px 52px; }
+        .layout { padding-inline: 18px; }
+      }
+
+      @media print {
+        body { background: #fff; color: #111; }
+        .topbar, .toc, .hero .meta, .internal-bar { display: none; }
+        .doc { max-width: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="internal-bar">
+      Documento interno — não publicar
+      <em>Manual operacional da equipe. Não é conteúdo para a audiência.</em>
+    </div>
+
+    <header class="topbar">
+      <div class="brand-group">
+        <a class="brand" href="#inicio">BrotherCast</a>
+        <nav class="docswitch" aria-label="Documentos"><a href="index.html">Master 1.1</a><a href="temporada-1.html" aria-current="page">Temporada 1</a></nav>
+      </div>
+      <nav class="links">
+        <a href="#1-a-pergunta-da-temporada">A pergunta</a><a href="#4-mapa-dos-10-episódios">Os 10 episódios</a><a href="#7-convidados-critérios-e-trilha">Convidados</a><a href="#8-plano-de-gravação">Gravação</a>
+        <span class="version">Temporada 1</span>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <p class="kicker">Documento 2 · versão 1.0</p>
+        <h1>Temporada 1 <em>quando a vida real pesa.</em></h1>
+        <p>Como pessoas comuns continuam avançando quando a vida real pesa. Arco narrativo em três atos, fichas dos dez episódios, trilha de convidados, plano de gravação e métricas.</p>
+        <div class="meta"><span>Outubro de 2025</span><span>10 episódios</span><span>3 blocos de gravação</span><span>Uso interno</span></div>
+      </div>
+    </section>
+
+    <main class="layout">
+      <aside class="toc" aria-label="Sumário">
+        <h2>Sumário</h2>
+        <div class="toc">
+<ul>
+<li><a href="#0-como-usar-este-documento">0. Como usar este documento</a></li>
+<li><a href="#1-a-pergunta-da-temporada">1. A pergunta da temporada</a></li>
+<li><a href="#2-conceito-e-arco-narrativo">2. Conceito e arco narrativo</a></li>
+<li><a href="#3-formato-e-especificações">3. Formato e especificações</a></li>
+<li><a href="#4-mapa-dos-10-episódios">4. Mapa dos 10 episódios</a></li>
+<li><a href="#5-como-ler-uma-ficha-de-episódio">5. Como ler uma ficha de episódio</a></li>
+<li><a href="#6-fichas-dos-episódios">6. Fichas dos episódios</a></li>
+<li><a href="#7-convidados-critérios-e-trilha">7. Convidados: critérios e trilha</a></li>
+<li><a href="#8-plano-de-gravação">8. Plano de gravação</a></li>
+<li><a href="#9-a-comunidade-ao-longo-da-temporada">9. A comunidade ao longo da temporada</a></li>
+<li><a href="#10-o-que-mede-o-sucesso-da-temporada-1">10. O que mede o sucesso da Temporada 1</a></li>
+<li><a href="#11-riscos-e-regras-de-proteção">11. Riscos e regras de proteção</a></li>
+<li><a href="#12-changelog">12. Changelog</a></li>
+<li><a href="#próximos-documentos">Próximos documentos</a></li>
+</ul>
+</div>
+
+      </aside>
+
+      <article class="doc" id="conteudo">
+        <h1 id="temporada-1-quando-a-vida-real-pesa">TEMPORADA 1 — <em>Quando a vida real pesa</em></h1>
+<p><strong>Documento 2 do sistema BrotherCast.</strong> Conceito de temporada, arco narrativo, fichas dos 10 episódios, trilha de convidados e plano de gravação.</p>
+<p>Versão 1.0 — outubro de 2025 · Status: <strong>vigente</strong> · <strong>USO INTERNO</strong>
+Documento-pai: <a href="index.html"><code>BROTHERCAST-MASTER-1.0.md</code></a></p>
+<blockquote>
+<p>Este documento <strong>deriva</strong> do Master 1.0 e não o substitui. Em caso de conflito, o Master vence.
+Tudo aqui está subordinado à <strong>Regra Zero</strong>: <em>primeiro vem a conversa verdadeira, depois encontramos o corte.</em></p>
+</blockquote>
+<hr />
+<hr />
+<h2 id="0-como-usar-este-documento">0. Como usar este documento</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Se você é…</th>
+<th>Leia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong></td>
+<td>1, 2, 6 (ficha do seu episódio), 11</td>
+</tr>
+<tr>
+<td><strong>Produtor</strong></td>
+<td>tudo</td>
+</tr>
+<tr>
+<td><strong>Convidado</strong></td>
+<td>1, 2 e o bloco "O que combinamos com o convidado" da sua ficha — <strong>nunca</strong> as perguntas antecipadamente na íntegra</td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>3, 6 (bloco de cortes), 9</td>
+</tr>
+<tr>
+<td><strong>IA / redator</strong></td>
+<td>1, 2, 5, 6 + o briefing da seção 15 do Master</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Regra de uso das perguntas:</strong> as 5 perguntas fortes de cada ficha são <strong>direção para o host</strong>, não questionário. Podem ser feitas fora de ordem, com outras palavras, ou não serem feitas — se a conversa foi melhor por outro caminho, a conversa venceu.</p>
+<hr />
+<h2 id="1-a-pergunta-da-temporada">1. A pergunta da temporada</h2>
+<blockquote>
+<h3 id="como-pessoas-comuns-continuam-avançando-quando-a-vida-real-pesa">Como pessoas comuns continuam avançando quando a vida real pesa?</h3>
+</blockquote>
+<p>Toda a Temporada 1 existe para responder essa pergunta a partir de dez ângulos diferentes.</p>
+<p><strong>O que "a vida real pesa" significa aqui:</strong> conta pra pagar, filho pra criar, chefe difícil, corpo cansado, medo de errar de novo, luto, trabalho que não cabe no dia, casamento em tensão, começar aos 40.</p>
+<p><strong>O que "continuar avançando" significa aqui:</strong> não é vencer. É não parar. É o próximo passo.</p>
+<p><strong>Critério de aderência:</strong> se um episódio não ajuda a responder essa pergunta, ele não é Temporada 1 — mesmo que seja uma boa conversa.</p>
+<hr />
+<h2 id="2-conceito-e-arco-narrativo">2. Conceito e arco narrativo</h2>
+<p>A temporada <strong>não é</strong> uma série de dez entrevistas soltas. É uma curva com começo, meio e fim.</p>
+<h3 id="os-três-atos">Os três atos</h3>
+<h4 id="ato-i-o-chão-e01e03-de-onde-a-gente-fala">ATO I — O CHÃO (E01–E03) · <em>de onde a gente fala</em></h4>
+<p>Estabelece quem está na mesa, por que o BrotherCast existe e qual é o peso concreto da vida adulta. O público precisa sair daqui dizendo: <em>"essas pessoas são como eu"</em>.</p>
+<h4 id="ato-ii-o-que-trava-e-o-que-sustenta-e04e07-as-forças-internas">ATO II — O QUE TRAVA E O QUE SUSTENTA (E04–E07) · <em>as forças internas</em></h4>
+<p>O miolo da temporada. Medo, disciplina, dinheiro e saúde emocional — as quatro forças que decidem se a pessoa anda ou congela. É aqui que a audiência vira comunidade, porque é aqui que ela se vê.</p>
+<h4 id="ato-iii-o-que-fica-e08e10-origem-perda-e-sentido">ATO III — O QUE FICA (E08–E10) · <em>origem, perda e sentido</em></h4>
+<p>Vai fundo: de onde viemos, o que perdemos, e o que sobra quando tudo quebra. Fecha com a resposta da temporada: o que realmente significa viver 1% melhor.</p>
+<h3 id="a-curva-emocional">A curva emocional</h3>
+<pre><code>  intensidade
+      │                                        ╭──╮
+      │                      ╭───╮        ╭───╯    ╰╮
+      │        ╭──╮     ╭───╯     ╰──╮ ╭─╯          ╰──╮
+      │   ╭───╯    ╰───╯             ╰─╯                ╰─ (alívio)
+      └───┴────┴────┴────┴────┴────┴────┴────┴────┴────┴──
+        E01  E02  E03  E04  E05  E06  E07  E08  E09  E10
+        ├──── ATO I ────┤├──────── ATO II ────────┤├ ATO III ┤
+        apresentação      o peso e as forças        sentido
+</code></pre>
+<p><strong>Decisões de arco:</strong>
+- <strong>E01 é o único episódio sem convidado externo.</strong> É a fundação — quem são os hosts e por que isso existe.
+- <strong>E09 (perdas e recomeços) é o pico emocional.</strong> É o episódio mais pesado e precisa ser o mais bem produzido.
+- <strong>E10 fecha aliviando.</strong> Depois de nove episódios de peso, o fechamento devolve esperança concreta, não um resumo.
+- <strong>Cada episódio termina com a mesma pergunta:</strong> <em>"Qual é o seu 1% de hoje?"</em> — é o fio que costura a temporada inteira.</p>
+<hr />
+<h2 id="3-formato-e-especificações">3. Formato e especificações</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Padrão da Temporada 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Episódios</strong></td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Duração-alvo</strong></td>
+<td>50–70 min (piloto pode ir a 75)</td>
+</tr>
+<tr>
+<td><strong>Cadência</strong></td>
+<td>1 por semana, mesmo dia e horário</td>
+</tr>
+<tr>
+<td><strong>Pessoas na mesa</strong></td>
+<td>Hosts + 1 convidado (E01 só hosts; E08 pode ter 2)</td>
+</tr>
+<tr>
+<td><strong>Formato de vídeo</strong></td>
+<td>Horizontal 16:9, multicâmera</td>
+</tr>
+<tr>
+<td><strong>Identidade</strong></td>
+<td>Universo A (preto/grafite + madeira + âmbar + branco) — Master §8.1</td>
+</tr>
+<tr>
+<td><strong>Pacote por episódio</strong></td>
+<td>Master §12.1 (episódio + 3–5 cortes de impacto + 2–3 cortes de reflexão + card + pergunta de comunidade + thumbnail)</td>
+</tr>
+<tr>
+<td><strong>Abertura</strong></td>
+<td>Máx. 30s. Sem vinheta longa.</td>
+</tr>
+<tr>
+<td><strong>Fechamento</strong></td>
+<td>Fixo: "Qual é o seu 1% de hoje?" + o 1% do convidado</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="estrutura-interna-padrão-do-episódio">Estrutura interna padrão do episódio</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>Tempo</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gancho frio</strong></td>
+<td>0:00–0:40</td>
+<td>Trecho forte da própria conversa, antes da abertura</td>
+</tr>
+<tr>
+<td><strong>Abertura</strong></td>
+<td>0:40–1:10</td>
+<td>Identidade + quem está na mesa + a pergunta do episódio</td>
+</tr>
+<tr>
+<td><strong>Bloco 1 — a pessoa</strong></td>
+<td>~15 min</td>
+<td>Quem é, de onde vem, o que carrega hoje</td>
+</tr>
+<tr>
+<td><strong>Bloco 2 — o peso</strong></td>
+<td>~20 min</td>
+<td>A dificuldade real, sem pressa e sem resolver cedo demais</td>
+</tr>
+<tr>
+<td><strong>Bloco 3 — a virada</strong></td>
+<td>~15 min</td>
+<td>Onde entrou a responsabilidade pelo próximo passo</td>
+</tr>
+<tr>
+<td><strong>Bloco 4 — o 1%</strong></td>
+<td>~8 min</td>
+<td>O que dá pra fazer hoje. Pergunta ritual. Fechamento.</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Nunca pular para o Bloco 3 cedo.</strong> O erro clássico é resolver a dor rápido para "ficar positivo". O público precisa sentir que o peso foi levado a sério antes de ouvir qualquer saída.</p>
+</blockquote>
+<hr />
+<h2 id="4-mapa-dos-10-episódios">4. Mapa dos 10 episódios</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Título de trabalho</th>
+<th>Tema central</th>
+<th>Pilar</th>
+<th>Ato</th>
+<th>Convidado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E01</strong></td>
+<td>Por que a gente senta nessa mesa</td>
+<td>Origem do BrotherCast e da filosofia do 1%</td>
+<td>Evolução Diária <em>(abre os quatro)</em></td>
+<td>I</td>
+<td>— só hosts</td>
+</tr>
+<tr>
+<td><strong>E02</strong></td>
+<td>Quando o plano antigo não serve mais</td>
+<td>Carreira e recomeço</td>
+<td>Responsabilidade Pessoal</td>
+<td>I</td>
+<td>Transição de carreira</td>
+</tr>
+<tr>
+<td><strong>E03</strong></td>
+<td>O tempo que a gente não tem</td>
+<td>Família e paternidade/maternidade</td>
+<td>Pessoas Reais</td>
+<td>I</td>
+<td>Pai ou mãe em jornada dupla</td>
+</tr>
+<tr>
+<td><strong>E04</strong></td>
+<td>O medo não vai embora. E agora?</td>
+<td>Medo e insegurança</td>
+<td>Dificuldades Reais</td>
+<td>II</td>
+<td>Quem agiu com medo</td>
+</tr>
+<tr>
+<td><strong>E05</strong></td>
+<td>Nos dias em que não dá vontade</td>
+<td>Disciplina e consistência</td>
+<td>Evolução Diária</td>
+<td>II</td>
+<td>Perfil de rotina longa</td>
+</tr>
+<tr>
+<td><strong>E06</strong></td>
+<td>A conta chega no dia 5</td>
+<td>Dinheiro e pressão</td>
+<td>Dificuldades Reais</td>
+<td>II</td>
+<td>Quem viveu aperto financeiro</td>
+</tr>
+<tr>
+<td><strong>E07</strong></td>
+<td>Quando o problema é por dentro</td>
+<td>Saúde emocional</td>
+<td>Pessoas Reais</td>
+<td>II</td>
+<td>Quem passou por burnout/ansiedade</td>
+</tr>
+<tr>
+<td><strong>E08</strong></td>
+<td>De onde eu venho ainda me explica</td>
+<td>Histórias de origem</td>
+<td>Pessoas Reais</td>
+<td>III</td>
+<td>Origem marcante (pode ser dupla)</td>
+</tr>
+<tr>
+<td><strong>E09</strong></td>
+<td>Perder e começar de novo</td>
+<td>Perdas e recomeços</td>
+<td>Responsabilidade Pessoal</td>
+<td>III</td>
+<td>Quem perdeu algo grande</td>
+</tr>
+<tr>
+<td><strong>E10</strong></td>
+<td>1% melhor, de verdade</td>
+<td>O que significa viver 1% melhor</td>
+<td>Evolução Diária</td>
+<td>III</td>
+<td>Convidado da comunidade</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>E10 com convidado da comunidade</strong> é uma decisão deliberada: a temporada que começou com os hosts termina com alguém do público que praticou o 1% durante a temporada. Isso fecha o ciclo <em>conversa → descoberta → reflexão → participação → comunidade</em> na frente de todo mundo.</p>
+</blockquote>
+<hr />
+<h2 id="5-como-ler-uma-ficha-de-episódio">5. Como ler uma ficha de episódio</h2>
+<p>Cada ficha tem nove blocos:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>O que é</th>
+<th>Para quem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tema central</strong></td>
+<td>O assunto em uma linha</td>
+<td>todos</td>
+</tr>
+<tr>
+<td><strong>Pergunta humana</strong></td>
+<td>A pergunta que o ouvinte já se fez sozinho</td>
+<td>host</td>
+</tr>
+<tr>
+<td><strong>Host / convidado ideal</strong></td>
+<td>Perfil, não nome</td>
+<td>produtor</td>
+</tr>
+<tr>
+<td><strong>Tensão da conversa</strong></td>
+<td>O conflito que mantém o episódio vivo</td>
+<td>host</td>
+</tr>
+<tr>
+<td><strong>5 perguntas fortes</strong></td>
+<td>Direção, nunca questionário</td>
+<td>host</td>
+</tr>
+<tr>
+<td><strong>Territórios de história</strong></td>
+<td>Onde pode ter história boa — <strong>sem combinar resposta</strong></td>
+<td>host, produtor</td>
+</tr>
+<tr>
+<td><strong>Possibilidades de corte</strong></td>
+<td>Hipóteses do que pode render</td>
+<td>editor</td>
+</tr>
+<tr>
+<td><strong>CTA da comunidade</strong></td>
+<td>A pergunta da semana</td>
+<td>produtor</td>
+</tr>
+<tr>
+<td><strong>O 1% do episódio</strong></td>
+<td>O passo praticável que o episódio entrega</td>
+<td>todos</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>⚠️ <strong>"Territórios de história" não é roteiro.</strong> São assuntos onde provavelmente existe verdade. O host navega até lá; o convidado conta o que quiser contar. Se não for, não força.</p>
+<p>⚠️ <strong>"Possibilidades de corte" são hipóteses, não metas.</strong> Se a conversa não deu o corte previsto, o corte previsto não existe. Nunca se provoca uma fala para preencher a lista.</p>
+</blockquote>
+<hr />
+<h2 id="6-fichas-dos-episódios">6. Fichas dos episódios</h2>
+<hr />
+<h3 id="e01-por-que-a-gente-senta-nessa-mesa">E01 — Por que a gente senta nessa mesa</h3>
+<p><strong>Ato I · Pilar: Evolução Diária (apresenta os quatro) · Só hosts · Piloto</strong></p>
+<ul>
+<li><strong>Tema central:</strong> por que o BrotherCast existe e o que é a filosofia do 1%.</li>
+<li><strong>Pergunta humana:</strong> <em>"Por que tanta coisa que eu ouço sobre evolução não cabe na minha vida?"</em></li>
+<li><strong>Na mesa:</strong> apenas os hosts. Sem convidado — a fundação é dos dois.</li>
+<li><strong>Tensão da conversa:</strong> produtividade tóxica × evolução realista. Os hosts precisam admitir que já tentaram o jeito intenso e não funcionou. Sem essa admissão o episódio vira palestra.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Qual foi a última vez que você tentou mudar tudo de uma vez — e em quantos dias desmoronou?
+2. O que você já fingiu que estava dando certo?
+3. O que te incomoda no conteúdo de alta performance que a gente consome?
+4. Que conversa você gostaria de ter tido há cinco anos e não teve com ninguém?
+5. Qual é a menor coisa que mudou algo grande pra você?</p>
+<p><strong>Territórios de história</strong>
+Tentativas de virada radical que fracassaram · o momento em que a vida adulta ficou pesada · a conversa que destravou algo · por que "brother" — a origem do nome · o que os hosts ainda não resolveram hoje.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> a confissão do fracasso da virada radical · "não precisa acordar às 4h" · a definição de 1% em 20 segundos.
+<em>Reflexão:</em> os quatro pilares explicados em linguagem de mesa · a diferença entre consistência e intensidade · "você não controla as circunstâncias, controla o próximo passo".</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é o seu 1% de hoje? Começa com um. Qualquer um."</em></li>
+<li><strong>O 1% do episódio:</strong> escolher <strong>uma</strong> coisa pequena e fazer hoje — e dizer em voz alta qual é.</li>
+</ul>
+<p><strong>Nota de produção:</strong> é o episódio mais importante da temporada e o mais fácil de errar. O risco é virar manifesto falado. <strong>Antídoto:</strong> cada afirmação de filosofia tem que vir colada em uma história pessoal concreta. Se não tem história, corta a afirmação.</p>
+<hr />
+<h3 id="e02-quando-o-plano-antigo-não-serve-mais">E02 — Quando o plano antigo não serve mais</h3>
+<p><strong>Ato I · Pilar: Responsabilidade Pessoal</strong></p>
+<ul>
+<li><strong>Tema central:</strong> carreira e recomeço — sair, ficar, ou mudar por dentro.</li>
+<li><strong>Pergunta humana:</strong> <em>"Eu largo isso ou eu aguento mais um ano?"</em></li>
+<li><strong>Convidado ideal:</strong> alguém em transição de carreira <strong>ainda em curso ou recente</strong>, de preferência sem final feliz embalado. Quem saiu e se deu mal também serve — e talvez sirva melhor.</li>
+<li><strong>Tensão da conversa:</strong> coragem × responsabilidade. Quem tem gente dependendo não pode simplesmente "seguir o sonho" — e também não pode morrer onde está. O episódio <strong>não</strong> pode terminar dizendo "largue tudo".</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Quando foi a primeira vez que você pensou em sair — e o que te fez ficar?
+2. O que você teve que deixar de contar pra sua família nesse período?
+3. Quanto custou, em dinheiro e em outra coisa?
+4. O que você faria diferente se tivesse que recomeçar amanhã?
+5. O que você diria pra alguém que está travado nessa decisão hoje?</p>
+<p><strong>Territórios de história</strong>
+O dia em que a ficha caiu · a conversa em casa sobre a decisão · o primeiro mês depois · a hora em que achou que tinha errado · o que mudou na relação com dinheiro.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> o momento da decisão contado em primeira pessoa · o número concreto (quanto caiu a renda) · a frase que alguém próximo disse.
+<em>Reflexão:</em> como decidir sem romantizar · a diferença entre coragem e impulso · o que fazer enquanto ainda não dá para sair.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é o 1% da sua carreira hoje? Uma conversa, um estudo, uma pergunta que você estava evitando?"</em></li>
+<li><strong>O 1% do episódio:</strong> dar <strong>um</strong> passo de informação ou conversa antes de decidir qualquer coisa grande.</li>
+</ul>
+<hr />
+<h3 id="e03-o-tempo-que-a-gente-não-tem">E03 — O tempo que a gente não tem</h3>
+<p><strong>Ato I · Pilar: Pessoas Reais</strong></p>
+<ul>
+<li><strong>Tema central:</strong> família, paternidade/maternidade e a culpa do tempo.</li>
+<li><strong>Pergunta humana:</strong> <em>"Eu estou presente ou só estou por perto?"</em></li>
+<li><strong>Convidado ideal:</strong> pai ou mãe em jornada dupla — trabalho exigente + filho pequeno. Bônus se for alguém que mudou a rotina para caber a família.</li>
+<li><strong>Tensão da conversa:</strong> prover × estar presente. Não existe resposta limpa e o episódio não deve fabricar uma.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Que momento você perdeu e não volta?
+2. O que você conta pra si mesmo pra justificar o tempo que você não está em casa?
+3. O que mudou em você depois que o seu filho nasceu — inclusive o que piorou?
+4. Qual foi o ajuste pequeno que te devolveu algum tempo?
+5. O que você quer que ele lembre de você daqui a vinte anos?</p>
+<p><strong>Territórios de história</strong>
+A culpa no fim do dia · a conversa difícil com o parceiro ou parceira · a rotina que foi reconstruída · o que a criança falou e doeu · o pai ou a mãe que ele teve e o que repete ou evita.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> a frase do filho · o momento perdido · "eu estava em casa mas não estava".
+<em>Reflexão:</em> presença não é quantidade de horas · o ritual de 15 minutos · como negociar tempo sem brigar.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é o seu 1% com a sua família hoje? 15 minutos sem celular contam."</em></li>
+<li><strong>O 1% do episódio:</strong> marcar <strong>um</strong> bloco curto e inegociável de presença total hoje.</li>
+</ul>
+<hr />
+<h3 id="e04-o-medo-não-vai-embora-e-agora">E04 — O medo não vai embora. E agora?</h3>
+<p><strong>Ato II · Pilar: Dificuldades Reais</strong></p>
+<ul>
+<li><strong>Tema central:</strong> medo, insegurança e síndrome de impostor.</li>
+<li><strong>Pergunta humana:</strong> <em>"Por que eu travo justo quando é importante?"</em></li>
+<li><strong>Convidado ideal:</strong> alguém que fez algo relevante <strong>sentindo medo o tempo todo</strong> — não quem "venceu o medo". A honestidade vale mais do que o feito.</li>
+<li><strong>Tensão da conversa:</strong> o mercado vende "vença seu medo"; o episódio defende <strong>agir com medo</strong>. Tem que ficar claro que o medo não sai de cena.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Do que você tem medo hoje, agora, nesta semana?
+2. Qual medo te paralisou e você só percebeu depois que custou caro?
+3. O que você faz fisicamente quando o medo bate?
+4. Você já fingiu segurança? Como foi por dentro?
+5. Qual foi a menor ação que você conseguiu fazer com medo — e o que aconteceu depois?</p>
+<p><strong>Territórios de história</strong>
+A vez em que travou na frente de gente · o medo de ser descoberto como fraude · o medo de falhar com a família · a primeira vez que agiu mesmo com medo · o medo que ainda não foi encarado.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> a confissão do medo atual (não do passado) · "eu finjo segurança até hoje" · o momento do travamento.
+<em>Reflexão:</em> medo não é sinal de parada, é sinal de importância · a técnica do menor passo possível · a diferença entre medo e aviso.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é a menor coisa que você consegue fazer hoje mesmo com medo?"</em></li>
+<li><strong>O 1% do episódio:</strong> executar a <strong>menor versão possível</strong> da coisa temida, hoje.</li>
+</ul>
+<hr />
+<h3 id="e05-nos-dias-em-que-não-dá-vontade">E05 — Nos dias em que não dá vontade</h3>
+<p><strong>Ato II · Pilar: Evolução Diária</strong></p>
+<ul>
+<li><strong>Tema central:</strong> disciplina e consistência quando a motivação não aparece.</li>
+<li><strong>Pergunta humana:</strong> <em>"Por que eu começo tudo e não termino nada?"</em></li>
+<li><strong>Convidado ideal:</strong> alguém com uma rotina mantida por anos — atleta amador, professor, músico, enfermeiro de plantão, qualquer um com prova de constância longa. <strong>Não</strong> um guru de produtividade.</li>
+<li><strong>Tensão da conversa:</strong> disciplina × autocobrança. O episódio defende sistema, não sofrimento, e precisa derrubar a ideia de que falhar um dia invalida tudo.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Como é o seu pior dia — e o que você faz mesmo nele?
+2. Quantas vezes você já quebrou a sequência? O que te fez voltar?
+3. O que você reduziu pra conseguir manter?
+4. Qual parte da sua rotina é negociável e qual não é?
+5. O que você responde pra quem diz "eu não tenho disciplina"?</p>
+<p><strong>Territórios de história</strong>
+A sequência mais longa e como ela quebrou · o dia que fez no mínimo e valeu · o sistema que substituiu a força de vontade · o que foi abandonado pra sustentar o resto · a recaída e a volta.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> "eu já quebrei dezenas de vezes" · a versão mínima da rotina · o dia pior possível.
+<em>Reflexão:</em> consistência acima de intensidade, explicado na prática · a regra de nunca falhar duas vezes seguidas · reduzir a meta em vez de abandonar.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é a versão mínima do seu 1% — aquela que você faz até no pior dia?"</em></li>
+<li><strong>O 1% do episódio:</strong> definir o <strong>mínimo inegociável</strong> e executá-lo hoje, mesmo ridiculamente pequeno.</li>
+</ul>
+<hr />
+<h3 id="e06-a-conta-chega-no-dia-5">E06 — A conta chega no dia 5</h3>
+<p><strong>Ato II · Pilar: Dificuldades Reais</strong></p>
+<ul>
+<li><strong>Tema central:</strong> dinheiro, pressão financeira e o que o aperto faz com a cabeça.</li>
+<li><strong>Pergunta humana:</strong> <em>"Por que eu trabalho tanto e o dinheiro não fica?"</em></li>
+<li><strong>Convidado ideal:</strong> quem já viveu aperto real — dívida, negócio quebrado, desemprego longo — e consegue falar de números sem vergonha. <strong>Não</strong> educador financeiro vendendo método.</li>
+<li><strong>Tensão da conversa:</strong> o episódio <strong>não dá consultoria financeira</strong> (Master §11.5). Ele fala do <strong>efeito emocional</strong> do dinheiro: vergonha, silêncio, relação, sono.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Qual foi o momento em que você percebeu que a conta não ia fechar?
+2. De quem você escondeu — e por quê?
+3. O que o aperto fez com o seu casamento, com o seu sono, com o seu humor?
+4. O que você cortou primeiro e o que você se recusou a cortar?
+5. Qual foi o primeiro passo que te tirou do buraco — por menor que fosse?</p>
+<p><strong>Territórios de história</strong>
+A ligação de cobrança · o pedido de ajuda · o que foi vendido · a conversa em casa · o primeiro mês em que sobrou algo.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> o número cru dito em voz alta · "eu escondi da minha esposa por três meses" · o que foi vendido.
+<em>Reflexão:</em> a vergonha é o que mais atrasa a saída · dinheiro é assunto emocional antes de ser matemático · o primeiro passo não é ganhar mais, é enxergar.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é o seu 1% financeiro hoje? Abrir o app e olhar já conta."</em></li>
+<li><strong>O 1% do episódio:</strong> <strong>olhar de frente</strong> um número que vem sendo evitado.</li>
+</ul>
+<blockquote>
+<p><strong>Regra editorial:</strong> nenhuma recomendação específica de investimento, dívida ou produto financeiro. Se o convidado começar a dar método, o host traz de volta para a experiência.</p>
+</blockquote>
+<hr />
+<h3 id="e07-quando-o-problema-é-por-dentro">E07 — Quando o problema é por dentro</h3>
+<p><strong>Ato II · Pilar: Pessoas Reais</strong></p>
+<ul>
+<li><strong>Tema central:</strong> saúde emocional, burnout, ansiedade e pedir ajuda.</li>
+<li><strong>Pergunta humana:</strong> <em>"Isso é só cansaço ou é alguma coisa mais séria?"</em></li>
+<li><strong>Convidado ideal:</strong> quem passou por burnout, ansiedade ou depressão, <strong>já fora da fase aguda</strong>, e fala com responsabilidade. Opcional: um profissional de saúde mental em bloco curto de contexto.</li>
+<li><strong>Tensão da conversa:</strong> "aguentar firme" × pedir ajuda. O episódio desmonta a ideia de que parar é fraqueza — sem romantizar adoecimento.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Qual foi o primeiro sinal que você ignorou?
+2. O que você dizia pras pessoas enquanto estava mal?
+3. O que fez você finalmente procurar ajuda?
+4. O que mudou na sua rotina depois — de verdade, não na teoria?
+5. O que você diria pra alguém que está no mesmo ponto agora?</p>
+<p><strong>Territórios de história</strong>
+O corpo avisando antes da cabeça · o dia do colapso · a resistência em procurar ajuda · a reação das pessoas em volta · a reconstrução lenta.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> o primeiro sinal ignorado · "eu dizia que estava tudo bem" · o dia em que o corpo parou.
+<em>Reflexão:</em> a diferença entre cansaço e esgotamento · pedir ajuda como ato de responsabilidade · o 1% quando até levantar é difícil.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual é o seu 1% de cuidado hoje?"</em></li>
+<li><strong>O 1% do episódio:</strong> <strong>um</strong> ato concreto de cuidado — dormir uma hora a mais, marcar a consulta, mandar a mensagem.</li>
+</ul>
+<blockquote>
+<p><strong>Regra editorial:</strong> sem conselho clínico, sem diagnóstico, sem detalhe de método de autolesão. Incluir na descrição os canais oficiais de apoio (CVV 188).</p>
+</blockquote>
+<hr />
+<h3 id="e08-de-onde-eu-venho-ainda-me-explica">E08 — De onde eu venho ainda me explica</h3>
+<p><strong>Ato III · Pilar: Pessoas Reais</strong></p>
+<ul>
+<li><strong>Tema central:</strong> histórias de origem — o que a infância e a família instalaram na gente.</li>
+<li><strong>Pergunta humana:</strong> <em>"Por que eu reajo assim mesmo sabendo que não precisava?"</em></li>
+<li><strong>Convidado ideal:</strong> alguém com origem marcante — não necessariamente dura. Pode ser episódio em dupla, com duas origens em contraste.</li>
+<li><strong>Tensão da conversa:</strong> origem explica × origem não justifica. O episódio honra a história <strong>e</strong> devolve a responsabilidade pelo próximo passo.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Que cena da sua infância você ainda vê com nitidez?
+2. O que você aprendeu em casa sobre trabalho, dinheiro ou afeto?
+3. O que você repete dos seus pais sem querer?
+4. O que você decidiu quebrar na sua geração?
+5. Se você pudesse falar com você aos 12 anos, o que diria?</p>
+<p><strong>Territórios de história</strong>
+A casa onde cresceu · o que faltava · o que o pai ou a mãe fazia e hoje faz sentido · a primeira vez que percebeu que sua vida era diferente da dos outros · o padrão que está sendo quebrado agora.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> a cena de infância · "eu prometi que nunca ia ser assim" · o padrão quebrado.
+<em>Reflexão:</em> a origem explica, mas não dirige · identificar um padrão herdado · o que significa quebrar um ciclo na prática.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Qual padrão você está quebrando na sua geração?"</em></li>
+<li><strong>O 1% do episódio:</strong> identificar <strong>um</strong> padrão herdado e nomear a primeira ação para interrompê-lo.</li>
+</ul>
+<hr />
+<h3 id="e09-perder-e-começar-de-novo">E09 — Perder e começar de novo</h3>
+<p><strong>Ato III · Pilar: Responsabilidade Pessoal · Pico emocional da temporada</strong></p>
+<ul>
+<li><strong>Tema central:</strong> perda — de pessoa, de negócio, de saúde, de identidade — e o recomeço.</li>
+<li><strong>Pergunta humana:</strong> <em>"Como alguém levanta depois de perder tudo?"</em></li>
+<li><strong>Convidado ideal:</strong> quem perdeu algo grande e está <strong>em reconstrução</strong>, não em palestra sobre superação. Tempo mínimo recomendado desde a perda: 1 ano.</li>
+<li><strong>Tensão da conversa:</strong> não romantizar a dor e não acelerar a recuperação. Este é o episódio em que o host mais escuta e menos fala.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Como foi o dia em que aconteceu?
+2. O que você fez na primeira semana?
+3. Quem apareceu e quem sumiu?
+4. Qual foi a primeira coisa que te fez sentir que você ainda estava inteiro?
+5. O que você ainda não superou?</p>
+<p><strong>Territórios de história</strong>
+O antes e o depois · os dias sem chão · o apoio inesperado · a primeira pequena vitória · o que não voltou e nunca vai voltar.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> o dia da perda · "quem apareceu e quem sumiu" · a primeira pequena vitória.
+<em>Reflexão:</em> recomeço não é apagar · o 1% quando o chão sumiu · o que o luto ensina sobre o que importa.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Se você está recomeçando, qual é o seu 1% de hoje? Aqui ninguém recomeça sozinho."</em></li>
+<li><strong>O 1% do episódio:</strong> nomear <strong>uma</strong> coisa que ainda está de pé — e cuidar dela hoje.</li>
+</ul>
+<blockquote>
+<p><strong>Nota de produção:</strong> o episódio de maior exposição do convidado. Combinar previamente o direito de <strong>vetar trechos</strong> na edição. Revisão de cortes com o convidado antes de publicar é <strong>obrigatória</strong> neste episódio.</p>
+</blockquote>
+<hr />
+<h3 id="e10-1-melhor-de-verdade">E10 — 1% melhor, de verdade</h3>
+<p><strong>Ato III · Pilar: Evolução Diária · Fechamento</strong></p>
+<ul>
+<li><strong>Tema central:</strong> o que significa, na prática, viver 1% melhor — a resposta da temporada.</li>
+<li><strong>Pergunta humana:</strong> <em>"Isso funciona mesmo ou é só mais uma frase bonita?"</em></li>
+<li><strong>Convidado ideal:</strong> <strong>alguém da comunidade</strong> que praticou o 1% durante a temporada. Pessoa comum, resultado modesto, história verdadeira. Escolhido a partir das respostas reais do ritual.</li>
+<li><strong>Tensão da conversa:</strong> o 1% é modesto, e justamente por isso funciona. O episódio precisa resistir à tentação de inflar o resultado para parecer impressionante.</li>
+</ul>
+<p><strong>5 perguntas fortes</strong>
+1. Qual foi o seu primeiro 1% e por que você escolheu esse?
+2. Quantas vezes você falhou durante esse período?
+3. O que mudou que ninguém vê de fora?
+4. O que você achava que ia mudar e não mudou?
+5. Qual é o seu 1% de amanhã?</p>
+<p><strong>Territórios de história</strong>
+O ponto de partida · a semana em que quase largou · o dia em que percebeu que tinha mudado algo · a reação das pessoas em volta · o que vem agora.</p>
+<p><strong>Possibilidades de corte</strong>
+<em>Impacto:</em> o resultado concreto depois de 10 semanas · "eu falhei umas 20 vezes e continuei" · a mudança que ninguém vê.
+<em>Reflexão:</em> a matemática do 1% explicada sem exagero · por que o resultado pequeno é o resultado honesto · como escolher o próximo 1%.</p>
+<ul>
+<li><strong>CTA da comunidade:</strong> <em>"Temporada 1 fechada. Qual é o seu 1% pra temporada que vem?"</em></li>
+<li><strong>O 1% do episódio:</strong> escolher o <strong>próximo</strong> 1% — e dizer publicamente qual é.</li>
+</ul>
+<p><strong>Nota de produção:</strong> recapitular os nove episódios anteriores em até 90 segundos, usando falas reais dos convidados. É o único momento da temporada em que é permitido montar uma colagem de frases — e ainda assim, só de falas que realmente aconteceram.</p>
+<hr />
+<h2 id="7-convidados-critérios-e-trilha">7. Convidados: critérios e trilha</h2>
+<h3 id="71-critério-de-seleção">7.1 Critério de seleção</h3>
+<blockquote>
+<p><strong>Teste dos 3 minutos:</strong> o ouvinte precisa conseguir dizer <em>"isso é a minha vida"</em> nos primeiros três minutos.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>✅ Convidamos</th>
+<th>❌ Não convidamos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quem viveu e fala honesto</td>
+<td>Quem só fala do que deu certo</td>
+</tr>
+<tr>
+<td>Pessoa comum com história concreta</td>
+<td>Palestrante com discurso pronto</td>
+</tr>
+<tr>
+<td>Quem está no meio do caminho</td>
+<td>Quem vem divulgar um lançamento</td>
+</tr>
+<tr>
+<td>Audiência pequena, verdade grande</td>
+<td>Audiência grande, verdade ensaiada</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>A audiência do convidado não é critério de seleção.</strong> Nunca foi, não vai ser nesta temporada.</p>
+<h3 id="72-trilha-do-convidado-do-convite-à-publicação">7.2 Trilha do convidado (do convite à publicação)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Prazo</th>
+<th>O que acontece</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Pré-conversa</td>
+<td>D-14</td>
+<td>20 min por telefone/vídeo. O produtor escuta a história, confirma o encaixe e o tema. <strong>Não ensaia respostas.</strong></td>
+</tr>
+<tr>
+<td>2. Convite formal</td>
+<td>D-12</td>
+<td>Envio do <strong>One-Pager do Convidado</strong> (7.3)</td>
+</tr>
+<tr>
+<td>3. Alinhamento</td>
+<td>D-3</td>
+<td>Confirmação de horário, local, duração e combinados de edição</td>
+</tr>
+<tr>
+<td>4. Gravação</td>
+<td>D0</td>
+<td>Ver seção 8</td>
+</tr>
+<tr>
+<td>5. Revisão (quando aplicável)</td>
+<td>D+5</td>
+<td>Cortes sensíveis enviados ao convidado antes da publicação</td>
+</tr>
+<tr>
+<td>6. Publicação</td>
+<td>D+7 ou janela da temporada</td>
+<td>Convidado recebe o pacote de cortes para repostar</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="73-one-pager-do-convidado-o-que-o-convidado-recebe">7.3 One-Pager do Convidado — o que o convidado recebe</h3>
+<blockquote>
+<p><strong>O convidado recebe:</strong> a pergunta da temporada · os 4 pilares · a Regra Zero · o tema do episódio · a duração · os combinados de edição.</p>
+<p><strong>O convidado NÃO recebe:</strong> as 5 perguntas fortes · os territórios de história · as possibilidades de corte.</p>
+</blockquote>
+<p><strong>Texto-padrão do combinado:</strong></p>
+<pre><code>O que a gente combina com você:
+
+1. Não existe roteiro. A gente não vai te mandar perguntas antes porque
+   a conversa precisa ser real.
+2. Você pode não responder qualquer coisa. Basta dizer. Não insistimos.
+3. Nada que você contar vai ser cortado de um jeito que mude o sentido.
+4. Se tiver um trecho sensível, você revisa antes de ir ao ar.
+5. A gente não vai te pedir frase de efeito. Se a conversa for boa,
+   o corte aparece sozinho.
+6. No fim, a gente vai te fazer uma pergunta: qual é o seu 1% de hoje?
+</code></pre>
+<h3 id="74-pipeline-preencher">7.4 Pipeline (preencher)</h3>
+<p>Manter sempre <strong>3 nomes por episódio</strong>: confirmado, reserva e reserva 2 — pessoas reais cancelam, e a cadência semanal não pode quebrar.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ep</th>
+<th>Perfil buscado</th>
+<th>Confirmado</th>
+<th>Reserva 1</th>
+<th>Reserva 2</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E02</td>
+<td>Transição de carreira em curso</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E03</td>
+<td>Pai/mãe em jornada dupla</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E04</td>
+<td>Agiu com medo</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E05</td>
+<td>Rotina longa comprovada</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E06</td>
+<td>Viveu aperto financeiro</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E07</td>
+<td>Burnout/ansiedade, fora da fase aguda</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E08</td>
+<td>Origem marcante (pode ser dupla)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E09</td>
+<td>Perda grande, +1 ano, em reconstrução</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>Comunidade, praticou o 1%</td>
+<td></td>
+<td></td>
+<td></td>
+<td>▢</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="8-plano-de-gravação">8. Plano de gravação</h2>
+<h3 id="81-estratégia-blocos-não-semanal">8.1 Estratégia: blocos, não semanal</h3>
+<p>Gravar semanalmente é o que mata podcast iniciante. A Temporada 1 grava em <strong>três blocos</strong> e publica semanalmente, mantendo sempre estoque à frente.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>Episódios</th>
+<th>Quando</th>
+<th>Estoque ao estrear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bloco A</strong></td>
+<td>E01, E02, E03</td>
+<td>Antes da estreia</td>
+<td>3 episódios prontos</td>
+</tr>
+<tr>
+<td><strong>Bloco B</strong></td>
+<td>E04, E05, E06, E07</td>
+<td>Semana 2 da publicação</td>
+<td>+4</td>
+</tr>
+<tr>
+<td><strong>Bloco C</strong></td>
+<td>E08, E09, E10</td>
+<td>Semana 6 da publicação</td>
+<td>+3</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Regra de estoque:</strong> nunca publicar com menos de <strong>2 episódios prontos</strong> na gaveta. Se o estoque chegar a 1, pausa-se a captação e grava-se.</p>
+<blockquote>
+<p><strong>E10 é a exceção obrigatória:</strong> só pode ser gravado depois que a comunidade estiver rodando, porque o convidado sai dela. Gravar na semana 8.</p>
+</blockquote>
+<h3 id="82-dia-de-gravação">8.2 Dia de gravação</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Horário</th>
+<th>Etapa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−60 min</td>
+<td>Montagem, teste de áudio, luz, cartões, baterias</td>
+</tr>
+<tr>
+<td>−20 min</td>
+<td>Chegada do convidado. <strong>Café e conversa fora da câmera</strong> — sem falar do tema</td>
+</tr>
+<tr>
+<td>−5 min</td>
+<td>Combinado rápido: duração, liberdade de não responder, pergunta final</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Grava. Som rodando antes de todo mundo sentar</td>
+</tr>
+<tr>
+<td>+75 min</td>
+<td>Fim. Pergunta ritual gravada <strong>duas vezes</strong> (uma de segurança)</td>
+</tr>
+<tr>
+<td>+85 min</td>
+<td>Backup duplo <strong>antes</strong> de desmontar qualquer coisa</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Checklist técnico mínimo</strong>
+- [ ] Gravador de áudio independente das câmeras
+- [ ] Microfone por pessoa, teste individual
+- [ ] Claquete de palma no início (sincronia)
+- [ ] Cartões formatados e baterias carregadas
+- [ ] Backup duplo antes de desmontar
+- [ ] Timestamps dos momentos fortes anotados <strong>durante</strong> a gravação (Master §12.2)</p>
+<h3 id="83-pós-produção-por-episódio">8.3 Pós-produção por episódio</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Prazo</th>
+<th>Responsável</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backup + sincronia</td>
+<td>D+1</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>Decupagem com marcação de cortes (impacto/reflexão)</td>
+<td>D+2</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>Corte do episódio completo</td>
+<td>D+4</td>
+<td>Editor</td>
+</tr>
+<tr>
+<td>Pacote de cortes (Master §12.1)</td>
+<td>D+6</td>
+<td>Editor</td>
+</tr>
+<tr>
+<td>Revisão do convidado (quando aplicável)</td>
+<td>D+5</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>Thumbnail + descrição + capítulos</td>
+<td>D+6</td>
+<td>Produção</td>
+</tr>
+<tr>
+<td>Publicação</td>
+<td>D+7</td>
+<td>Produção</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="9-a-comunidade-ao-longo-da-temporada">9. A comunidade ao longo da temporada</h2>
+<p>A comunidade <strong>abre junto com o E01</strong>, não depois. Sem ela, a temporada é só um canal de vídeo.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Episódios</th>
+<th>Foco da comunidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Abertura</strong></td>
+<td>E01–E03</td>
+<td>Fundar o ritual: todo mundo posta o primeiro 1%</td>
+</tr>
+<tr>
+<td><strong>Aprofundamento</strong></td>
+<td>E04–E07</td>
+<td>Pergunta temática semanal ligada ao episódio</td>
+</tr>
+<tr>
+<td><strong>Protagonismo</strong></td>
+<td>E08–E10</td>
+<td>A comunidade vira conteúdo: histórias dela entram no ar</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ciclo semanal:</strong> Master §13.3.</p>
+<p><strong>Caminho para o E10:</strong> a partir do E05, a produção marca candidatos — gente que postou 1% de forma consistente e tem história real. Convite feito na semana 7.</p>
+<blockquote>
+<p><strong>Regra:</strong> nada que alguém postou na comunidade vira conteúdo público sem autorização explícita (Master §13.2).</p>
+</blockquote>
+<hr />
+<h2 id="10-o-que-mede-o-sucesso-da-temporada-1">10. O que mede o sucesso da Temporada 1</h2>
+<p>A Temporada 1 é uma temporada de <strong>fundação</strong>, não de escala. As metas refletem isso.</p>
+<h3 id="métrica-principal">Métrica principal</h3>
+<blockquote>
+<p><strong>Número de pessoas que responderam "qual é o seu 1% de hoje?" mais de uma vez.</strong></p>
+</blockquote>
+<p>Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repetição é vaidade.</p>
+<h3 id="painel-por-camada">Painel por camada</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Métrica</th>
+<th>Meta T1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Episódio completo</td>
+<td>Retenção média</td>
+<td>≥ 40%</td>
+</tr>
+<tr>
+<td>Episódio completo</td>
+<td>Tempo médio assistido</td>
+<td>≥ 20 min</td>
+</tr>
+<tr>
+<td>Cortes de impacto</td>
+<td>% de alcance em não seguidores</td>
+<td>≥ 60%</td>
+</tr>
+<tr>
+<td>Cortes de reflexão</td>
+<td>Salvamentos + compartilhamentos</td>
+<td>acima da média do canal</td>
+</tr>
+<tr>
+<td>Comunidade</td>
+<td><strong>Membros com ≥ 2 participações</strong></td>
+<td><strong>a métrica principal</strong></td>
+</tr>
+<tr>
+<td>Temporada</td>
+<td>Episódios publicados no dia combinado</td>
+<td><strong>10 de 10</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="metas-qualitativas">Metas qualitativas</h3>
+<ul>
+<li><input type="checkbox" disabled /> Pelo menos <strong>3 episódios</strong> em que o convidado disse algo que ele mesmo não esperava dizer</li>
+<li><input type="checkbox" disabled /> Pelo menos <strong>1 convidado</strong> que não é da rede pessoal dos hosts</li>
+<li><input type="checkbox" disabled /> <strong>Zero</strong> cortes publicados que distorcem o sentido original</li>
+<li><input type="checkbox" disabled /> <strong>Zero</strong> episódios gravados sem o pacote planejado antes</li>
+<li><input type="checkbox" disabled /> O E10 com um convidado <strong>real</strong> da comunidade</li>
+</ul>
+<blockquote>
+<p><strong>Consistência acima de intensidade vale também para nós.</strong> Publicar 10 episódios medianos no prazo é vitória. Publicar 4 excelentes e sumir é derrota.</p>
+</blockquote>
+<hr />
+<h2 id="11-riscos-e-regras-de-proteção">11. Riscos e regras de proteção</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Risco</th>
+<th>Sinal de alerta</th>
+<th>Regra de proteção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Virar palestra</strong></td>
+<td>Hosts explicando mais do que escutando</td>
+<td>Toda afirmação de filosofia vem colada em história concreta</td>
+</tr>
+<tr>
+<td><strong>Resolver a dor cedo demais</strong></td>
+<td>Bloco 2 durando menos de 15 min</td>
+<td>Não entrar no Bloco 3 antes do peso estar estabelecido</td>
+</tr>
+<tr>
+<td><strong>Fabricar viral</strong></td>
+<td>"Fala aquela frase de novo pro corte"</td>
+<td><strong>Regra Zero.</strong> Proibido pedir repetição para render corte</td>
+</tr>
+<tr>
+<td><strong>Quebra de cadência</strong></td>
+<td>Estoque em 1 episódio</td>
+<td>Pausa a captação e grava</td>
+</tr>
+<tr>
+<td><strong>Convidado se arrepender</strong></td>
+<td>Hesitação na gravação</td>
+<td>Direito de veto combinado antes; revisão de cortes sensíveis</td>
+</tr>
+<tr>
+<td><strong>Tudo virar sobre o Kayan</strong></td>
+<td>2 episódios seguidos centrados na história dele</td>
+<td>Máx. 1 em 5 (Master §11.2)</td>
+</tr>
+<tr>
+<td><strong>Episódio fora do eixo</strong></td>
+<td>Boa conversa que não responde a pergunta da temporada</td>
+<td>Guarda para a T2 ou publica como material avulso, fora da numeração</td>
+</tr>
+<tr>
+<td><strong>Dar conselho técnico</strong></td>
+<td>Convidado virando consultor em E06/E07</td>
+<td>Host traz de volta para a experiência vivida</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="12-changelog">12. Changelog</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Mudanças</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.0</strong></td>
+<td>out/2025</td>
+<td>Primeira versão. Define a pergunta da temporada, arco em 3 atos, 10 fichas de episódio, trilha e one-pager do convidado, gravação em 3 blocos com estoque mínimo, integração com a comunidade e painel de métricas com participação recorrente como métrica principal.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="próximos-documentos">Próximos documentos</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Documento</th>
+<th>Depende de</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2.1</strong></td>
+<td>Roteiro de direção do piloto (E01)</td>
+<td>este documento</td>
+</tr>
+<tr>
+<td><strong>2.2</strong></td>
+<td>Lista inicial de convidados (pipeline da §7.4 preenchido)</td>
+<td>este documento</td>
+</tr>
+<tr>
+<td><strong>2.3</strong></td>
+<td>Plano de gravação do Bloco A</td>
+<td>2.1 + 2.2</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Sistema de Conteúdo</td>
+<td>Master §12</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Kit Visual Definitivo</td>
+<td>Master §8 e §9</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Lançamento de 30 Dias</td>
+<td><strong>Bloco A gravado</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>BrotherCast · Temporada 1</strong>
+<em>Como pessoas comuns continuam avançando quando a vida real pesa.</em></p>
+<blockquote>
+<p>Primeiro vem a conversa verdadeira. Depois encontramos o corte.</p>
+</blockquote>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p class="sig">BrotherCast</p>
+      <p class="tag">Experiências que conectam. Conversas que destravam.</p>
+      <p class="quote">“O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.”</p>
+    </footer>
+
+    <script>
+      // Destaca no sumário a seção visível.
+      const links = [...document.querySelectorAll(".toc a")];
+      const byId = new Map(links.map((a) => [decodeURIComponent(a.hash.slice(1)), a]));
+      const headings = [...document.querySelectorAll(".doc h2")].filter((h) => byId.has(h.id));
+
+      if (headings.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              links.forEach((a) => a.classList.remove("active"));
+              byId.get(entry.target.id)?.classList.add("active");
+            });
+          },
+          { rootMargin: "-88px 0px -72% 0px", threshold: 0 }
+        );
+        headings.forEach((h) => observer.observe(h));
+      }
+    </script>
+  </body>
+</html>

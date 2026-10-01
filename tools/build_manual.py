@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Gera a versão navegável (HTML) do BROTHERCAST MASTER 1.0 a partir do Markdown.
+Gera as versões navegáveis (HTML) dos documentos internos do BrotherCast.
 
-Fonte da verdade:  docs/BROTHERCAST-MASTER-1.0.md
-Saída:             manual/index.html
+Fonte da verdade:  docs/*.md
+Saída:             internal/manual/   (USO INTERNO — fora do publish do Netlify)
 
 Uso:
     pip install markdown
@@ -20,8 +20,53 @@ import unicodedata
 import markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "docs" / "BROTHERCAST-MASTER-1.0.md"
-OUTPUT = ROOT / "manual" / "index.html"
+DOCS_DIR = ROOT / "docs"
+OUT_DIR = ROOT / "internal" / "manual"
+
+# (arquivo markdown, html de saída, rótulo de navegação, título, kicker, destaque, chips do hero)
+DOCUMENTS = [
+    {
+        "source": "BROTHERCAST-MASTER-1.0.md",
+        "output": "index.html",
+        "nav": "Master 1.1",
+        "badge": "Master 1.1",
+        "kicker": "Documento 1 · versão 1.1",
+        "title": "BrotherCast Master",
+        "highlight": "o que é, o que não é e como produzir.",
+        "lead": (
+            "Marca, filosofia, público, tom de voz, identidade visual, regras editoriais e "
+            "ecossistema de conteúdo. Fonte única da verdade para editor, designer, produtor, "
+            "convidado ou IA."
+        ),
+        "chips": ["Outubro de 2025", "Status: vigente", "17 seções", "Uso interno"],
+        "shortcuts": [
+            ("#1-a-regra-que-vem-antes-de-todas-as-outras", "Regra Zero"),
+            ("#2-manifesto", "Manifesto"),
+            ("#10-ecossistema-de-conteúdo", "Ecossistema"),
+            ("#15-briefing-curto-para-ias-e-colaboradores", "Briefing"),
+        ],
+    },
+    {
+        "source": "TEMPORADA-1.md",
+        "output": "temporada-1.html",
+        "nav": "Temporada 1",
+        "badge": "Temporada 1",
+        "kicker": "Documento 2 · versão 1.0",
+        "title": "Temporada 1",
+        "highlight": "quando a vida real pesa.",
+        "lead": (
+            "Como pessoas comuns continuam avançando quando a vida real pesa. Arco narrativo em "
+            "três atos, fichas dos dez episódios, trilha de convidados, plano de gravação e métricas."
+        ),
+        "chips": ["Outubro de 2025", "10 episódios", "3 blocos de gravação", "Uso interno"],
+        "shortcuts": [
+            ("#1-a-pergunta-da-temporada", "A pergunta"),
+            ("#4-mapa-dos-10-episódios", "Os 10 episódios"),
+            ("#7-convidados-critérios-e-trilha", "Convidados"),
+            ("#8-plano-de-gravação", "Gravação"),
+        ],
+    },
+]
 
 
 def slugify(text: str, _sep: str = "-") -> str:
@@ -38,10 +83,11 @@ TEMPLATE = """<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="BrotherCast Master 1.0 — documento oficial de marca, filosofia e produção do BrotherCast."
+      content="{meta_description}"
     />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta name="theme-color" content="#0d1117" />
-    <title>BrotherCast Master 1.0 | Documento oficial</title>
+    <title>Uso interno · BrotherCast — {title}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,6 +138,37 @@ TEMPLATE = """<!doctype html>
 
       :focus-visible {{ outline: 3px solid var(--mustard-light); outline-offset: 4px; }}
 
+      /* ---------- faixa de uso interno ---------- */
+      .internal-bar {{
+        position: relative;
+        z-index: 45;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 9px 18px;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(229, 169, 61, 0.14) 0 14px,
+          rgba(229, 169, 61, 0.07) 14px 28px
+        );
+        border-bottom: 1px solid rgba(229, 169, 61, 0.35);
+        color: var(--mustard-light);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+      }}
+      .internal-bar em {{
+        color: var(--muted);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }}
+
       /* ---------- topbar ---------- */
       .topbar {{
         position: sticky;
@@ -126,6 +203,21 @@ TEMPLATE = """<!doctype html>
         letter-spacing: 0.16em;
         text-transform: uppercase;
       }}
+
+      .brand-group {{ display: flex; align-items: center; gap: 18px; min-width: 0; }}
+
+      .docswitch {{ display: flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(244, 241, 237, 0.03); }}
+      .docswitch a {{
+        padding: 5px 13px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+      }}
+      .docswitch a:hover {{ color: var(--paper); }}
+      .docswitch a[aria-current="page"] {{ background: rgba(229, 169, 61, 0.16); color: var(--mustard-light); }}
 
       .topbar .links {{ display: flex; align-items: center; gap: 18px; }}
       .topbar .links a {{
@@ -272,6 +364,14 @@ TEMPLATE = """<!doctype html>
       .doc blockquote p {{ margin-bottom: 10px; }}
       .doc blockquote p:last-child {{ margin-bottom: 0; }}
       .doc blockquote strong {{ color: var(--mustard-light); }}
+      .doc blockquote h3 {{
+        margin: 2px 0 6px;
+        font-family: var(--display);
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--mustard-light);
+      }}
       .doc blockquote hr {{ margin: 16px 0; border: 0; border-top: 1px solid rgba(229, 169, 61, 0.25); }}
 
       .doc hr {{ margin: 52px 0; border: 0; border-top: 1px solid var(--line); }}
@@ -347,44 +447,42 @@ TEMPLATE = """<!doctype html>
       @media (max-width: 620px) {{
         body {{ font-size: 16px; }}
         .topbar {{ padding: 14px 18px; }}
-        .topbar .links a:not(.ghsrc) {{ display: none; }}
+        .topbar .links a {{ display: none; }}
+        .docswitch a {{ font-size: 0.7rem; padding: 5px 10px; }}
         .hero {{ padding: 64px 18px 52px; }}
         .layout {{ padding-inline: 18px; }}
       }}
 
       @media print {{
         body {{ background: #fff; color: #111; }}
-        .topbar, .toc, .hero .meta {{ display: none; }}
+        .topbar, .toc, .hero .meta, .internal-bar {{ display: none; }}
         .doc {{ max-width: none; }}
       }}
     </style>
   </head>
   <body>
+    <div class="internal-bar">
+      Documento interno — não publicar
+      <em>Manual operacional da equipe. Não é conteúdo para a audiência.</em>
+    </div>
+
     <header class="topbar">
-      <a class="brand" href="#inicio">BrotherCast</a>
+      <div class="brand-group">
+        <a class="brand" href="#inicio">BrotherCast</a>
+        <nav class="docswitch" aria-label="Documentos">{docswitch}</nav>
+      </div>
       <nav class="links">
-        <a href="#1-a-regra-que-vem-antes-de-todas-as-outras">Regra Zero</a>
-        <a href="#2-manifesto">Manifesto</a>
-        <a href="#10-ecossistema-de-conteúdo">Ecossistema</a>
-        <a href="#15-briefing-curto-para-ias-e-colaboradores">Briefing</a>
-        <span class="version">Master 1.0</span>
+        {shortcuts}
+        <span class="version">{badge}</span>
       </nav>
     </header>
 
     <section class="hero" id="inicio">
       <div class="hero-inner">
-        <p class="kicker">Documento oficial · versão 1.0</p>
-        <h1>BrotherCast Master <em>o que é, o que não é e como produzir.</em></h1>
-        <p>
-          Marca, filosofia, público, tom de voz, identidade visual, regras editoriais e ecossistema de
-          conteúdo. Fonte única da verdade para editor, designer, produtor, convidado ou IA.
-        </p>
-        <div class="meta">
-          <span>Outubro de 2025</span>
-          <span>Status: vigente</span>
-          <span>17 seções</span>
-          <span>Descoberta conceitual encerrada</span>
-        </div>
+        <p class="kicker">{kicker}</p>
+        <h1>{title} <em>{highlight}</em></h1>
+        <p>{lead}</p>
+        <div class="meta">{chips}</div>
       </div>
     </section>
 
@@ -430,8 +528,9 @@ TEMPLATE = """<!doctype html>
 """
 
 
-def build() -> None:
-    text = SOURCE.read_text(encoding="utf-8")
+def render(doc: dict) -> str:
+    """Converte um documento markdown no HTML navegável."""
+    text = (DOCS_DIR / doc["source"]).read_text(encoding="utf-8")
 
     md = markdown.Markdown(
         extensions=["extra", "sane_lists", "toc"],
@@ -445,24 +544,56 @@ def build() -> None:
     )
 
     # Checkboxes do checklist viram inputs reais.
-    content = re.sub(
-        r"<li>\[ \]\s*", '<li><input type="checkbox" disabled /> ', content
-    )
+    content = re.sub(r"<li>\[ \]\s*", '<li><input type="checkbox" disabled /> ', content)
     content = re.sub(
         r"<li>\[x\]\s*", '<li><input type="checkbox" checked disabled /> ', content
     )
 
+    # Links entre documentos: .md -> .html gerado.
+    for other in DOCUMENTS:
+        content = content.replace(f'href="{other["source"]}"', f'href="{other["output"]}"')
+
     # O sumário manual do Markdown é redundante na versão web: remove-o.
     content = re.sub(
-        r'<h2 id="sumário">.*?</ol>\s*', "", content, count=1, flags=re.DOTALL
+        r'<h2 id="sumário">.*?</(?:ol|ul)>\s*', "", content, count=1, flags=re.DOTALL
     )
-
-    # O item "Sumário" não existe mais no corpo da página web.
     toc = re.sub(r'<li><a href="#sumário">.*?</a></li>\s*', "", md.toc, count=1)
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(TEMPLATE.format(toc=toc, content=content), encoding="utf-8")
-    print(f"ok  {OUTPUT.relative_to(ROOT)}  ({len(OUTPUT.read_text(encoding='utf-8')):,} bytes)")
+    docswitch = "".join(
+        '<a href="{href}"{current}>{label}</a>'.format(
+            href=other["output"],
+            current=' aria-current="page"' if other is doc else "",
+            label=html.escape(other["nav"]),
+        )
+        for other in DOCUMENTS
+    )
+    shortcuts = "".join(
+        f'<a href="{href}">{html.escape(label)}</a>' for href, label in doc["shortcuts"]
+    )
+    chips = "".join(f"<span>{html.escape(c)}</span>" for c in doc["chips"])
+
+    return TEMPLATE.format(
+        meta_description=html.escape(f'{doc["title"]} — documento interno do BrotherCast.'),
+        title=html.escape(doc["title"]),
+        highlight=html.escape(doc["highlight"]),
+        kicker=html.escape(doc["kicker"]),
+        lead=html.escape(doc["lead"]),
+        badge=html.escape(doc["badge"]),
+        chips=chips,
+        docswitch=docswitch,
+        shortcuts=shortcuts,
+        toc=toc,
+        content=content,
+    )
+
+
+def build() -> None:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for doc in DOCUMENTS:
+        target = OUT_DIR / doc["output"]
+        target.write_text(render(doc), encoding="utf-8")
+        size = len(target.read_text(encoding="utf-8"))
+        print(f"ok  {target.relative_to(ROOT)}  ({size:,} bytes)")
 
 
 if __name__ == "__main__":

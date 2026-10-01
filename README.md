@@ -6,22 +6,40 @@ Podcast de conversas honestas com pessoas reais sobre dificuldades reais — e o
 
 ---
 
-## 📘 Documento oficial
+## 🔒 Público × interno
 
-| Documento | Arquivo | Status |
-|---|---|---|
-| **BrotherCast Master 1.0** | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
-| Temporada 1 | — | ▢ próximo |
-| Sistema de Conteúdo | — | ▢ |
-| Kit Visual Definitivo | — | ▢ |
-| Lançamento de 30 Dias | — | ▢ |
+Este repositório tem duas camadas. **Só `site/` vai para o ar.**
 
-O **Master 1.0** é a fonte única da verdade: manifesto, posicionamento, arquitetura da marca, público, tom de voz, pilares, identidade visual, regras editoriais, ecossistema e sistema de produção.
-Qualquer pessoa — editor, designer, produtor, convidado ou IA — deve conseguir ler só esse arquivo e saber **o que é, o que não é e como produzir BrotherCast**.
+| | Pasta | Vai para o ar? | Conteúdo |
+|---|---|---|---|
+| **Público** | `site/` | ✅ sim | Propósito, manifesto, hosts, episódios, convidados, Movimento 1% |
+| **Interno** | `docs/`, `internal/`, `tools/` | ❌ **não** | Master, Temporada, regras, estratégia, edição, distribuição, métricas |
 
-> ⚠️ Não existe versão paralela desse documento em outra ferramenta. Mudança de diretriz se faz **aqui**, com registro no changelog.
+A separação é garantida pelo `netlify.toml` (`publish = "site"`). As páginas internas levam `noindex` e faixa de aviso.
 
-**Precisa briefar alguém rápido?** Copie o bloco da seção *15 — Briefing curto para IAs e colaboradores*.
+> ⚠️ Antes de publicar qualquer coisa: *isto é propósito e história (público) ou é método e critério (interno)?*
+
+---
+
+## 📘 Documentos oficiais
+
+| # | Documento | Arquivo | Status |
+|---|---|---|---|
+| **1** | **BrotherCast Master** (v1.1) | [`docs/BROTHERCAST-MASTER-1.0.md`](docs/BROTHERCAST-MASTER-1.0.md) | ✅ vigente |
+| **2** | **Temporada 1** (v1.0) | [`docs/TEMPORADA-1.md`](docs/TEMPORADA-1.md) | ✅ vigente |
+| 2.1 | Roteiro de direção do piloto (E01) | — | ▢ próximo |
+| 2.2 | Lista inicial de convidados | — | ▢ |
+| 2.3 | Plano de gravação do Bloco A | — | ▢ |
+| 3 | Sistema de Conteúdo | — | ▢ |
+| 4 | Kit Visual Definitivo | — | ▢ |
+| 4.1 | Manifesto BrotherCast (peça pública) | — | ▢ |
+| 5 | Lançamento de 30 Dias | — | ▢ depende do Bloco A gravado |
+
+O **Master** é a fonte única da verdade; a **Temporada 1** deriva dele. Em caso de conflito, o Master vence.
+
+> ⚠️ Não existe versão paralela desses documentos em outra ferramenta. Mudança de diretriz se faz **aqui**, com registro no changelog.
+
+**Precisa briefar alguém rápido?** Copie o bloco da seção *15 — Briefing curto para IAs e colaboradores* do Master. Para um colaborador externo, mande a ficha específica do trabalho dele, não o documento inteiro.
 
 ---
 
@@ -29,24 +47,31 @@ Qualquer pessoa — editor, designer, produtor, convidado ou IA — deve consegu
 
 ```
 .
-├── index.html                      # landing page pública
-├── manual/index.html               # Master 1.0 em versão navegável (gerado)
-├── docs/BROTHERCAST-MASTER-1.0.md  # fonte da verdade
-├── tools/build_manual.py           # gera manual/ a partir de docs/
-└── netlify.toml
+├── site/                           # 🌐 PÚBLICO — única pasta publicada
+│   └── index.html
+├── docs/                           # 🔒 fonte da verdade (markdown)
+│   ├── BROTHERCAST-MASTER-1.0.md
+│   └── TEMPORADA-1.md
+├── internal/manual/                # 🔒 versão navegável (gerada)
+│   ├── index.html                  #    Master
+│   └── temporada-1.html            #    Temporada 1
+├── tools/build_manual.py           # gera internal/manual/ a partir de docs/
+└── netlify.toml                    # publish = "site"
 ```
 
 ## 🔧 Rodando localmente
 
 ```bash
-python3 -m http.server 8000
-# landing page → http://localhost:8000/
-# manual       → http://localhost:8000/manual/
+# site público (igual ao que o Netlify publica)
+python3 -m http.server 8000 --directory site
+
+# manual interno
+python3 -m http.server 8001 --directory internal/manual
 ```
 
 ## ♻️ Regerando o manual
 
-O `manual/index.html` é **gerado**. Edite sempre o Markdown, nunca o HTML.
+O HTML em `internal/manual/` é **gerado**. Edite sempre o Markdown em `docs/`, nunca o HTML.
 
 ```bash
 pip install markdown

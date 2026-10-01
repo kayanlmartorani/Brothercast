@@ -1,0 +1,1395 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="BrotherCast Master 1.0 — documento oficial de marca, filosofia e produção do BrotherCast."
+    />
+    <meta name="theme-color" content="#0d1117" />
+    <title>BrotherCast Master 1.0 | Documento oficial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --night: #0d1117;
+        --night-deep: #080b10;
+        --surface: #131a23;
+        --surface-2: #19212c;
+        --mustard: #e5a93d;
+        --mustard-light: #f1c56b;
+        --wood: #9c7247;
+        --paper: #f4f1ed;
+        --muted: #a0aab5;
+        --line: rgba(244, 241, 237, 0.12);
+        --display: "Playfair Display", Georgia, serif;
+        --body: "Manrope", system-ui, sans-serif;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+      body {
+        margin: 0;
+        background: var(--night);
+        color: var(--paper);
+        font-family: var(--body);
+        font-size: 17px;
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        content: "";
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      :focus-visible { outline: 3px solid var(--mustard-light); outline-offset: 4px; }
+
+      /* ---------- topbar ---------- */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 28px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 11, 16, 0.88);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar a.brand {
+        font-family: var(--display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--paper);
+        text-decoration: none;
+      }
+
+      .topbar .version {
+        padding: 4px 12px;
+        border: 1px solid rgba(229, 169, 61, 0.45);
+        border-radius: 999px;
+        color: var(--mustard);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .topbar .links { display: flex; align-items: center; gap: 18px; }
+      .topbar .links a {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+      }
+      .topbar .links a:hover { color: var(--mustard-light); }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative;
+        padding: 96px 28px 72px;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background:
+          radial-gradient(900px 420px at 18% -10%, rgba(229, 169, 61, 0.18), transparent 70%),
+          radial-gradient(700px 380px at 92% 110%, rgba(156, 114, 71, 0.22), transparent 72%),
+          var(--night-deep);
+      }
+
+      .hero-inner { width: min(100%, 860px); margin-inline: auto; }
+
+      .hero .kicker {
+        margin: 0 0 18px;
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        font-family: var(--display);
+        font-size: clamp(2.6rem, 7vw, 4.4rem);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.015em;
+      }
+
+      .hero h1 em { display: block; color: var(--mustard); font-style: italic; font-weight: 400; }
+
+      .hero p { max-width: 58ch; margin: 0; color: var(--muted); font-size: 1.04rem; }
+
+      .hero .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .hero .meta span {
+        padding: 7px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(244, 241, 237, 0.04);
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      /* ---------- layout ---------- */
+      .layout {
+        display: grid;
+        grid-template-columns: 278px minmax(0, 1fr);
+        gap: 52px;
+        width: min(100%, 1240px);
+        margin-inline: auto;
+        padding: 56px 28px 120px;
+      }
+
+      .toc { position: sticky; top: 92px; align-self: start; max-height: calc(100vh - 130px); overflow-y: auto; }
+      .toc h2 {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .toc ul { margin: 0; padding: 0; list-style: none; border-left: 1px solid var(--line); }
+      .toc li a {
+        display: block;
+        padding: 7px 0 7px 16px;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .toc li a:hover { color: var(--paper); border-left-color: var(--wood); }
+      .toc li a.active { color: var(--mustard); border-left-color: var(--mustard); font-weight: 600; }
+      .toc ul ul { display: none; }
+
+      /* ---------- document ---------- */
+      .doc { min-width: 0; max-width: 80ch; }
+
+      .doc h1 { display: none; }
+
+      .doc h2 {
+        margin: 68px 0 22px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        font-family: var(--display);
+        font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+        font-weight: 700;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+      }
+      .doc h2:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
+
+      .doc h3 {
+        margin: 44px 0 14px;
+        font-size: 1.16rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: var(--mustard-light);
+      }
+
+      .doc h4 { margin: 30px 0 10px; font-size: 1rem; font-weight: 700; color: var(--paper); }
+
+      .doc p { margin: 0 0 18px; }
+      .doc a { color: var(--mustard); text-decoration-color: rgba(229, 169, 61, 0.4); text-underline-offset: 3px; }
+      .doc a:hover { color: var(--mustard-light); }
+      .doc strong { color: #fff; font-weight: 700; }
+
+      .doc ul, .doc ol { margin: 0 0 20px; padding-left: 22px; }
+      .doc li { margin-bottom: 8px; }
+      .doc li::marker { color: var(--mustard); }
+
+      .doc blockquote {
+        position: relative;
+        margin: 28px 0;
+        padding: 24px 28px;
+        border: 1px solid rgba(229, 169, 61, 0.26);
+        border-left: 3px solid var(--mustard);
+        border-radius: 0 12px 12px 0;
+        background: linear-gradient(100deg, rgba(229, 169, 61, 0.08), rgba(229, 169, 61, 0.01));
+      }
+      .doc blockquote p { margin-bottom: 10px; }
+      .doc blockquote p:last-child { margin-bottom: 0; }
+      .doc blockquote strong { color: var(--mustard-light); }
+      .doc blockquote hr { margin: 16px 0; border: 0; border-top: 1px solid rgba(229, 169, 61, 0.25); }
+
+      .doc hr { margin: 52px 0; border: 0; border-top: 1px solid var(--line); }
+
+      .table-wrap { margin: 0 0 26px; overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+      .doc table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+      .doc thead th {
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--mustard);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: left;
+        white-space: nowrap;
+      }
+      .doc tbody td { padding: 13px 16px; border-bottom: 1px solid rgba(244, 241, 237, 0.07); vertical-align: top; }
+      .doc tbody tr:last-child td { border-bottom: 0; }
+      .doc tbody tr:nth-child(even) { background: rgba(244, 241, 237, 0.025); }
+
+      .doc code {
+        padding: 2px 6px;
+        border-radius: 5px;
+        background: rgba(229, 169, 61, 0.12);
+        color: var(--mustard-light);
+        font-family: var(--mono);
+        font-size: 0.86em;
+      }
+
+      .doc pre {
+        margin: 0 0 26px;
+        padding: 22px 24px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--night-deep);
+        line-height: 1.55;
+      }
+      .doc pre code { padding: 0; background: none; color: var(--muted); font-size: 0.8rem; }
+
+      .doc input[type="checkbox"] { margin-right: 8px; accent-color: var(--mustard); }
+      .doc ul:has(> li > input[type="checkbox"]) { list-style: none; padding-left: 2px; }
+
+      /* ---------- footer ---------- */
+      .footer {
+        padding: 48px 28px 64px;
+        border-top: 1px solid var(--line);
+        background: var(--night-deep);
+        text-align: center;
+      }
+      .footer .sig {
+        margin: 0 0 8px;
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .footer .tag { margin: 0 0 24px; color: var(--mustard); font-style: italic; }
+      .footer .quote { margin: 0 auto; max-width: 46ch; color: var(--muted); font-size: 0.92rem; }
+
+      @media (max-width: 960px) {
+        .layout { grid-template-columns: 1fr; gap: 0; padding-top: 36px; }
+        .toc {
+          position: static;
+          max-height: none;
+          margin-bottom: 44px;
+          padding-bottom: 28px;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 620px) {
+        body { font-size: 16px; }
+        .topbar { padding: 14px 18px; }
+        .topbar .links a:not(.ghsrc) { display: none; }
+        .hero { padding: 64px 18px 52px; }
+        .layout { padding-inline: 18px; }
+      }
+
+      @media print {
+        body { background: #fff; color: #111; }
+        .topbar, .toc, .hero .meta { display: none; }
+        .doc { max-width: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio">BrotherCast</a>
+      <nav class="links">
+        <a href="#1-a-regra-que-vem-antes-de-todas-as-outras">Regra Zero</a>
+        <a href="#2-manifesto">Manifesto</a>
+        <a href="#10-ecossistema-de-conteúdo">Ecossistema</a>
+        <a href="#15-briefing-curto-para-ias-e-colaboradores">Briefing</a>
+        <span class="version">Master 1.0</span>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <p class="kicker">Documento oficial · versão 1.0</p>
+        <h1>BrotherCast Master <em>o que é, o que não é e como produzir.</em></h1>
+        <p>
+          Marca, filosofia, público, tom de voz, identidade visual, regras editoriais e ecossistema de
+          conteúdo. Fonte única da verdade para editor, designer, produtor, convidado ou IA.
+        </p>
+        <div class="meta">
+          <span>Outubro de 2025</span>
+          <span>Status: vigente</span>
+          <span>17 seções</span>
+          <span>Descoberta conceitual encerrada</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="layout">
+      <aside class="toc" aria-label="Sumário">
+        <h2>Sumário</h2>
+        <div class="toc">
+<ul>
+<li><a href="#1-a-regra-que-vem-antes-de-todas-as-outras">1. A regra que vem antes de todas as outras</a></li>
+<li><a href="#2-manifesto">2. Manifesto</a></li>
+<li><a href="#3-posicionamento">3. Posicionamento</a></li>
+<li><a href="#4-arquitetura-da-marca">4. Arquitetura da marca</a></li>
+<li><a href="#5-a-hierarquia-filosófica-crença-ação-sustentação">5. A hierarquia filosófica (crença, ação, sustentação)</a></li>
+<li><a href="#6-público">6. Público</a></li>
+<li><a href="#7-tom-de-voz">7. Tom de voz</a></li>
+<li><a href="#8-identidade-visual">8. Identidade visual</a></li>
+<li><a href="#9-o-manifesto-como-peça-gráfica">9. O manifesto como peça gráfica</a></li>
+<li><a href="#10-ecossistema-de-conteúdo">10. Ecossistema de conteúdo</a></li>
+<li><a href="#11-regras-editoriais">11. Regras editoriais</a></li>
+<li><a href="#12-sistema-de-produção-por-episódio">12. Sistema de produção por episódio</a></li>
+<li><a href="#13-comunidade-e-o-ritual-do-1">13. Comunidade e o ritual do 1%</a></li>
+<li><a href="#14-o-que-é-o-que-não-é">14. O que é / o que não é</a></li>
+<li><a href="#15-briefing-curto-para-ias-e-colaboradores">15. Briefing curto para IAs e colaboradores</a></li>
+<li><a href="#16-roadmap-dos-próximos-documentos">16. Roadmap dos próximos documentos</a></li>
+<li><a href="#17-glossário-e-governança">17. Glossário e governança</a></li>
+</ul>
+</div>
+
+      </aside>
+
+      <article class="doc" id="conteudo">
+        <h1 id="brothercast-master-10">BROTHERCAST MASTER 1.0</h1>
+<p><strong>Documento oficial de marca, filosofia e produção.</strong>
+Versão 1.0 — outubro de 2025 · Status: <strong>vigente</strong> · Substitui: todos os documentos anteriores de descoberta conceitual.</p>
+<blockquote>
+<p>Este é o documento-fonte do BrotherCast. Qualquer pessoa — editor, designer, produtor, convidado, parceiro ou inteligência artificial — deve conseguir ler este arquivo e entender <strong>o que o BrotherCast é, o que o BrotherCast não é e como se produz BrotherCast</strong>, sem precisar de nenhuma outra referência.</p>
+<p>Se algo que você for produzir contradiz este documento, este documento vence. Se este documento estiver errado, ele é atualizado aqui — não contornado lá fora.</p>
+</blockquote>
+<hr />
+<hr />
+<h2 id="1-a-regra-que-vem-antes-de-todas-as-outras">1. A regra que vem antes de todas as outras</h2>
+<blockquote>
+<p><strong>Primeiro vem a conversa verdadeira. Depois encontramos o corte.
+Nunca sacrificamos a verdade para fabricar um viral.</strong></p>
+</blockquote>
+<p>Esta é a Regra Zero. Ela está acima do calendário, acima da meta de alcance, acima de qualquer formato.</p>
+<p>O que ela significa na prática:</p>
+<ul>
+<li><strong>Não roteirizamos emoção.</strong> Ninguém recebe uma lista de frases de efeito para falar na gravação.</li>
+<li><strong>Não plantamos "momento viral".</strong> O corte é encontrado depois, dentro do que realmente aconteceu.</li>
+<li><strong>Não cortamos para mudar o sentido.</strong> Um corte pode encurtar, nunca distorcer.</li>
+<li><strong>Se o episódio não rendeu corte bom, ele vai no ar mesmo assim</strong> — e nós não inventamos um.</li>
+<li><strong>Se o corte ficou bom mas é desonesto com a conversa, ele não é publicado.</strong> Sem exceção.</li>
+</ul>
+<p>Toda decisão duvidosa se resolve com uma pergunta: <em>isso é verdade do jeito que aconteceu?</em></p>
+<hr />
+<h2 id="2-manifesto">2. Manifesto</h2>
+<h3 id="21-manifesto-curto-versão-oficial-5-mensagens">2.1 Manifesto curto (versão oficial, 5 mensagens)</h3>
+<p>Esta é a versão canônica. É ela que vira peça gráfica, abertura de episódio, bio e âncora de comunicação.</p>
+<blockquote>
+<p><strong>BROTHERCAST</strong>
+<em>O Manifesto da Vida Real</em></p>
+<p><strong>1% melhor, um passo de cada vez.</strong></p>
+<p><strong>Pessoas reais. Histórias que conectam.</strong></p>
+<p><strong>Consistência acima de intensidade.</strong></p>
+<p><strong>Você não controla todas as circunstâncias. Controla o próximo passo.</strong></p>
+<hr />
+<p><strong>“O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.”</strong></p>
+</blockquote>
+<p>A frase final é <strong>a assinatura filosófica</strong> — ela fecha o manifesto e aparece sozinha quando precisamos de uma única linha que represente tudo.</p>
+<h3 id="22-manifesto-longo-versão-falada-institucional">2.2 Manifesto longo (versão falada / institucional)</h3>
+<p>Uso: narração de vídeo institucional, abertura de temporada, texto de apresentação.</p>
+<blockquote>
+<p>Existe um tipo de conteúdo que promete que você pode virar outra pessoa em trinta dias.
+O BrotherCast não é isso.</p>
+<p>A gente acredita em gente comum vivendo coisas reais: conta pra pagar, filho pra criar, carreira pra decidir, medo pra encarar, recomeço pra tentar de novo.</p>
+<p>A gente não acredita que você precisa acordar às quatro da manhã, odiar quem você é hoje e virar uma máquina.
+A gente acredita em 1%. Hoje. Do tamanho que der.</p>
+<p>Você não controla a economia. Não controla o chefe. Não controla a doença, o mercado, o imprevisto.
+Mas controla o próximo passo. E o próximo passo é suficiente.</p>
+<p>Aqui a gente senta, conversa de verdade e escuta histórias de quem está no meio do caminho — não só de quem já chegou.</p>
+<p>Porque o ontem ensina. O amanhã inspira.
+Mas é hoje que a vida acontece.</p>
+<p><strong>BrotherCast. Experiências que conectam. Conversas que destravam.</strong></p>
+</blockquote>
+<h3 id="23-hierarquia-das-frases-oficiais">2.3 Hierarquia das frases oficiais</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Frase</th>
+<th>Função</th>
+<th>Onde usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Experiências que conectam. Conversas que destravam.</strong></td>
+<td>Assinatura institucional</td>
+<td>Logo, abertura, capa, rodapé, bio</td>
+</tr>
+<tr>
+<td><strong>O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.</strong></td>
+<td>Declaração filosófica</td>
+<td>Manifesto, fechamento de episódio, peças de reflexão</td>
+</tr>
+<tr>
+<td><strong>1% melhor, um passo de cada vez.</strong></td>
+<td>Síntese da filosofia</td>
+<td>Comunidade, cortes de reflexão, camisetas, bio</td>
+</tr>
+<tr>
+<td><strong>Qual é o seu 1% de hoje?</strong></td>
+<td>Ritual de participação</td>
+<td>Chamada para ação, comunidade, fim de corte, stories</td>
+</tr>
+<tr>
+<td><strong>Você não controla todas as circunstâncias. Controla o próximo passo.</strong></td>
+<td>Princípio de responsabilidade</td>
+<td>Cortes de reflexão, peças do Movimento 1%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Regra: <strong>nunca usar as cinco na mesma peça.</strong> Uma peça, uma ideia.</p>
+<hr />
+<h2 id="3-posicionamento">3. Posicionamento</h2>
+<h3 id="31-frase-de-posicionamento">3.1 Frase de posicionamento</h3>
+<blockquote>
+<p>O BrotherCast é um podcast de conversas honestas com pessoas reais sobre dificuldades reais — e um movimento que transforma essas conversas em um passo praticável por dia.</p>
+</blockquote>
+<h3 id="32-a-tensão-central-da-marca">3.2 A tensão central da marca</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mundo que rejeitamos</th>
+<th>Mundo que defendemos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produtividade tóxica</td>
+<td>Evolução realista</td>
+</tr>
+<tr>
+<td>Transformação radical em 30 dias</td>
+<td>1% por dia, pelo tempo que for</td>
+</tr>
+<tr>
+<td>Intensidade</td>
+<td>Consistência</td>
+</tr>
+<tr>
+<td>Palco de quem já venceu</td>
+<td>Mesa de quem está no meio do caminho</td>
+</tr>
+<tr>
+<td>Fórmula</td>
+<td>Conversa</td>
+</tr>
+<tr>
+<td>Motivação que passa em 20 minutos</td>
+<td>Próximo passo que cabe na terça-feira</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="33-promessa-ao-público">3.3 Promessa ao público</h3>
+<p>Você sai de um episódio do BrotherCast com <strong>uma coisa que dá para fazer hoje</strong> — e com a sensação de que não está sozinho no que está vivendo.</p>
+<h3 id="34-prova-por-que-acreditar">3.4 Prova (por que acreditar)</h3>
+<ul>
+<li>O host está <strong>vivendo</strong> as questões que discute (carreira, recomeço, família, medo, dinheiro, responsabilidade), não relatando de longe.</li>
+<li>Os convidados são <strong>pessoas reconhecíveis</strong>, não apenas cases de sucesso.</li>
+<li>A comunidade mostra o 1% acontecendo em público, todo dia.</li>
+</ul>
+<hr />
+<h2 id="4-arquitetura-da-marca">4. Arquitetura da marca</h2>
+<pre><code>                        BROTHERCAST
+                 (marca principal · a mídia)
+                             │
+          ┌──────────────────┴───────────────────┐
+          │                                      │
+   CONTEÚDO / MÍDIA                       MOVIMENTO 1%
+   episódios, cortes,                (filosofia e comunidade
+   canais, institucional              nascidas dentro do BrotherCast)
+                                              │
+                                   ritual: &quot;Qual é o seu 1% de hoje?&quot;
+                                              │
+                                   [futuro] ponte com o projeto 1% MELHOR
+</code></pre>
+<h3 id="41-definições">4.1 Definições</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>O que é</th>
+<th>O que <strong>não</strong> é</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BROTHERCAST</strong></td>
+<td>A marca principal e a mídia. Dona do conteúdo, do tom e da identidade.</td>
+<td>Não é uma marca pessoal do Kayan.</td>
+</tr>
+<tr>
+<td><strong>MOVIMENTO 1%</strong></td>
+<td>A filosofia e a comunidade que nasceram dentro do BrotherCast. Camada de prática.</td>
+<td>Não é uma marca independente, não tem logo concorrente.</td>
+</tr>
+<tr>
+<td><strong>“Qual é o seu 1% de hoje?”</strong></td>
+<td>O ritual da comunidade. Pergunta recorrente que gera participação.</td>
+<td>Não é slogan institucional.</td>
+</tr>
+<tr>
+<td><strong>Declaração filosófica</strong></td>
+<td>“O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.”</td>
+<td>Não é tagline de logo.</td>
+</tr>
+<tr>
+<td><strong>Assinatura institucional</strong></td>
+<td>“Experiências que conectam. Conversas que destravam.”</td>
+<td>Não é frase de reflexão/post.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="42-relação-com-o-projeto-1-melhor">4.2 Relação com o projeto <strong>1% Melhor</strong></h3>
+<p>Decisão 1.0: <strong>manter separado por enquanto.</strong></p>
+<p>O Movimento 1% é a camada de comunidade dentro do BrotherCast. O projeto <em>1% Melhor</em> permanece como iniciativa própria, com conexão natural no futuro (cobranding, produto, programa), <strong>sem fusão de marcas agora</strong>. Nenhuma peça deve apresentar os dois como a mesma coisa.</p>
+<p>Revisitar esta decisão: ao fim da Temporada 1.</p>
+<hr />
+<h2 id="5-a-hierarquia-filosófica-crença-ação-sustentação">5. A hierarquia filosófica (crença, ação, sustentação)</h2>
+<p>Três camadas, três funções. Não misturar níveis na mesma peça.</p>
+<h3 id="camada-1-os-quatro-pilares-no-que-acreditamos">Camada 1 — OS QUATRO PILARES · <em>no que acreditamos</em></h3>
+<p>Esta é a base filosófica do BrotherCast. É o que define o conteúdo editorial.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pilar</th>
+<th>Significado</th>
+<th>Como aparece no conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Pessoas Reais</strong></td>
+<td>Gente comum, com nome, rotina e contradição. Não personagens de palco.</td>
+<td>Escolha de convidado, perguntas sobre vida concreta</td>
+</tr>
+<tr>
+<td><strong>2. Dificuldades Reais</strong></td>
+<td>Dinheiro, medo, cansaço, família, fracasso, recomeço, saúde.</td>
+<td>Pauta do episódio, o "ponto de dor" da conversa</td>
+</tr>
+<tr>
+<td><strong>3. Responsabilidade Pessoal</strong></td>
+<td>Você não controla tudo, mas controla o próximo passo.</td>
+<td>O virar de chave da conversa</td>
+</tr>
+<tr>
+<td><strong>4. Evolução Diária</strong></td>
+<td>1% por dia. Consistência acima de intensidade.</td>
+<td>O fechamento e a ponte com a comunidade</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Esses quatro são a espinha dorsal de todo episódio.</strong> Um episódio que não toca nos quatro provavelmente não é BrotherCast.</p>
+<h3 id="camada-2-foco-mente-atitude-como-agir">Camada 2 — FOCO · MENTE · ATITUDE · <em>como agir</em></h3>
+<p>Linguagem de ação. Usada para organizar conselhos, séries de conteúdo e peças do Movimento 1%.</p>
+<ul>
+<li><strong>FOCO</strong> — escolher a coisa certa e dizer não para o resto.</li>
+<li><strong>MENTE</strong> — como você interpreta o que acontece com você.</li>
+<li><strong>ATITUDE</strong> — o que você efetivamente faz hoje.</li>
+</ul>
+<p>Uso recomendado: categorização de cortes de reflexão e trilhas de conteúdo educativo.</p>
+<h3 id="camada-3-plano-disciplina-liberdade-como-sustentar">Camada 3 — PLANO · DISCIPLINA · LIBERDADE · <em>como sustentar</em></h3>
+<p>Explicam a sustentação no tempo — por que o 1% funciona.</p>
+<ul>
+<li><strong>PLANO</strong> — direção, para não repetir esforço perdido.</li>
+<li><strong>DISCIPLINA</strong> — o sistema que funciona mesmo nos dias ruins.</li>
+<li><strong>LIBERDADE</strong> — a consequência, não o ponto de partida.</li>
+</ul>
+<h3 id="regra-de-uso-das-camadas">Regra de uso das camadas</h3>
+<blockquote>
+<p>Pilares explicam <strong>o que o BrotherCast acredita</strong>.
+Foco/Mente/Atitude explicam <strong>como agir</strong>.
+Plano/Disciplina/Liberdade explicam <strong>como sustentar</strong>.</p>
+<p>Nunca apresentar as três camadas como se fossem a mesma lista.</p>
+</blockquote>
+<hr />
+<h2 id="6-público">6. Público</h2>
+<h3 id="61-quem-é">6.1 Quem é</h3>
+<p>O <strong>público comum</strong> — a pessoa que trabalha, tem responsabilidade sobre alguém, carrega uma frustração silenciosa e não se vê no conteúdo de alta performance.</p>
+<p><strong>Faixa central:</strong> 25 a 45 anos. CLT, autônomo, pequeno empreendedor, pessoa em transição.</p>
+<h3 id="62-perfis-de-reconhecimento-a-mesa">6.2 Perfis de reconhecimento (a "mesa")</h3>
+<p>O BrotherCast não é sobre uma profissão. É sobre situações que qualquer um reconhece:</p>
+<ul>
+<li>o bancário que não sabe se fica ou sai</li>
+<li>o dentista que tem sucesso técnico e vazio pessoal</li>
+<li>o empreendedor que está sustentando um negócio que ainda não o sustenta</li>
+<li>a mãe que não tem uma hora do dia que seja só dela</li>
+<li>o pai que trabalha o dia todo e sente que está perdendo a infância do filho</li>
+<li>o cara que perdeu tudo e está recomeçando do zero</li>
+<li>quem começou tarde e acha que já era</li>
+<li>quem cuida de alguém doente e sumiu da própria vida</li>
+<li>quem venceu em uma área e está completamente perdido em outra</li>
+</ul>
+<p><strong>Critério editorial:</strong> se o ouvinte consegue dizer <em>"isso é a minha vida"</em> nos primeiros 3 minutos, o convidado está certo.</p>
+<h3 id="63-o-que-o-público-quer">6.3 O que o público quer</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Quer</th>
+<th>Não quer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentir que não é o único</td>
+<td>Ser julgado por não ter "acordado cedo"</td>
+</tr>
+<tr>
+<td>Uma coisa prática pra hoje</td>
+<td>Um plano de 90 dias que ele não vai cumprir</td>
+</tr>
+<tr>
+<td>Honestidade sobre o que dói</td>
+<td>Discurso de palco</td>
+</tr>
+<tr>
+<td>Alguém no mesmo lugar que ele</td>
+<td>Alguém falando de cima</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="64-não-público">6.4 Não-público</h3>
+<p>Quem procura hustle culture, atalho financeiro, fórmula de enriquecimento ou conteúdo de alta performance. <strong>Não adaptamos o BrotherCast para atender esse perfil.</strong></p>
+<hr />
+<h2 id="7-tom-de-voz">7. Tom de voz</h2>
+<h3 id="71-os-cinco-atributos">7.1 Os cinco atributos</h3>
+<ol>
+<li><strong>Honesto</strong> — conta a parte difícil, inclusive a própria.</li>
+<li><strong>Próximo</strong> — fala com, nunca para baixo.</li>
+<li><strong>Maduro</strong> — não é motivacional barato, não grita.</li>
+<li><strong>Prático</strong> — sempre aterrissa em algo executável.</li>
+<li><strong>Esperançoso sem ser ingênuo</strong> — reconhece o tamanho do problema antes de falar em solução.</li>
+</ol>
+<h3 id="72-como-escrevemos">7.2 Como escrevemos</h3>
+<ul>
+<li>Frases curtas. Parágrafos curtos.</li>
+<li>Segunda pessoa ("você"), primeira pessoa do plural quando é a marca ("a gente acredita").</li>
+<li>Linguagem concreta: "conta de luz", "segunda-feira", "boleto", "consulta", "turno".</li>
+<li>Zero jargão de coach. Zero inglês desnecessário.</li>
+<li>Pode usar humor leve. Nunca ironia que diminui alguém.</li>
+</ul>
+<h3 id="73-dizemos-não-dizemos">7.3 Dizemos / Não dizemos</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>✅ Dizemos</th>
+<th>❌ Não dizemos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Qual é o seu 1% de hoje?"</td>
+<td>"Saia da zona de conforto agora!"</td>
+</tr>
+<tr>
+<td>"Consistência acima de intensidade."</td>
+<td>"Sem desculpa. Sem dor, sem ganho."</td>
+</tr>
+<tr>
+<td>"Você controla o próximo passo."</td>
+<td>"Você é 100% responsável por tudo que te acontece."</td>
+</tr>
+<tr>
+<td>"Deu errado comigo também."</td>
+<td>"Eu descobri o segredo."</td>
+</tr>
+<tr>
+<td>"Um passo de cada vez."</td>
+<td>"Mude sua vida em 7 dias."</td>
+</tr>
+<tr>
+<td>"Pessoas reais, histórias que conectam."</td>
+<td>"Mentalidade milionária."</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74-palavras-proibidas">7.4 Palavras proibidas</h3>
+<p><code>mindset milionário</code> · <code>destrave sua mente agora</code> · <code>shape</code> · <code>máquina</code> (como elogio a pessoa) · <code>sem desculpas</code> · <code>você é fraco</code> · <code>fórmula</code> · <code>segredo</code> · <code>hackear a vida</code> · <code>rotina 5 da manhã</code> (exceto para criticar).</p>
+<hr />
+<h2 id="8-identidade-visual">8. Identidade visual</h2>
+<h3 id="81-a-regra-de-separação-decisão-central-da-10">8.1 A regra de separação (decisão central da 1.0)</h3>
+<p>Existem <strong>dois universos visuais</strong> e eles têm funções diferentes.</p>
+<h4 id="universo-a-brothercast-institucional-e-audiovisual">Universo A — BROTHERCAST institucional e audiovisual</h4>
+<p><strong>Uso:</strong> logo, capa, thumbnail, abertura, lower thirds, cortes, manifesto, site, cenário, redes sociais da marca.</p>
+<ul>
+<li><strong>Preto / grafite</strong> (base)</li>
+<li><strong>Madeira</strong> (textura, calor, mesa)</li>
+<li><strong>Âmbar / dourado</strong> (destaque, luz, microfone)</li>
+<li><strong>Branco / off-white</strong> (texto)</li>
+</ul>
+<p>Atmosfera: madura, profunda, noturna, de conversa de mesa. É isto que "parece BrotherCast".</p>
+<h4 id="universo-b-movimento-1-educacional">Universo B — MOVIMENTO 1% educacional</h4>
+<p><strong>Uso:</strong> infográficos, carrosséis explicativos, diagramas, material didático, apresentações, conteúdo de comunidade.</p>
+<ul>
+<li>Pode usar <strong>fundos claros</strong>, ilustrações, diagramas e cores de apoio.</li>
+<li><strong>Obrigatório:</strong> sempre carregar ao menos <strong>dois</strong> elementos de ligação com o BrotherCast — logo/assinatura, âmbar como cor de destaque, tipografia oficial, ou faixa escura de cabeçalho/rodapé.</li>
+</ul>
+<blockquote>
+<p><strong>Regra:</strong> o Universo B pode explicar conceitos; ele <strong>não define a identidade principal</strong>. Nunca usar material claro/ilustrado como capa de episódio, avatar, thumbnail principal ou peça institucional.</p>
+</blockquote>
+<h3 id="82-paleta-referência-técnica">8.2 Paleta (referência técnica)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cor</th>
+<th>Hex</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Night / Grafite</td>
+<td><code>#0D1117</code></td>
+<td>Fundo institucional</td>
+</tr>
+<tr>
+<td>Night Deep</td>
+<td><code>#080B10</code></td>
+<td>Fundo de contraste, letterbox</td>
+</tr>
+<tr>
+<td>Âmbar</td>
+<td><code>#E5A93D</code></td>
+<td>Destaque, CTA, elementos de luz</td>
+</tr>
+<tr>
+<td>Âmbar claro</td>
+<td><code>#F1C56B</code></td>
+<td>Hover, detalhes finos</td>
+</tr>
+<tr>
+<td>Madeira</td>
+<td><code>#6B4A2F</code> → <code>#9C7247</code></td>
+<td>Texturas e superfícies</td>
+</tr>
+<tr>
+<td>Off-white / Paper</td>
+<td><code>#F4F1ED</code></td>
+<td>Texto principal no escuro</td>
+</tr>
+<tr>
+<td>Muted</td>
+<td><code>#A0AAB5</code></td>
+<td>Texto secundário</td>
+</tr>
+</tbody>
+</table></div>
+<p>Contraste mínimo: <strong>4.5:1</strong> para texto corrido, <strong>3:1</strong> para títulos grandes.</p>
+<h3 id="83-tipografia">8.3 Tipografia</h3>
+<ul>
+<li><strong>Display / títulos:</strong> serifada com personalidade (referência atual: <em>Playfair Display</em>) — usada em frases-manifesto e títulos de episódio.</li>
+<li><strong>Texto / interface:</strong> sans-serif humanista (referência atual: <em>Manrope</em>) — usada em tudo o mais.</li>
+<li><strong>Fonte manuscrita:</strong> <strong>proibida como fonte de leitura.</strong> Pode aparecer como elemento gráfico pontual (uma palavra, uma assinatura), nunca em bloco de mensagem.</li>
+</ul>
+<h3 id="84-erros-recorrentes-a-evitar">8.4 Erros recorrentes a evitar</h3>
+<ul>
+<li>Excesso de texto na mesma peça.</li>
+<li>Áreas apertadas, sem respiro nas margens.</li>
+<li>Fonte manuscrita competindo com a mensagem.</li>
+<li>Parte inferior da peça perdendo legibilidade (resolver com gradiente de base e hierarquia).</li>
+<li><strong>Marca d'água de ferramenta de IA em peça publicada — nunca.</strong> Toda arte final é ativo próprio do BrotherCast.</li>
+</ul>
+<hr />
+<h2 id="9-o-manifesto-como-peça-gráfica">9. O manifesto como peça gráfica</h2>
+<p>O conceito do manifesto preto (madeira, microfones, dourado) está <strong>correto e aprovado</strong>. O que muda é a execução.</p>
+<h3 id="91-briefing-para-o-designer">9.1 Briefing para o designer</h3>
+<p><strong>Objetivo:</strong> redesenhar o manifesto preservando ~80% do conceito original, como ativo próprio do BrotherCast.</p>
+<p><strong>Preservar:</strong>
+- Fundo preto/grafite com textura de madeira
+- Microfones como elemento simbólico central
+- Luz âmbar/dourada como ponto de calor
+- Atmosfera de mesa de conversa, noturna e madura</p>
+<p><strong>Corrigir:</strong>
+- Reduzir o texto para <strong>exatamente as 5 mensagens + assinatura central</strong> (seção 2.1)
+- Respiro generoso nas margens; nada encostando na borda
+- Hierarquia tipográfica clara: título &gt; mensagens &gt; assinatura
+- Fonte manuscrita fora do corpo da mensagem
+- Base da peça legível (gradiente escuro + contraste controlado)
+- <strong>Zero marca d'água de ferramenta</strong></p>
+<p><strong>Estrutura sugerida (de cima para baixo):</strong></p>
+<pre><code>┌──────────────────────────────────────────────┐
+│                BROTHERCAST                   │  ← logo
+│            O Manifesto da Vida Real          │  ← subtítulo
+│                                              │
+│      1% melhor, um passo de cada vez.        │
+│      Pessoas reais. Histórias que conectam.  │  ← 4 mensagens
+│      Consistência acima de intensidade.      │
+│      Você não controla todas as circunstâncias.
+│      Controla o próximo passo.               │
+│                                              │
+│   ┌────────────────────────────────────┐     │
+│   │ &quot;O ontem ensina. O amanhã inspira. │     │  ← assinatura central
+│   │  Mas é hoje que a vida acontece.&quot;  │     │     (destaque âmbar)
+│   └────────────────────────────────────┘     │
+│                                              │
+│   Experiências que conectam.                 │  ← assinatura institucional
+│   Conversas que destravam.                   │
+└──────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Entregas:</strong> vertical 1080×1920 (stories) · quadrado 1080×1080 (feed) · horizontal 1920×1080 (abertura/slide) · versão impressa A3 300dpi.</p>
+<hr />
+<h2 id="10-ecossistema-de-conteúdo">10. Ecossistema de conteúdo</h2>
+<h3 id="101-o-modelo-correto">10.1 O modelo correto</h3>
+<p>O BrotherCast <strong>não</strong> é <code>Podcast → cortes</code>.</p>
+<p>O BrotherCast é:</p>
+<pre><code>CONVERSA → DESCOBERTA → REFLEXÃO → PARTICIPAÇÃO → COMUNIDADE
+</code></pre>
+<h3 id="102-as-quatro-camadas">10.2 As quatro camadas</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Formato</th>
+<th>Função</th>
+<th>Métrica principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Episódio completo</strong></td>
+<td>40–75 min, YouTube + áudio</td>
+<td>Fonte da verdade e profundidade</td>
+<td>Retenção, tempo médio</td>
+</tr>
+<tr>
+<td><strong>2. Cortes de impacto</strong></td>
+<td>20–60s, vertical</td>
+<td>Alcançar quem ainda não conhece</td>
+<td>Alcance, novos seguidores</td>
+</tr>
+<tr>
+<td><strong>3. Cortes de reflexão</strong></td>
+<td>60–180s, vertical ou feed</td>
+<td>Construir autoridade e identidade</td>
+<td>Salvamentos, compartilhamentos, comentários</td>
+</tr>
+<tr>
+<td><strong>4. Comunidade</strong></td>
+<td>Grupo + ritual diário</td>
+<td>Transformar audiência passiva em gente praticando o 1%</td>
+<td>Participação ativa recorrente</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="103-por-que-isso-importa">10.3 Por que isso importa</h3>
+<blockquote>
+<p>Cortes sem comunidade geram audiência que passa.
+Comunidade sem episódio não tem profundidade.
+O ecossistema completo cria pertencimento — e pertencimento é o que nenhum concorrente copia.</p>
+</blockquote>
+<h3 id="104-diferença-entre-corte-de-impacto-e-corte-de-reflexão">10.4 Diferença entre corte de impacto e corte de reflexão</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Corte de impacto</th>
+<th>Corte de reflexão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Para quem</td>
+<td>Quem não conhece</td>
+<td>Quem já acompanha</td>
+</tr>
+<tr>
+<td>Gatilho</td>
+<td>Surpresa, tensão, frase forte, história</td>
+<td>Ideia que organiza o pensamento</td>
+</tr>
+<tr>
+<td>Duração</td>
+<td>20–60s</td>
+<td>60–180s</td>
+</tr>
+<tr>
+<td>Abertura</td>
+<td>Entra no meio da ação</td>
+<td>Entra pela ideia</td>
+</tr>
+<tr>
+<td>CTA</td>
+<td>Nome do episódio</td>
+<td>"Qual é o seu 1% de hoje?"</td>
+</tr>
+<tr>
+<td>Sucesso</td>
+<td>Muita gente nova viu</td>
+<td>Gente certa salvou e respondeu</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="11-regras-editoriais">11. Regras editoriais</h2>
+<h3 id="111-regra-zero">11.1 Regra Zero</h3>
+<p>Ver <a href="#1-a-regra-que-vem-antes-de-todas-as-outras">seção 1</a>. Verdade antes de corte. Sempre.</p>
+<h3 id="112-a-história-do-kayan-é-um-capítulo-não-a-identidade">11.2 A história do Kayan é um capítulo, não a identidade</h3>
+<p><strong>Decisão oficial:</strong> o BrotherCast <strong>não é</strong> "o podcast do ex-bancário que largou tudo".</p>
+<ul>
+<li>Kayan pode e deve falar de carreira, banco, recomeço, família, medo, empreendedorismo, erros e responsabilidades — <strong>porque está vivendo isso agora</strong>. É daí que vem a legitimidade.</li>
+<li>Mas a narrativa pessoal é <strong>um capítulo entre muitos</strong>, não o enquadramento da marca.</li>
+<li>A partir da Temporada 1, o conteúdo cresce para outras histórias (ver seção 6.2).</li>
+</ul>
+<p><strong>Teste prático:</strong> se o público entra apenas para acompanhar o Kayan, falhamos. O público precisa entrar porque <strong>se reconhece na mesa</strong>.</p>
+<p><strong>Limite de uso:</strong> a história pessoal do host pode ser o eixo central de no máximo <strong>1 em cada 5 episódios</strong>.</p>
+<h3 id="113-regras-de-convidado">11.3 Regras de convidado</h3>
+<ul>
+<li>O convidado não precisa ter vencido. Precisa ter <strong>vivido e ser honesto</strong>.</li>
+<li>Não existe convidado "pequeno demais". Existe conversa rasa.</li>
+<li>O convidado recebe antecipadamente: os quatro pilares, a Regra Zero e os temas — <strong>nunca</strong> as respostas.</li>
+<li>Nenhum convidado é exposto em corte de forma que ele não reconheceria como justa.</li>
+</ul>
+<h3 id="114-regras-de-pauta">11.4 Regras de pauta</h3>
+<p>Todo episódio precisa ter:
+1. Uma <strong>dificuldade real</strong> nomeada com clareza.
+2. Um <strong>momento de virada</strong> (onde entra a responsabilidade pessoal).
+3. Um <strong>1% praticável</strong> declarado em voz alta antes do fim.</p>
+<h3 id="115-linhas-que-não-cruzamos">11.5 Linhas que não cruzamos</h3>
+<ul>
+<li>Não damos conselho médico, jurídico ou financeiro específico.</li>
+<li>Não expomos terceiros que não estão na mesa para se defender.</li>
+<li>Não usamos a dor de ninguém como isca de clique.</li>
+<li>Não publicamos corte que muda o sentido do que foi dito.</li>
+<li>Não aceitamos patrocínio que contradiga a filosofia (enriquecimento rápido, aposta, fórmula milagrosa).</li>
+</ul>
+<hr />
+<h2 id="12-sistema-de-produção-por-episódio">12. Sistema de produção por episódio</h2>
+<p><strong>Princípio:</strong> cada episódio já nasce planejado como <em>episódio completo + cortes de descoberta + cortes de reflexão + ativação de comunidade</em>. Nunca como "grava e depois a gente vê".</p>
+<h3 id="121-pacote-padrão-de-um-episódio">12.1 Pacote padrão de um episódio</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Entregável</th>
+<th>Qtd</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Episódio completo</td>
+<td>1</td>
+<td>Horizontal, YouTube + plataformas de áudio</td>
+</tr>
+<tr>
+<td>Cortes de impacto</td>
+<td>3–5</td>
+<td>Vertical 9:16, 20–60s, legenda queimada</td>
+</tr>
+<tr>
+<td>Cortes de reflexão</td>
+<td>2–3</td>
+<td>Vertical ou 1:1, 60–180s</td>
+</tr>
+<tr>
+<td>Card de citação</td>
+<td>1–2</td>
+<td>Feed, Universo A</td>
+</tr>
+<tr>
+<td>Pergunta de comunidade</td>
+<td>1</td>
+<td>Derivada do 1% do episódio</td>
+</tr>
+<tr>
+<td>Thumbnail</td>
+<td>1</td>
+<td>1280×720, Universo A</td>
+</tr>
+<tr>
+<td>Descrição + capítulos</td>
+<td>1</td>
+<td>Texto</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="122-fluxo-de-trabalho">12.2 Fluxo de trabalho</h3>
+<p><strong>Pré (antes de gravar)</strong>
+1. Definir o convidado pelo <strong>critério de reconhecimento</strong> (6.2), não por audiência dele.
+2. Mapear a dificuldade real que será o centro.
+3. Escrever de 8 a 12 perguntas-âncora — roteiro de direção, não de resposta.
+4. Combinar expectativas com o convidado (seção 11.3).</p>
+<p><strong>Gravação</strong>
+5. Sem roteiro fechado. A conversa manda.
+6. Marcar timestamps dos momentos fortes <strong>enquanto</strong> grava.
+7. Antes de encerrar, perguntar sempre: <strong>"Qual é o seu 1% de hoje?"</strong> — isso fecha o episódio e alimenta a comunidade.</p>
+<p><strong>Pós</strong>
+8. Decupagem: marcar candidatos a corte com o tipo (impacto / reflexão).
+9. Teste de honestidade em cada corte: <em>o convidado reconheceria isso como justo?</em> Se não, descarta.
+10. Montar o pacote padrão (12.1).
+11. Programar a distribuição (12.3).</p>
+<h3 id="123-janela-de-distribuição-padrão">12.3 Janela de distribuição (padrão)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D0</td>
+<td>Episódio completo no ar</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>Corte de impacto #1</td>
+</tr>
+<tr>
+<td>D+1</td>
+<td>Pergunta de comunidade (o 1% do episódio)</td>
+</tr>
+<tr>
+<td>D+2</td>
+<td>Corte de reflexão #1</td>
+</tr>
+<tr>
+<td>D+3</td>
+<td>Corte de impacto #2</td>
+</tr>
+<tr>
+<td>D+5</td>
+<td>Card de citação</td>
+</tr>
+<tr>
+<td>D+6</td>
+<td>Corte de reflexão #2</td>
+</tr>
+<tr>
+<td>D+7</td>
+<td>Corte de impacto #3 + chamada para o próximo episódio</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="124-checklist-de-publicação">12.4 Checklist de publicação</h3>
+<ul>
+<li><input type="checkbox" disabled /> A conversa aconteceu de verdade e o corte é fiel a ela</li>
+<li><input type="checkbox" disabled /> O corte funciona sem contexto para quem nunca ouviu</li>
+<li><input type="checkbox" disabled /> Legenda queimada, legível em tela pequena, sem cobrir rosto</li>
+<li><input type="checkbox" disabled /> Identidade do Universo A aplicada (ou Universo B com os 2 elementos de ligação)</li>
+<li><input type="checkbox" disabled /> Nenhuma marca d'água de ferramenta</li>
+<li><input type="checkbox" disabled /> CTA correto para o tipo de corte (10.4)</li>
+<li><input type="checkbox" disabled /> Episódio de origem identificável</li>
+<li><input type="checkbox" disabled /> O 1% do episódio está em algum lugar da semana</li>
+</ul>
+<hr />
+<h2 id="13-comunidade-e-o-ritual-do-1">13. Comunidade e o ritual do 1%</h2>
+<h3 id="131-o-ritual">13.1 O ritual</h3>
+<blockquote>
+<p><strong>"Qual é o seu 1% de hoje?"</strong></p>
+</blockquote>
+<p>Pergunta feita no fim de todo episódio e repetida na comunidade. É o mecanismo que converte audiência em prática.</p>
+<h3 id="132-regras-da-comunidade">13.2 Regras da comunidade</h3>
+<ol>
+<li><strong>Vale 1% pequeno.</strong> "Bebi água", "mandei a mensagem que eu estava adiando" vale.</li>
+<li><strong>Não se compara 1% de ninguém.</strong> Nenhum 1% é pequeno demais.</li>
+<li><strong>Dia perdido não é fracasso.</strong> Recomeço no dia seguinte faz parte do método.</li>
+<li><strong>Ninguém vende nada para ninguém.</strong></li>
+<li><strong>O que é contado na comunidade não vira conteúdo sem autorização explícita.</strong></li>
+</ol>
+<h3 id="133-ciclo-semanal-sugerido">13.3 Ciclo semanal sugerido</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Ritual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segunda</td>
+<td>"Qual é o seu 1% dessa semana?"</td>
+</tr>
+<tr>
+<td>Quarta</td>
+<td>Pergunta ligada ao episódio da semana</td>
+</tr>
+<tr>
+<td>Sexta</td>
+<td>"O que funcionou e o que não funcionou?"</td>
+</tr>
+<tr>
+<td>Domingo</td>
+<td>Reflexão curta do host (texto ou áudio de 1 min)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="14-o-que-é-o-que-não-é">14. O que é / o que não é</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>O BrotherCast <strong>é</strong></th>
+<th>O BrotherCast <strong>não é</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conversa honesta com pessoas reais</td>
+<td>Entrevista com celebridade de palco</td>
+</tr>
+<tr>
+<td>Evolução realista, 1% ao dia</td>
+<td>Transformação radical em 30 dias</td>
+</tr>
+<tr>
+<td>Consistência</td>
+<td>Intensidade</td>
+</tr>
+<tr>
+<td>Mesa de quem está no meio do caminho</td>
+<td>Pódio de quem já chegou</td>
+</tr>
+<tr>
+<td>Mídia + movimento + comunidade</td>
+<td>Canal de cortes</td>
+</tr>
+<tr>
+<td>Responsabilidade pelo próximo passo</td>
+<td>Culpabilização de quem está sofrendo</td>
+</tr>
+<tr>
+<td>Estética madura, escura, de madeira e âmbar</td>
+<td>Estética clara e colorida como identidade principal</td>
+</tr>
+<tr>
+<td>Histórias diversas na mesma mesa</td>
+<td>A biografia de uma pessoa só</td>
+</tr>
+<tr>
+<td>Verdade primeiro, corte depois</td>
+<td>Conteúdo desenhado para viralizar</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="15-briefing-curto-para-ias-e-colaboradores">15. Briefing curto para IAs e colaboradores</h2>
+<blockquote>
+<p><strong>Cole este bloco quando pedir qualquer coisa para uma IA, editor, redator ou designer.</strong></p>
+</blockquote>
+<pre><code>CONTEXTO — BROTHERCAST
+
+O BrotherCast é um podcast de conversas honestas com pessoas reais sobre
+dificuldades reais, e um movimento (MOVIMENTO 1%) que transforma essas
+conversas em um passo praticável por dia.
+
+REGRA ZERO: primeiro vem a conversa verdadeira, depois encontramos o corte.
+Nunca sacrificamos a verdade para fabricar um viral.
+
+QUATRO PILARES (no que acreditamos):
+Pessoas Reais · Dificuldades Reais · Responsabilidade Pessoal · Evolução Diária
+
+COMO AGIR: Foco · Mente · Atitude
+COMO SUSTENTAR: Plano · Disciplina · Liberdade
+(São três camadas diferentes. Não misturar na mesma lista.)
+
+PÚBLICO: pessoa comum, 25–45, que trabalha, tem responsabilidade sobre
+alguém, e não se vê no conteúdo de alta performance.
+
+TOM: honesto, próximo, maduro, prático, esperançoso sem ser ingênuo.
+Frases curtas. Linguagem concreta. Zero jargão de coach.
+
+PROIBIDO: discurso de produtividade tóxica, promessa de transformação
+rápida, &quot;sem desculpas&quot;, &quot;mindset milionário&quot;, &quot;fórmula&quot;, &quot;segredo&quot;,
+culpabilizar quem está sofrendo, enquadrar a marca como &quot;o podcast do
+ex-bancário que largou tudo&quot;.
+
+FRASES OFICIAIS (usar no máximo uma por peça):
+- Assinatura institucional: &quot;Experiências que conectam. Conversas que destravam.&quot;
+- Declaração filosófica: &quot;O ontem ensina. O amanhã inspira. Mas é hoje que
+  a vida acontece.&quot;
+- Filosofia: &quot;1% melhor, um passo de cada vez.&quot;
+- Ritual: &quot;Qual é o seu 1% de hoje?&quot;
+
+VISUAL:
+- Institucional/audiovisual: preto/grafite + madeira + âmbar/dourado + branco.
+- Material educativo do Movimento 1%: pode ser claro, ilustrado e colorido,
+  desde que carregue pelo menos 2 elementos de ligação com o BrotherCast.
+- Nunca usar material claro como identidade principal.
+- Nunca marca d'água de ferramenta de IA em peça final.
+</code></pre>
+<hr />
+<h2 id="16-roadmap-dos-próximos-documentos">16. Roadmap dos próximos documentos</h2>
+<p>A fase de descoberta conceitual está <strong>encerrada</strong>. A partir daqui, execução.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Documento</th>
+<th>Status</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>BrotherCast Master 1.0</strong></td>
+<td>✅ <strong>este documento</strong></td>
+<td>Manifesto, posicionamento, arquitetura, público, tom, pilares, visual, editorial, ecossistema</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Temporada 1</strong></td>
+<td>▢ próximo</td>
+<td>Conceito da temporada, episódio piloto, lista de primeiros convidados, linha narrativa dos episódios</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Sistema de Conteúdo</strong></td>
+<td>▢</td>
+<td>Operacionalização da seção 12: templates de decupagem, planilha de pacote por episódio, calendário</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Kit Visual Definitivo</strong></td>
+<td>▢</td>
+<td>Logo, manifesto redesenhado, thumbnail, capa de Reels/Shorts, lower thirds, templates</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Lançamento de 30 Dias</strong></td>
+<td>▢</td>
+<td>Reconstruído em torno de <strong>conteúdo realmente gravado</strong> — não de frases artificiais</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Regra de sequência:</strong> o documento 5 (lançamento) só é finalizado <strong>depois</strong> que existir material gravado. Nenhum plano de lançamento é construído sobre conteúdo hipotético.</p>
+<p><strong>Nota:</strong> não produzir mais documentos paralelos de descoberta. Material conceitual suficiente.</p>
+<hr />
+<h2 id="17-glossário-e-governança">17. Glossário e governança</h2>
+<h3 id="171-glossário">17.1 Glossário</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1%</strong></td>
+<td>A menor melhoria praticável hoje. Unidade básica da filosofia.</td>
+</tr>
+<tr>
+<td><strong>Mesa</strong></td>
+<td>Metáfora do formato: todos sentados no mesmo nível, ninguém no palco.</td>
+</tr>
+<tr>
+<td><strong>Corte de impacto</strong></td>
+<td>Clipe curto para alcançar quem não conhece a marca.</td>
+</tr>
+<tr>
+<td><strong>Corte de reflexão</strong></td>
+<td>Clipe para quem já acompanha, voltado a autoridade e identidade.</td>
+</tr>
+<tr>
+<td><strong>Regra Zero</strong></td>
+<td>Verdade antes de corte.</td>
+</tr>
+<tr>
+<td><strong>Universo A / Universo B</strong></td>
+<td>Os dois sistemas visuais (institucional escuro / educativo claro).</td>
+</tr>
+<tr>
+<td><strong>Ritual</strong></td>
+<td>A pergunta "Qual é o seu 1% de hoje?".</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="172-governança-deste-documento">17.2 Governança deste documento</h3>
+<ul>
+<li><strong>Fonte da verdade:</strong> este arquivo, neste repositório.</li>
+<li><strong>Quem aprova mudanças:</strong> Kayan.</li>
+<li><strong>Como mudar:</strong> editar aqui, subir a versão, registrar no changelog abaixo. Não existe "versão paralela no NotebookLM".</li>
+<li><strong>Versionamento:</strong> <code>MAJOR.MINOR</code> — MAJOR para mudança de posicionamento, MINOR para ajustes e acréscimos.</li>
+</ul>
+<h3 id="173-changelog">17.3 Changelog</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Mudanças</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.0</strong></td>
+<td>out/2025</td>
+<td>Primeira consolidação oficial. Define: Regra Zero; ecossistema Conversa → Descoberta → Reflexão → Participação → Comunidade; separação dos Universos A e B; hierarquia de 3 camadas filosóficas (pilares / ação / sustentação); manifesto curto de 5 mensagens; arquitetura BrotherCast + Movimento 1%; decisão editorial sobre a história pessoal do host; separação do projeto <em>1% Melhor</em>. Encerra a fase de descoberta conceitual.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><strong>BrotherCast</strong>
+<em>Experiências que conectam. Conversas que destravam.</em></p>
+<blockquote>
+<p>O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.</p>
+</blockquote>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p class="sig">BrotherCast</p>
+      <p class="tag">Experiências que conectam. Conversas que destravam.</p>
+      <p class="quote">“O ontem ensina. O amanhã inspira. Mas é hoje que a vida acontece.”</p>
+    </footer>
+
+    <script>
+      // Destaca no sumário a seção visível.
+      const links = [...document.querySelectorAll(".toc a")];
+      const byId = new Map(links.map((a) => [decodeURIComponent(a.hash.slice(1)), a]));
+      const headings = [...document.querySelectorAll(".doc h2")].filter((h) => byId.has(h.id));
+
+      if (headings.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              links.forEach((a) => a.classList.remove("active"));
+              byId.get(entry.target.id)?.classList.add("active");
+            });
+          },
+          { rootMargin: "-88px 0px -72% 0px", threshold: 0 }
+        );
+        headings.forEach((h) => observer.observe(h));
+      }
+    </script>
+  </body>
+</html>

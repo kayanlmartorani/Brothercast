@@ -1,7 +1,7 @@
 # BROTHERCAST MASTER 1.0
 
 **Documento oficial de marca, filosofia e produção.**
-Versão 1.1 — outubro de 2025 · Status: **vigente** · **USO INTERNO — não publicar**
+Versão 1.2 — outubro de 2025 · Status: **vigente** · **USO INTERNO — não publicar**
 Substitui: todos os documentos anteriores de descoberta conceitual.
 
 > **Uso interno.** Este é manual operacional da equipe, não conteúdo para a audiência — ver [política de acesso](#173-política-de-acesso-público-interno).
@@ -138,6 +138,20 @@ Você sai de um episódio do BrotherCast com **uma coisa que dá para fazer hoje
 - O host está **vivendo** as questões que discute (carreira, recomeço, família, medo, dinheiro, responsabilidade), não relatando de longe.
 - Os convidados são **pessoas reconhecíveis**, não apenas cases de sucesso.
 - A comunidade mostra o 1% acontecendo em público, todo dia.
+
+### 3.5 Formato oficial
+
+> **Kayan conduz conversas com pessoas reais. Host único, um convidado por episódio.**
+
+| | Definição |
+|---|---|
+| **Host** | Kayan — único e fixo |
+| **Convidado** | 1 por episódio, sempre |
+| **Exceções** | Peças solo curtas (manifesto, reflexão), que **não** são episódios |
+
+**Por que host único:** a condução ganha consistência de tom, o convidado ocupa o centro da mesa e o ouvinte sabe exatamente de quem é a voz que o acompanha toda semana.
+
+**O que isso exige do host:** escutar mais do que falar. Em um formato de host único, o risco não é o convidado sumir — é o host preencher o silêncio. Ver [§11.2](#112-a-história-do-kayan-é-ponte-nunca-protagonista).
 
 ---
 
@@ -453,17 +467,28 @@ CONVERSA → DESCOBERTA → REFLEXÃO → PARTICIPAÇÃO → COMUNIDADE
 ### 11.1 Regra Zero
 Ver [seção 1](#1-a-regra-que-vem-antes-de-todas-as-outras). Verdade antes de corte. Sempre.
 
-### 11.2 A história do Kayan é um capítulo, não a identidade
+### 11.2 A história do Kayan é ponte, nunca protagonista
 
 **Decisão oficial:** o BrotherCast **não é** "o podcast do ex-bancário que largou tudo".
 
-- Kayan pode e deve falar de carreira, banco, recomeço, família, medo, empreendedorismo, erros e responsabilidades — **porque está vivendo isso agora**. É daí que vem a legitimidade.
-- Mas a narrativa pessoal é **um capítulo entre muitos**, não o enquadramento da marca.
-- A partir da Temporada 1, o conteúdo cresce para outras histórias (ver seção 6.2).
+Em formato de host único, a história pessoal deixa de ser um "capítulo ocasional" e passa a ser **ferramenta de condução**. A regra muda de *quantidade* para *função*.
 
-**Teste prático:** se o público entra apenas para acompanhar o Kayan, falhamos. O público precisa entrar porque **se reconhece na mesa**.
+- **Pode aparecer em todos os episódios**, como ponte — para criar segurança, destravar o convidado ou nomear algo que ele ainda não conseguiu nomear.
+- **Só entra quando aprofunda a conversa do convidado.** Nunca quando apenas acrescenta a versão do host.
+- **Nunca é protagonista.** O centro do episódio é sempre a história de quem está do outro lado da mesa.
+- Kayan fala de carreira, banco, recomeço, família, medo, empreendedorismo, erros e responsabilidades **porque está vivendo isso agora** — é daí que vem a legitimidade.
 
-**Limite de uso:** a história pessoal do host pode ser o eixo central de no máximo **1 em cada 5 episódios**.
+**Os três testes da ponte** — antes de contar algo seu, o host checa:
+
+1. **Serve ao convidado?** Isso vai fazer ele ir mais fundo, ou vai mudar o assunto para mim?
+2. **É curta?** Ponte boa é de 20 a 40 segundos. Acima de um minuto virou monólogo.
+3. **Devolve a bola?** Toda ponte termina com uma pergunta para o convidado, não com uma conclusão do host.
+
+Se falhar em qualquer um dos três, não conta.
+
+**Teste prático da marca:** se o público entra apenas para acompanhar o Kayan, falhamos. O público precisa entrar porque **se reconhece na mesa**.
+
+> O limite anterior de "1 a cada 5 episódios" está **revogado**. Ele fazia sentido no formato de dois hosts; no formato atual seria contraproducente, porque a ponte pessoal é justamente o que mantém a conversa honesta.
 
 ### 11.3 Regras de convidado
 
@@ -650,7 +675,9 @@ A fase de descoberta conceitual está **encerrada**. A partir daqui, execução.
 |---|---|---|---|
 | **1** | **BrotherCast Master 1.0** | ✅ **este documento** | Manifesto, posicionamento, arquitetura, público, tom, pilares, visual, editorial, ecossistema |
 | **2** | **[Temporada 1](TEMPORADA-1.md)** | ✅ entregue | Pergunta da temporada, arco em 3 atos, fichas dos 10 episódios, trilha de convidados, plano de gravação, métricas |
-| **2.1** | Roteiro de direção do piloto (E01) | ▢ **próximo** | Condução do episódio de abertura bloco a bloco |
+| **0** | Correção do Master para host único | ✅ feito nesta versão (1.2) | Remove "os hosts" e "os dois na mesa"; define §3.5 e reescreve §11.2 |
+| **2.0** | Manifesto BrotherCast (peça solo, 60–90s) | ▢ **próximo** | Peça de Kayan sozinho, gravada **antes** do E01 — ver Temporada 1, Peça 0 |
+| **2.1** | Roteiro de direção do piloto (E01) | ▢ bloqueado: falta perfil do convidado | Condução do episódio de abertura bloco a bloco |
 | **2.2** | Lista inicial de convidados | ▢ | Pipeline da §7.4 da Temporada 1 preenchido com nomes reais |
 | **2.3** | Plano de gravação do Bloco A | ▢ | Datas, local, equipe e logística de E01–E03 |
 | **3** | **Sistema de Conteúdo** | ▢ | Operacionalização da seção 12: templates de decupagem, planilha de pacote por episódio, calendário |
@@ -693,7 +720,7 @@ Este documento é **manual operacional da equipe**, não conteúdo para a audiê
 
 | | **Público vê** | **Equipe vê** |
 |---|---|---|
-| **O quê** | Propósito, manifesto, hosts, episódios, convidados, Movimento 1% | Master, Temporada, regras, estratégia, edição, distribuição, testes e métricas |
+| **O quê** | Propósito, manifesto, host, episódios, convidados, Movimento 1% | Master, Temporada, regras, estratégia, edição, distribuição, testes e métricas |
 | **Onde** | Site, redes, plataformas de áudio | Repositório + compartilhamento controlado |
 | **Tom** | Emocional, curto, convidativo | Operacional, detalhado, prescritivo |
 
@@ -709,6 +736,7 @@ Este documento é **manual operacional da equipe**, não conteúdo para a audiê
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.2** | out/2025 | **Formato oficial: host único.** Kayan conduz, um convidado por episódio (§3.5). Reescreve §11.2: a história do Kayan vira **ponte, nunca protagonista**, pode aparecer em todos os episódios desde que aprofunde a conversa do convidado — o limite de "1 a cada 5" fica revogado, com os três testes da ponte no lugar. Remove referências a "os hosts" e "os dois na mesa". Registra a peça solo Manifesto BrotherCast no roadmap. |
 | **1.1** | out/2025 | Confirma a separação do projeto *1% Melhor* com gatilho e critério de revisão (§4.2). Define a política de acesso público × interno e tira o manual do site público (§17.3). Registra a entrega do Documento 2 — Temporada 1 (§16). |
 | **1.0** | out/2025 | Primeira consolidação oficial. Define: Regra Zero; ecossistema Conversa → Descoberta → Reflexão → Participação → Comunidade; separação dos Universos A e B; hierarquia de 3 camadas filosóficas (pilares / ação / sustentação); manifesto curto de 5 mensagens; arquitetura BrotherCast + Movimento 1%; decisão editorial sobre a história pessoal do host; separação do projeto *1% Melhor*. Encerra a fase de descoberta conceitual. |
 

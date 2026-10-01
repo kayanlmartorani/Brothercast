@@ -2,10 +2,16 @@
 
 **Documento 2 do sistema BrotherCast.** Conceito de temporada, arco narrativo, fichas dos 10 episódios, trilha de convidados e plano de gravação.
 
-Versão 1.0 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
-Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md)
+Versão 1.1 — outubro de 2025 · Status: **vigente** · **USO INTERNO**
+Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md) (v1.2)
 
-> Este documento **deriva** do Master 1.0 e não o substitui. Em caso de conflito, o Master vence.
+> ### Formato oficial
+>
+> **Kayan conduz conversas com pessoas reais. Host único, um convidado por episódio — sem exceção.**
+>
+> As únicas peças sem convidado são peças **solo curtas** (manifesto, reflexão), que não contam como episódio.
+
+> Este documento **deriva** do Master e não o substitui. Em caso de conflito, o Master vence.
 > Tudo aqui está subordinado à **Regra Zero**: *primeiro vem a conversa verdadeira, depois encontramos o corte.*
 
 ---
@@ -17,6 +23,7 @@ Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md)
 2. [Conceito e arco narrativo](#2-conceito-e-arco-narrativo)
 3. [Formato e especificações](#3-formato-e-especificações)
 4. [Mapa dos 10 episódios](#4-mapa-dos-10-episódios)
+    - [Peça 0 — Manifesto BrotherCast (solo, 60–90s)](#peça-0-manifesto-brothercast-solo-6090s)
 5. [Como ler uma ficha de episódio](#5-como-ler-uma-ficha-de-episódio)
 6. [Fichas dos episódios](#6-fichas-dos-episódios)
 7. [Convidados: critérios e trilha](#7-convidados-critérios-e-trilha)
@@ -38,7 +45,19 @@ Documento-pai: [`BROTHERCAST-MASTER-1.0.md`](BROTHERCAST-MASTER-1.0.md)
 | **Editor** | 3, 6 (bloco de cortes), 9 |
 | **IA / redator** | 1, 2, 5, 6 + o briefing da seção 15 do Master |
 
-**Regra de uso das perguntas:** as 5 perguntas fortes de cada ficha são **direção para o host**, não questionário. Podem ser feitas fora de ordem, com outras palavras, ou não serem feitas — se a conversa foi melhor por outro caminho, a conversa venceu.
+**Regra de uso das perguntas:** as 5 perguntas fortes de cada ficha são **direção para o host**, não questionário. Elas são sempre **para o convidado**. Podem ser feitas fora de ordem, com outras palavras, ou não serem feitas — se a conversa foi melhor por outro caminho, a conversa venceu.
+
+### A história do Kayan é ponte, nunca protagonista
+
+Vale em **todos** os episódios desta temporada (Master §11.2):
+
+- A história pessoal do host **pode aparecer sempre** — e deve, quando cria segurança ou destrava o convidado.
+- **Só entra quando aprofunda a conversa do convidado.** Nunca quando apenas acrescenta a versão do host.
+- **Nunca é protagonista.** O centro do episódio é sempre quem está do outro lado da mesa.
+
+**Os três testes da ponte:** serve ao convidado? · é curta (20–40s)? · devolve a bola com uma pergunta? Falhou em um, não conta.
+
+> O limite de "1 a cada 5 episódios" do formato antigo está **revogado**.
 
 ---
 
@@ -82,11 +101,13 @@ Vai fundo: de onde viemos, o que perdemos, e o que sobra quando tudo quebra. Fec
       └───┴────┴────┴────┴────┴────┴────┴────┴────┴────┴──
         E01  E02  E03  E04  E05  E06  E07  E08  E09  E10
         ├──── ATO I ────┤├──────── ATO II ────────┤├ ATO III ┤
-        apresentação      o peso e as forças        sentido
+        o chão            o peso e as forças        sentido
 ```
 
 **Decisões de arco:**
-- **E01 é o único episódio sem convidado externo.** É a fundação — quem são os hosts e por que isso existe.
+- **E01 tem convidado, como todos os outros.** A fundação do BrotherCast não é explicada — ela é demonstrada: Kayan abre curto dizendo por que isso existe e, em seguida, a filosofia aparece em ato, numa conversa real.
+- **A peça solo "Manifesto BrotherCast" (60–90s) sai antes do E01** e carrega sozinha o trabalho de apresentação. Ver [Peça 0](#peça-0-manifesto-brothercast-solo-6090s).
+- **A história do Kayan atravessa a temporada inteira como ponte**, nunca como eixo. É isso que costura os dez episódios sem transformá-los na biografia dele.
 - **E09 (perdas e recomeços) é o pico emocional.** É o episódio mais pesado e precisa ser o mais bem produzido.
 - **E10 fecha aliviando.** Depois de nove episódios de peso, o fechamento devolve esperança concreta, não um resumo.
 - **Cada episódio termina com a mesma pergunta:** *"Qual é o seu 1% de hoje?"* — é o fio que costura a temporada inteira.
@@ -100,11 +121,12 @@ Vai fundo: de onde viemos, o que perdemos, e o que sobra quando tudo quebra. Fec
 | **Episódios** | 10 |
 | **Duração-alvo** | 50–70 min (piloto pode ir a 75) |
 | **Cadência** | 1 por semana, mesmo dia e horário |
-| **Pessoas na mesa** | Hosts + 1 convidado (E01 só hosts; E08 pode ter 2) |
+| **Pessoas na mesa** | **Kayan + 1 convidado** — em todos os dez episódios |
+| **Peça extra** | Manifesto BrotherCast: solo de 60–90s, gravado **antes** do E01 |
 | **Formato de vídeo** | Horizontal 16:9, multicâmera |
 | **Identidade** | Universo A (preto/grafite + madeira + âmbar + branco) — Master §8.1 |
 | **Pacote por episódio** | Master §12.1 (episódio + 3–5 cortes de impacto + 2–3 cortes de reflexão + card + pergunta de comunidade + thumbnail) |
-| **Abertura** | Máx. 30s. Sem vinheta longa. |
+| **Abertura** | Máx. 30s, só Kayan. Sem vinheta longa. |
 | **Fechamento** | Fixo: "Qual é o seu 1% de hoje?" + o 1% do convidado |
 
 ### Estrutura interna padrão do episódio
@@ -112,11 +134,11 @@ Vai fundo: de onde viemos, o que perdemos, e o que sobra quando tudo quebra. Fec
 | Bloco | Tempo | Função |
 |---|---|---|
 | **Gancho frio** | 0:00–0:40 | Trecho forte da própria conversa, antes da abertura |
-| **Abertura** | 0:40–1:10 | Identidade + quem está na mesa + a pergunta do episódio |
+| **Abertura** | 0:40–1:10 | Kayan sozinho: identidade + quem é o convidado + a pergunta do episódio |
 | **Bloco 1 — a pessoa** | ~15 min | Quem é, de onde vem, o que carrega hoje |
 | **Bloco 2 — o peso** | ~20 min | A dificuldade real, sem pressa e sem resolver cedo demais |
 | **Bloco 3 — a virada** | ~15 min | Onde entrou a responsabilidade pelo próximo passo |
-| **Bloco 4 — o 1%** | ~8 min | O que dá pra fazer hoje. Pergunta ritual. Fechamento. |
+| **Bloco 4 — o 1%** | ~8 min | O que dá pra fazer hoje. Pergunta ritual ao convidado. Fechamento. |
 
 > **Nunca pular para o Bloco 3 cedo.** O erro clássico é resolver a dor rápido para "ficar positivo". O público precisa sentir que o peso foi levado a sério antes de ouvir qualquer saída.
 
@@ -126,18 +148,70 @@ Vai fundo: de onde viemos, o que perdemos, e o que sobra quando tudo quebra. Fec
 
 | # | Título de trabalho | Tema central | Pilar | Ato | Convidado |
 |---|---|---|---|---|---|
-| **E01** | Por que a gente senta nessa mesa | Origem do BrotherCast e da filosofia do 1% | Evolução Diária *(abre os quatro)* | I | — só hosts |
+| **E01** | Por que a gente senta nessa mesa | Origem do BrotherCast e da filosofia do 1% | Evolução Diária *(abre os quatro)* | I | **A definir** — ver §7.5 |
 | **E02** | Quando o plano antigo não serve mais | Carreira e recomeço | Responsabilidade Pessoal | I | Transição de carreira |
 | **E03** | O tempo que a gente não tem | Família e paternidade/maternidade | Pessoas Reais | I | Pai ou mãe em jornada dupla |
 | **E04** | O medo não vai embora. E agora? | Medo e insegurança | Dificuldades Reais | II | Quem agiu com medo |
 | **E05** | Nos dias em que não dá vontade | Disciplina e consistência | Evolução Diária | II | Perfil de rotina longa |
 | **E06** | A conta chega no dia 5 | Dinheiro e pressão | Dificuldades Reais | II | Quem viveu aperto financeiro |
 | **E07** | Quando o problema é por dentro | Saúde emocional | Pessoas Reais | II | Quem passou por burnout/ansiedade |
-| **E08** | De onde eu venho ainda me explica | Histórias de origem | Pessoas Reais | III | Origem marcante (pode ser dupla) |
+| **E08** | De onde eu venho ainda me explica | Histórias de origem | Pessoas Reais | III | Origem marcante |
 | **E09** | Perder e começar de novo | Perdas e recomeços | Responsabilidade Pessoal | III | Quem perdeu algo grande |
-| **E10** | 1% melhor, de verdade | O que significa viver 1% melhor | Evolução Diária | III | Convidado da comunidade |
+| **E10** | 1% melhor, de verdade | O que significa viver 1% melhor | Evolução Diária | III | Da comunidade, 1% visível |
 
-> **E10 com convidado da comunidade** é uma decisão deliberada: a temporada que começou com os hosts termina com alguém do público que praticou o 1% durante a temporada. Isso fecha o ciclo *conversa → descoberta → reflexão → participação → comunidade* na frente de todo mundo.
+> **E10 com convidado da comunidade** é uma decisão deliberada: a temporada termina com alguém do público que praticou o 1% de forma visível durante as dez semanas, com relatos de outras pessoas da comunidade entrando no episódio. Fecha o ciclo *conversa → descoberta → reflexão → participação → comunidade* na frente de todo mundo.
+>
+> **Ponto em aberto:** existe a alternativa de um E10 só com Kayan e a comunidade, sem convidado individual. Mantemos o convidado por coerência com a regra de formato — ver [§7.5](#75-decisões-e-pontos-em-aberto).
+
+---
+
+## Peça 0 — Manifesto BrotherCast (solo, 60–90s)
+
+**Gravada ANTES do E01. Não é episódio.**
+
+Em formato de host único, a apresentação do projeto não pode ocupar o episódio de estreia — ela viraria monólogo e empurraria o convidado para o canto. Por isso a apresentação sai da grade e vira uma peça própria.
+
+| Item | Definição |
+|---|---|
+| **Formato** | Kayan sozinho, direto na câmera |
+| **Duração** | 60–90s (ideal: 75s) |
+| **Função** | Declarar o que o BrotherCast é, antes de qualquer episódio existir |
+| **Onde** | Post fixado, bio, abertura do canal, primeira peça do lançamento |
+| **Visual** | Universo A — preto/grafite, madeira, âmbar (Master §8.1) |
+| **Versões** | 9:16 (principal) · 16:9 (abertura de canal) · corte de 30s |
+
+**Regras da peça**
+- Nada de promessa, número ou fórmula.
+- Uma história concreta e curta no meio — sem ela, vira propaganda.
+- Termina com a pergunta ritual, não com um pedido de inscrição.
+- Texto decorado soa falso: Kayan grava em tomadas livres a partir dos marcos abaixo, e a montagem escolhe.
+
+**Estrutura em quatro marcos**
+
+| Marco | Tempo | O que precisa acontecer |
+|---|---|---|
+| 1. A rejeição | 0:00–0:15 | Nomear o que o BrotherCast **não** é. Abre pela tensão, não pela saudação. |
+| 2. A história | 0:15–0:40 | Um caso concreto e pessoal, pequeno. A prova de que ele fala de dentro. |
+| 3. A tese | 0:40–1:05 | O 1%: consistência acima de intensidade; controlar o próximo passo. |
+| 4. O convite | 1:05–1:15 | A declaração filosófica + a pergunta ritual. |
+
+**Rascunho v0 — base para reagir, não para decorar**
+
+> Tem um monte de gente dizendo que você precisa acordar às cinco da manhã, odiar quem você é hoje e virar outra pessoa em trinta dias.
+>
+> Eu já tentei. Durou onze dias. No décimo segundo eu estava mais cansado do que quando comecei, e me sentindo um fracassado por cima.
+>
+> O que funcionou pra mim foi o contrário: uma coisa pequena, hoje. Depois de novo amanhã. Consistência ganha de intensidade — sempre.
+>
+> Eu não controlo a economia, não controlo o chefe, não controlo o imprevisto. Mas eu controlo o próximo passo. E o próximo passo é suficiente.
+>
+> Aqui a gente senta e conversa de verdade com gente que está no meio do caminho. Não com quem já chegou.
+>
+> Porque o ontem ensina, o amanhã inspira — mas é hoje que a vida acontece.
+>
+> Eu sou o Kayan. Isso aqui é o BrotherCast. **E aí: qual é o seu 1% de hoje?**
+
+*≈ 175 palavras ≈ 75 segundos.* A história dos "onze dias" é um **espaço reservado**: tem que ser substituída por um caso real do Kayan. Se a história for verdadeira, a peça funciona; se for genérica, nenhuma edição salva.
 
 ---
 
@@ -169,14 +243,28 @@ Cada ficha tem nove blocos:
 
 ### E01 — Por que a gente senta nessa mesa
 
-**Ato I · Pilar: Evolução Diária (apresenta os quatro) · Só hosts · Piloto**
+**Ato I · Pilar: Evolução Diária (apresenta os quatro) · Piloto · Com convidado**
 
-- **Tema central:** por que o BrotherCast existe e o que é a filosofia do 1%.
+- **Tema central:** por que o BrotherCast existe e o que é a filosofia do 1% — **demonstrada em conversa**, não explicada em discurso.
 - **Pergunta humana:** *"Por que tanta coisa que eu ouço sobre evolução não cabe na minha vida?"*
-- **Na mesa:** apenas os hosts. Sem convidado — a fundação é dos dois.
-- **Tensão da conversa:** produtividade tóxica × evolução realista. Os hosts precisam admitir que já tentaram o jeito intenso e não funcionou. Sem essa admissão o episódio vira palestra.
+- **Na mesa:** Kayan + 1 convidado.
+- **Convidado ideal:** alguém que **já tentou a virada radical e se quebrou** — e que hoje avança com passos pequenos. Perfil reconhecível, não notório. Precisa ser alguém com quem Kayan tenha intimidade suficiente para a conversa fluir no primeiro episódio, mas que o público não conheça. *A definir — ver §7.5.*
+- **Tensão da conversa:** produtividade tóxica × evolução realista. O episódio só funciona se **os dois** admitirem fracasso: Kayan na abertura e na primeira ponte, o convidado ao longo da conversa. Sem isso, vira palestra.
 
-**5 perguntas fortes**
+**Estrutura específica do piloto**
+
+| Bloco | Tempo | O que acontece |
+|---|---|---|
+| Gancho frio | 0:00–0:40 | Trecho forte da conversa do convidado |
+| **Abertura solo** | 0:40–1:40 | **Kayan sozinho, até 60s:** por que isso existe, o que não vai ter aqui, quem é o convidado. Versão falada e curta do manifesto — nunca o texto da Peça 0 repetido |
+| Bloco 1 — a pessoa | ~15 min | Quem é o convidado, de onde vem, o que carrega hoje |
+| Bloco 2 — o peso | ~20 min | A tentativa de virada radical e o que ela custou |
+| Bloco 3 — a virada | ~15 min | Onde ele parou de tentar mudar tudo e começou a mudar algo |
+| Bloco 4 — o 1% | ~8 min | A filosofia nomeada **a partir do que o convidado contou** + pergunta ritual |
+
+> **A filosofia do 1% só é nomeada no Bloco 4** — e usando as palavras do convidado, não as do manual. Se Kayan explicar os quatro pilares no Bloco 1, o piloto morre.
+
+**5 perguntas fortes** *(para o convidado)*
 1. Qual foi a última vez que você tentou mudar tudo de uma vez — e em quantos dias desmoronou?
 2. O que você já fingiu que estava dando certo?
 3. O que te incomoda no conteúdo de alta performance que a gente consome?
@@ -184,16 +272,19 @@ Cada ficha tem nove blocos:
 5. Qual é a menor coisa que mudou algo grande pra você?
 
 **Territórios de história**
-Tentativas de virada radical que fracassaram · o momento em que a vida adulta ficou pesada · a conversa que destravou algo · por que "brother" — a origem do nome · o que os hosts ainda não resolveram hoje.
+A virada radical que fracassou · o momento em que a vida adulta ficou pesada · a cobrança que vinha de fora e a que vinha de dentro · a primeira coisa pequena que sobreviveu · o que ele ainda não resolveu hoje.
+
+**Pontes do Kayan previstas** *(curtas, e só se servirem ao convidado)*
+A própria tentativa de virada radical que não durou · por que "brother" — a origem do nome, em uma frase · a conversa que destravou algo nele. Nenhuma passa de 40 segundos; todas terminam devolvendo a pergunta.
 
 **Possibilidades de corte**
-*Impacto:* a confissão do fracasso da virada radical · "não precisa acordar às 4h" · a definição de 1% em 20 segundos.
-*Reflexão:* os quatro pilares explicados em linguagem de mesa · a diferença entre consistência e intensidade · "você não controla as circunstâncias, controla o próximo passo".
+*Impacto:* a confissão de fracasso do convidado · "não precisa acordar às 4h" · a definição de 1% em 20 segundos, dita pelo convidado.
+*Reflexão:* os quatro pilares aparecendo na história real de alguém · a diferença entre consistência e intensidade · "você não controla as circunstâncias, controla o próximo passo".
 
 - **CTA da comunidade:** *"Qual é o seu 1% de hoje? Começa com um. Qualquer um."*
 - **O 1% do episódio:** escolher **uma** coisa pequena e fazer hoje — e dizer em voz alta qual é.
 
-**Nota de produção:** é o episódio mais importante da temporada e o mais fácil de errar. O risco é virar manifesto falado. **Antídoto:** cada afirmação de filosofia tem que vir colada em uma história pessoal concreta. Se não tem história, corta a afirmação.
+**Nota de produção:** é o episódio mais importante da temporada e o mais fácil de errar. Em formato de host único o risco dobra: o host, ansioso para explicar o projeto, toma a conversa. **Antídotos:** (1) a apresentação do projeto já foi feita na Peça 0 — não refazer; (2) abertura solo com cronômetro, teto de 60s; (3) cada afirmação de filosofia vem colada em uma história concreta, de preferência a do convidado; (4) se Kayan falar mais que o convidado em qualquer bloco, regrava-se o bloco ou corta-se na edição.
 
 ---
 
@@ -375,7 +466,7 @@ O corpo avisando antes da cabeça · o dia do colapso · a resistência em procu
 
 - **Tema central:** histórias de origem — o que a infância e a família instalaram na gente.
 - **Pergunta humana:** *"Por que eu reajo assim mesmo sabendo que não precisava?"*
-- **Convidado ideal:** alguém com origem marcante — não necessariamente dura. Pode ser episódio em dupla, com duas origens em contraste.
+- **Convidado ideal:** alguém com origem marcante — não necessariamente dura. **Um convidado**, como todos os outros: a ideia de duas origens em contraste fica para a Temporada 2.
 - **Tensão da conversa:** origem explica × origem não justifica. O episódio honra a história **e** devolve a responsabilidade pelo próximo passo.
 
 **5 perguntas fortes**
@@ -429,12 +520,21 @@ O antes e o depois · os dias sem chão · o apoio inesperado · a primeira pequ
 
 ### E10 — 1% melhor, de verdade
 
-**Ato III · Pilar: Evolução Diária · Fechamento**
+**Ato III · Pilar: Evolução Diária · Fechamento · Com convidado + vozes da comunidade**
 
 - **Tema central:** o que significa, na prática, viver 1% melhor — a resposta da temporada.
 - **Pergunta humana:** *"Isso funciona mesmo ou é só mais uma frase bonita?"*
-- **Convidado ideal:** **alguém da comunidade** que praticou o 1% durante a temporada. Pessoa comum, resultado modesto, história verdadeira. Escolhido a partir das respostas reais do ritual.
+- **Convidado ideal:** **alguém da comunidade que viveu o 1% de forma visível** durante as dez semanas. Pessoa comum, resultado modesto, história verdadeira e acompanhável — o público precisa ter visto isso acontecendo. Escolhido a partir das respostas reais do ritual.
 - **Tensão da conversa:** o 1% é modesto, e justamente por isso funciona. O episódio precisa resistir à tentação de inflar o resultado para parecer impressionante.
+
+**Estrutura específica do fechamento**
+
+| Bloco | O que acontece |
+|---|---|
+| Blocos 1–3 | Conversa normal com o convidado da comunidade |
+| **Mosaico da comunidade** | ~4 min de **relatos curtos de outras pessoas** (áudio ou vídeo enviado): o 1% de cada uma. Com autorização explícita, sempre |
+| Bloco 4 | O 1% do convidado + pergunta ritual |
+| **Fechamento solo** | **Kayan sozinho, até 90s**, encerrando a temporada. O único momento solo de fechamento do ano |
 
 **5 perguntas fortes**
 1. Qual foi o seu primeiro 1% e por que você escolheu esse?
@@ -453,7 +553,9 @@ O ponto de partida · a semana em que quase largou · o dia em que percebeu que 
 - **CTA da comunidade:** *"Temporada 1 fechada. Qual é o seu 1% pra temporada que vem?"*
 - **O 1% do episódio:** escolher o **próximo** 1% — e dizer publicamente qual é.
 
-**Nota de produção:** recapitular os nove episódios anteriores em até 90 segundos, usando falas reais dos convidados. É o único momento da temporada em que é permitido montar uma colagem de frases — e ainda assim, só de falas que realmente aconteceram.
+**Nota de produção:** no fechamento solo, recapitular os nove episódios anteriores em até 90 segundos, usando falas reais dos convidados. É o único momento da temporada em que é permitido montar uma colagem de frases — e ainda assim, só de falas que realmente aconteceram.
+
+**Alternativa registrada:** um E10 **sem convidado individual**, só Kayan + mosaico ampliado da comunidade. Mantivemos o convidado por coerência com a regra de um convidado por episódio, e porque uma história acompanhada de ponta a ponta prova mais do que vinte depoimentos curtos. A troca é pequena e reversível — ver [§7.5](#75-decisões-e-pontos-em-aberto).
 
 ---
 
@@ -510,15 +612,42 @@ Manter sempre **3 nomes por episódio**: confirmado, reserva e reserva 2 — pes
 
 | Ep | Perfil buscado | Confirmado | Reserva 1 | Reserva 2 | Status |
 |---|---|---|---|---|---|
+| **E01** | **Tentou a virada radical e se quebrou; hoje avança devagar** | | | | 🔴 **bloqueia o piloto** |
 | E02 | Transição de carreira em curso | | | | ▢ |
 | E03 | Pai/mãe em jornada dupla | | | | ▢ |
 | E04 | Agiu com medo | | | | ▢ |
 | E05 | Rotina longa comprovada | | | | ▢ |
 | E06 | Viveu aperto financeiro | | | | ▢ |
 | E07 | Burnout/ansiedade, fora da fase aguda | | | | ▢ |
-| E08 | Origem marcante (pode ser dupla) | | | | ▢ |
+| E08 | Origem marcante | | | | ▢ |
 | E09 | Perda grande, +1 ano, em reconstrução | | | | ▢ |
-| E10 | Comunidade, praticou o 1% | | | | ▢ |
+| E10 | Comunidade, 1% visível nas 10 semanas | | | | ▢ |
+
+### 7.5 Decisões e pontos em aberto
+
+#### Decisões fechadas
+
+| # | Decisão | Consequência |
+|---|---|---|
+| 1 | **Host único: Kayan** | Condução consistente; o risco passa a ser o host preencher silêncio |
+| 2 | **Um convidado por episódio, nos dez** | E01 e E10 deixam de ser episódios de host; E08 deixa de ser dupla |
+| 3 | **Peça solo "Manifesto BrotherCast" (60–90s), antes do E01** | Tira a apresentação do projeto de dentro do piloto |
+| 4 | **História do Kayan = ponte, nunca protagonista** | Revoga o limite de "1 a cada 5"; entra o teste dos três critérios |
+| 5 | **E10 com convidado + mosaico da comunidade + fechamento solo** | Mantém a regra de formato e ainda dá voz ao público |
+| 6 | **Gravação em três blocos com estoque mínimo de 2** | Protege a cadência semanal |
+| 7 | **Métrica principal: participação recorrente no ritual** | Alcance deixa de ser a meta |
+
+#### Pontos em aberto
+
+| # | Em aberto | Bloqueia | Quem decide |
+|---|---|---|---|
+| **A** | **Quem é o convidado do E01** | 🔴 roteiro do piloto (Doc 2.1) e plano do Bloco A | Kayan |
+| B | Confirmar o formato do E10 (com convidado × só Kayan + comunidade) | nada agora; decidir até a semana 6 | Kayan |
+| C | Perfil do convidado do E08 depois de cair a dupla | pipeline do Bloco C | Produção |
+| D | Qual história real do Kayan entra na Peça 0 no lugar do espaço reservado | 🔴 gravação do Manifesto solo | Kayan |
+| E | Local fixo de gravação e montagem de cenário (Universo A) | Bloco A | Produção |
+
+> **O ponto A é o único bloqueio de caminho crítico.** Sem o perfil do convidado do E01 não existe roteiro de piloto, e sem roteiro de piloto não existe Bloco A gravado — o que trava também o plano de lançamento (Doc 5).
 
 ---
 
@@ -530,6 +659,7 @@ Gravar semanalmente é o que mata podcast iniciante. A Temporada 1 grava em **tr
 
 | Bloco | Episódios | Quando | Estoque ao estrear |
 |---|---|---|---|
+| **Peça 0** | Manifesto solo | Antes de tudo | — |
 | **Bloco A** | E01, E02, E03 | Antes da estreia | 3 episódios prontos |
 | **Bloco B** | E04, E05, E06, E07 | Semana 2 da publicação | +4 |
 | **Bloco C** | E08, E09, E10 | Semana 6 da publicação | +3 |
@@ -544,6 +674,7 @@ Gravar semanalmente é o que mata podcast iniciante. A Temporada 1 grava em **tr
 |---|---|
 | −60 min | Montagem, teste de áudio, luz, cartões, baterias |
 | −20 min | Chegada do convidado. **Café e conversa fora da câmera** — sem falar do tema |
+| −10 min | Kayan grava a abertura solo do episódio (até 30s; 60s no piloto) |
 | −5 min | Combinado rápido: duração, liberdade de não responder, pergunta final |
 | 0 | Grava. Som rodando antes de todo mundo sentar |
 | +75 min | Fim. Pergunta ritual gravada **duas vezes** (uma de segurança) |
@@ -609,14 +740,16 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 | Cortes de reflexão | Salvamentos + compartilhamentos | acima da média do canal |
 | Comunidade | **Membros com ≥ 2 participações** | **a métrica principal** |
 | Temporada | Episódios publicados no dia combinado | **10 de 10** |
+| Episódio | Proporção de fala **convidado : host** | ≥ 60:40 |
 
 ### Metas qualitativas
 
 - [ ] Pelo menos **3 episódios** em que o convidado disse algo que ele mesmo não esperava dizer
-- [ ] Pelo menos **1 convidado** que não é da rede pessoal dos hosts
+- [ ] Pelo menos **1 convidado** que não é da rede pessoal do Kayan
 - [ ] **Zero** cortes publicados que distorcem o sentido original
 - [ ] **Zero** episódios gravados sem o pacote planejado antes
 - [ ] O E10 com um convidado **real** da comunidade
+- [ ] **Em nenhum episódio** o host falou mais tempo que o convidado
 
 > **Consistência acima de intensidade vale também para nós.** Publicar 10 episódios medianos no prazo é vitória. Publicar 4 excelentes e sumir é derrota.
 
@@ -626,12 +759,13 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 
 | Risco | Sinal de alerta | Regra de proteção |
 |---|---|---|
-| **Virar palestra** | Hosts explicando mais do que escutando | Toda afirmação de filosofia vem colada em história concreta |
+| **Virar palestra** | Kayan explicando mais do que escutando | Toda afirmação de filosofia vem colada em história concreta |
+| **Host ocupa o episódio** *(risco novo do formato solo)* | Ponte passando de 40s; host falando mais que o convidado | Teste dos três critérios; proporção de fala ≥ 60:40; regravar ou cortar |
 | **Resolver a dor cedo demais** | Bloco 2 durando menos de 15 min | Não entrar no Bloco 3 antes do peso estar estabelecido |
 | **Fabricar viral** | "Fala aquela frase de novo pro corte" | **Regra Zero.** Proibido pedir repetição para render corte |
 | **Quebra de cadência** | Estoque em 1 episódio | Pausa a captação e grava |
 | **Convidado se arrepender** | Hesitação na gravação | Direito de veto combinado antes; revisão de cortes sensíveis |
-| **Tudo virar sobre o Kayan** | 2 episódios seguidos centrados na história dele | Máx. 1 em 5 (Master §11.2) |
+| **Tudo virar sobre o Kayan** | O convidado vira plateia da história do host | Ponte serve ao convidado, é curta e devolve a bola (Master §11.2) |
 | **Episódio fora do eixo** | Boa conversa que não responde a pergunta da temporada | Guarda para a T2 ou publica como material avulso, fora da numeração |
 | **Dar conselho técnico** | Convidado virando consultor em E06/E07 | Host traz de volta para a experiência vivida |
 
@@ -641,6 +775,7 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 
 | Versão | Data | Mudanças |
 |---|---|---|
+| **1.1** | out/2025 | **Formato oficial: host único.** Kayan conduz, um convidado em todos os dez episódios. E01 refeito com convidado e abertura solo de até 60s, com a filosofia nomeada só no Bloco 4. E08 deixa de ser dupla. E10 passa a ter convidado da comunidade + mosaico de relatos + fechamento solo de até 90s. Nova **Peça 0 — Manifesto BrotherCast** (solo 60–90s, antes do E01) com estrutura em quatro marcos e rascunho v0. Regra de narrativa pessoal trocada: ponte, nunca protagonista, com os três testes. Nova §7.5 com decisões fechadas e pontos em aberto. Novas métricas de proporção de fala (≥ 60:40) e risco de o host ocupar o episódio. |
 | **1.0** | out/2025 | Primeira versão. Define a pergunta da temporada, arco em 3 atos, 10 fichas de episódio, trilha e one-pager do convidado, gravação em 3 blocos com estoque mínimo, integração com a comunidade e painel de métricas com participação recorrente como métrica principal. |
 
 ---
@@ -649,7 +784,9 @@ Essa é a única métrica que prova que o ecossistema funciona. Alcance sem repe
 
 | # | Documento | Depende de |
 |---|---|---|
-| **2.1** | Roteiro de direção do piloto (E01) | este documento |
+| **0** | Correção do Master para host único | ✅ feito — Master v1.2 |
+| **2.0** | Roteiro do Manifesto solo (Peça 0) | história real do Kayan (ponto D) |
+| **2.1** | Roteiro de direção do piloto (E01) | 🔴 **perfil do convidado do E01 (ponto A)** |
 | **2.2** | Lista inicial de convidados (pipeline da §7.4 preenchido) | este documento |
 | **2.3** | Plano de gravação do Bloco A | 2.1 + 2.2 |
 | **3** | Sistema de Conteúdo | Master §12 |
